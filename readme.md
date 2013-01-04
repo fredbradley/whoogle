@@ -1,4 +1,4 @@
-whosonheart
+"Whoogle"
 ===========
 
-Code I'm working on! 
+For more information see http://www.fredbradley.me/portfolio/whos-on-heart
