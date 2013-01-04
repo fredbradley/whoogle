@@ -11,10 +11,10 @@
 	/* DEFINES PATHS */
 		if ($_SERVER['SERVER_ADDR'] != "127.0.0.1") {
 			$ROOT_PATH = "/kunden/homepages/3/d298570323/htdocs/_smarty_sites/";
-			$SITE_PATH = $ROOT_PATH."whosonheart/";
+			$SITE_PATH = $ROOT_PATH."whoogle/";
 		} else { 
 			$ROOT_PATH = "/Users/fredbradley/Sites/smarty_site/";
-			$SITE_PATH = $ROOT_PATH."whosonheart/";
+			$SITE_PATH = $ROOT_PATH."whoogle/";
 		}
 		
 
@@ -24,7 +24,7 @@
 		$smarty = new Smarty;
 		define('TWO_SITES_SAME_NAME', 'Two of ya sites have the same host');
 	/* INCLUDE DATABASE THINGS */
-		require_once($ROOT_PATH.'db.who.php'); 		// Include DB SETTINGS
+		require_once($ROOT_PATH.'db.whoogle.php'); 		// Include DB SETTINGS
 		define('DB_PREFIX', 'woh_');				// PREFIX (IF USED) FOR THE DATABASE
 		define('USERS_TABLE', DB_PREFIX.'users'); 		// (NAME OF USERS TABLE)
 		define('CONFIG_TABLE', DB_PREFIX.'config'); 		// (NAME OF CONFIG TABLE)
@@ -57,6 +57,9 @@
 		$smarty->setCompileDir($SITE_PATH.'templates_c');
 		$smarty->setCacheDir($SITE_PATH.'cache');
 		$smarty->setConfigDir($SITE_PATH.'configs');
+		$smarty->force_compile = true;
+		$smarty->debugging = true;
+
 	
 	/* FACEBOOK FAN PAGE */
 	//	$json_string = 'https://graph.facebook.com/'.$fanpage;

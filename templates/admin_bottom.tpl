@@ -1,8 +1,12 @@
-                        <div id="footer">
-                                <small>
-                                                &#169; Copyright 2012 Template Design by Simpla Admin. Coded and developed by <a href="http://www.fredbradley.co.uk">Fred Bradley</a>
-                                </small>
-                        </div><!-- End #footer -->
-                </div> <!-- End #main-content -->
-        </div></body>
+</div>
+</div>
+</div>
+	<footer>
+		<div class="wrapper">
+			<span class="copyright">
+			Template by:	COPYRIGHT © 2012 Mahieddine Abd-kader
+			</span>
+		</div>
+	</footer>
+</body>
 </html>

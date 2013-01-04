@@ -1,31 +1,23 @@
- <div class="content-box-header">
-
-                                        <h3>Users Table</h3>
 
 
-                                        <div class="clear"></div>
+                                <div class="widget_contents noPadding content-box-content">
 
-                                </div> <!-- End .content-box-header -->
-
-                                <div class="content-box-content">
-
-                                                <table>
+ 						<table class="datatable tables">
 
                                                         <thead>
                                                                 <tr>
-                                                                   <th><input class="check-all" type="checkbox" /></th>
-                                                                   <th>Name</th>
+                                                                   <th>Name (Username)</th>
                                                                    <th>Email</th>
-                                                                   <th>Admin Level</th>
+                                                                   <th>Access</th>
                                                                    <th>Last Login</th>
-                                                                   <th>Edit</th>
+                                                                   <th>Delete</th>
                                                                 </tr>
 
                                                         </thead>
 
                                                         <tfoot>
                                                                 <tr>
-                                                                        <td colspan="6">
+                                                                        <td colspan="5">
                                                                         <!--    <div class="bulk-actions align-left">
                                                                                         <select name="dropdown">
                                                                                                 <option value="option1">Choose an action...</option>
@@ -50,16 +42,11 @@
                                                         <tbody>
                                                 {foreach $users as $user}
                                                                 <tr>
-                                                                        <td><input type="checkbox" /></td>
-                                                                        <td><a href="edit/{$user.id}">{$user.first_name} {$user.last_name}</a></td>
+                                                                        <td><a href="edit/{$user.id}">{$user.first_name} {$user.last_name} ({$user.username})</a></td>
                                                                         <td>{$user.email}</td>
                                                                         <td>{$user.acl}</td>
                                                                         <td>{$user.last_login|relative_date}</td>
-                                                                        <td>
-                                                                                <a href="edit/{$user.id}" title="Edit"><img src="/admin/resources/images/icons/pencil.png" alt="Edit" /></a>
-                                                                                <a href="delete/{$user.id}" title="Delete"><img src="/admin/resources/images/icons/cross.png" alt="Delete" /></a>
-                                                                        <!--    <a href="#" title="Edit Meta"><img src="resources/images/icons/hammer_screwdriver.png" alt="Edit Meta" /></a>
-                                                                -->     </td>
+                                                                        <td><a href="delete/{$user.id}" title="Delete"><img src="/admin/resources/images/icons/cross.png" alt="Delete" /></a></td>
 
                                                                 </tr>
                                                 {/foreach}

@@ -1,61 +1,227 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>{$title} | Whoogle Admin</title>
+	<!--[if lt IE 9]>
+		<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<script src="/assets/javascript/Flot/excanvas.js"></script>
+	<![endif]-->
+	<!-- The Fonts -->
+	<link href="http://fonts.googleapis.com/css?family=Oswald|Droid+Sans:400,700" rel="stylesheet">
+	<!-- The Main CSS File -->
+	<link rel="stylesheet" href="/assets/css/style.css">
+	<!-- jQuery -->
+	<script src="/assets/javascript/jQuery/jquery-1.7.2.min.js"></script>
+	<!-- Flot -->
+	<script src="/assets/javascript/Flot/jquery.flot.js"></script>
+	<script src="/assets/javascript/Flot/jquery.flot.resize.js"></script>
+	<script src="/assets/javascript/Flot/jquery.flot.pie.js"></script>
+	<!-- DataTables -->
+	<script src="/assets/javascript/DataTables/jquery.dataTables.min.js"></script>
+	<!-- ColResizable -->
+	<script src="/assets/javascript/ColResizable/colResizable-1.3.js"></script>
+	<!-- jQuryUI -->
+	<script src="/assets/javascript/jQueryUI/jquery-ui-1.8.21.min.js"></script>
+	<!-- Uniform -->
+	<script src="/assets/javascript/Uniform/jquery.uniform.js"></script>
+	<!-- Tipsy -->
+	<script src="/assets/javascript/Tipsy/jquery.tipsy.js"></script>
+	<!-- Elastic -->
+	<script src="/assets/javascript/Elastic/jquery.elastic.js"></script>
+	<!-- ColorPicker -->
+	<script src="/assets/javascript/ColorPicker/colorpicker.js"></script>
+	<!-- SuperTextarea -->
+	<script src="/assets/javascript/SuperTextarea/jquery.supertextarea.min.js"></script>
+	<!-- UISpinner -->
+	<script src="/assets/javascript/UISpinner/ui.spinner.js"></script>
+	<!-- MaskedInput -->
+	<script src="/assets/javascript/MaskedInput/jquery.maskedinput-1.3.js"></script>
+	<!-- ClEditor -->
+	<script src="/assets/javascript/ClEditor/jquery.cleditor.js"></script>
+	<!-- Full Calendar -->
+	<script src="/assets/javascript/FullCalendar/fullcalendar.js"></script>
+	<!-- Color Box -->
+	<script src="/assets/javascript/ColorBox/jquery.colorbox.js"></script>
+	<!-- Kanrisha Script -->
+	<script src="/assets/javascript/kanrisha.js"></script>
+</head>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
- 
-	<head>
+	<!-- Top Panel -->
+	<div class="top_panel">
+		<div class="wrapper">
+			<div class="user">
+				<img src="/assets/images/user_avatar.png" alt="user_avatar" class="user_avatar">
+				<span class="label">{$SESH.user.info.first_name} {$SESH.user.info.last_name}</span>
+				<!-- Top Tooltip -->
+				<div class="top_tooltip">
+					<div>
+						<ul class="user_options">
+							<li class="i_16_profile"><a href="#" title="Profile"></a></li>
+							<li class="i_16_tasks"><a href="#" title="Tasks"></a></li>
+							<li class="i_16_notes"><a href="#" title="Notes"></a></li>
+							<li class="i_16_options"><a href="#" title="Options"></a></li>
+							<li class="i_16_logout"><a href="/logout.php" title="Log-Out"></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="top_links">
+				<ul>
+					<li class="i_22_search search_icon">
+						<div class="top_tooltip right_direction">
+							<div>
+								<form class="top_search_form">
+									<input type="text" class="top_search_input">
+									<input type="submit" class="top_search_submit" value="">
+								</form>
+							</div>
+						</div>
+					</li>
+					<li class="i_22_settings">
+						<a href="#" title="Settings">
+							<span class="label">Settings</span>
+						</a>
+					</li>
+					<li class="i_22_upload">
+						<a href="#" title="Upload">
+							<span class="label">Upload</span>
+						</a>
+						<!-- Drop Menu -->
+						<ul class="drop_menu menu_with_icons right_direction">
+							<li>
+								<a class="i_16_add" href="#" title="New Flie">
+									<span class="label">New File</span>
+								</a>									
+							</li>
+							<li>
+								<a class="i_16_progress" href="#" title="2 Files Left">
+									<span class="label">Files Left</span>
+									<span class="small_count">2</span>
+								</a>
+							</li>
+							<li>
+								<a class="i_16_files" href="#" title="Browse Files">
+									<span class="label">Browse Files</span>
+								</a>
+							</li>
+						</ul>
+					</li>
+					<li class="i_22_inbox top_inbox">
+						<a href="#" title="Inbox">
+							<span class="label lasCount">Inbox</span>
+							<span class="small_count">3</span>
+						</a>
+					</li>
+					<li class="i_22_pages">
+						<a href="#" title="Pages">
+							<span class="label">Pages</span>
+						</a>
+						<!-- Drop Menu -->
+						<ul class="drop_menu menu_without_icons">
+							<li>
+								<a title="403 Page" href="403.html">
+									<span class="label">403 Forbidden</span>
+								</a>									
+							</li>
+							<li>
+								<a href="404.html" title="404 Page">
+									<span class="label">404 Not Found</span>
+								</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<header class="main_header">
+		<div class="wrapper">
+			<div class="logo">
+				{*<a href="#" Title="Kanrisha Home">
+					<img src="/assets/images/TalentCow/daisy.png" alt="Talent Cow Logo">
+				</a> *}
+					<h2>Welcome {$user.first_name}</h2>
+			<p id="page-intro">Welcome to the updated 'Whoogle'!</p>
+			</div>
+		</div>
+	</header>
+
+	<div class="wrapper small_menu">
+		<ul class="menu_small_buttons">
+			<li><a title="General Info" class="i_22_dashboard smActive" href="index.html"></a></li>
+			<li><a title="Your Messages" class="i_22_inbox" href="inbox.html"></a></li>
+			<li><a title="Visual Data" class="i_22_charts" href="charts.html"></a></li>
+			<li><a title="Kit elements" class="i_22_ui" href="ui.html"></a></li>
+			<li><a title="Some Rows" class="i_22_tables" href="tables.html"></a></li>
+			<li><a title="Some Fields" class="i_22_forms" href="forms.html"></a></li>
+		</ul>
+	</div>
+
+	<div class="wrapper contents_wrapper">
 		
-		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		<aside class="sidebar">
+			<ul class="tab_nav">
+				<li class="{if {$smarty.get.page}==''}active_tab {/if}i_32_dashboard">
+					<a href="/admin/index.php" title="General Info">
+						<span class="tab_label">Dashboard</span>
+						<span class="tab_info">General Info</span>
+					</a>
+				</li>
+				<li class="i_32_inbox {if {$page}=="sites"}active_tab{/if}">
+					<a href="/admin/guesses/list" title="Guesses Manager">
+						<span class="tab_label">Celebs</span>
+						<span class="tab_info">View Guesses</span>
+					</a>
+				</li>
+				<li class="{if {$page}=="users"}active_tab {/if}i_32_ui">
+					<a href="/admin/users/list" title="Users">
+						<span class="tab_label">Users</span>
+						<span class="tab_info">View Users</span>
+					</a>
+				</li>
+				<li class="{if {$smarty.get.page}=='settings'}active_tab {/if}i_32_forms">
+					<a href="index.php?page=settings" title="Settings">
+						<span class="tab_label">Settings</span>
+						<span class="tab_info">Configuration</span>
+					</a>
+				</li>
+			</ul>
+		</aside>
 		
-		<title>Who's On Heart Database | Admin</title>
-		
-		<!--                       CSS                       -->
-	  
-		<!-- Reset Stylesheet -->
-		<link rel="stylesheet" href="/admin/resources/css/reset.css" type="text/css" media="screen" />
-	  
-		<!-- Main Stylesheet -->
-		<link rel="stylesheet" href="/admin/resources/css/style.css" type="text/css" media="screen" />
-		
-		<!-- Invalid Stylesheet. This makes stuff look pretty. Remove it if you want the CSS completely valid -->
-		<link rel="stylesheet" href="/admin/resources/css/invalid.css" type="text/css" media="screen" />	
-		
-		<!-- Colour Schemes
-	  
-		Default colour scheme is green. Uncomment prefered stylesheet to use it.
-		
-		<link rel="stylesheet" href="/admin/resources/css/blue.css" type="text/css" media="screen" />
-		
-		<link rel="stylesheet" href="/admin/resources/css/red.css" type="text/css" media="screen" />  
-	 
-		-->
-		
-		<!-- Internet Explorer Fixes Stylesheet -->
-		
-		<!--[if lte IE 7]>
-			<link rel="stylesheet" href="/admin/resources/css/ie.css" type="text/css" media="screen" />
-		<![endif]-->
-		
-		<!--                       Javascripts                       -->
-	  
-		<!-- jQuery -->
-		<script type="text/javascript" src="/admin/resources/scripts/jquery-1.3.2.min.js"></script>
-		
-		<!-- jQuery Configuration -->
-		<script type="text/javascript" src="/admin/resources/scripts/simpla.jquery.configuration.js"></script>
-		
-		<!-- Facebox jQuery Plugin -->
-		<script type="text/javascript" src="/admin/resources/scripts/facebox.js"></script>
-		
-		<!-- jQuery WYSIWYG Plugin -->
-		<script type="text/javascript" src="/admin/resources/scripts/jquery.wysiwyg.js"></script>
-		
-		<!-- Internet Explorer .png-fix -->
-		
-		<!--[if IE 6]>
-			<script type="text/javascript" src="/admin/resources/scripts/DD_belatedPNG_0.0.7a.js"></script>
-			<script type="text/javascript">
-				DD_belatedPNG.fix('.png_bg, img, li');
-			</script>
-		<![endif]-->
-	</head>
+		{* // BELOW HERE ARE HIDDEN DIVS *}
+		<div id="info" style="display:none">
+			<h3>Project Info</h3>
+				<p><strong>Who's On Heart online searchable database</strong> by <a href="http://www.fredbradley.me">Fred Bradley</a></p>
+				<p>This project is custom developed for Heart and Global Radio. Developed by Fred Bradley under the instructions of Toby D'Olier, Senior Producer of the Who's On Heart competition.</p><p>Admin template based upon Fred Bradley's 'Quonkay' SEO Solution</p>
+			</div>
+			<div id="databasebackup" style="display:none;">
+				<h3>Make a Database Backup</h3>
+				<p>It's suggested that you do this at the end of every day. </p><p>The database that the site uses will never swap over, without specific action from Fred, however at least you're making backups so we can revert to the most recent should things hit the fan!</p>
+				<form action="/admin/index.php" method="post">
+				<input type="hidden" name="dbaction" value="backup" />
+				<input type="hidden" name="dobackup" value="1" />
+				<input class="button" type="submit" name="submit" value="Do the Backup!" />
+				</form>
+			</div>
+			<div id="messages" style="display: none"> <!-- Messages are shown when a link with these attributes are clicked: href="#messages" rel="modal"  -->	
+		<h3>Mail for Help!</h3>
+			<form action="/inc/functions/mailer.php" method="post">
+					
+					<h4>Message</h4>
+				<input type="hidden" name="subject" value="Mail For Help" />
+				<input type="hidden" name="fromemail" value="{$user.email}" />
+				<input type="hidden" name="fromname" value="{$user.first_name} {$user.last_name}" />
+				<fieldset>
+					<textarea class="textarea" name="email" cols="79" rows="5"></textarea>
+				</fieldset>
+				<fieldset>
+					<input class="button" type="submit" value="Send" />
+				</fieldset>
+			</form>
+				
+			</div> <!-- End #messages -->
+<div id="temp_container">

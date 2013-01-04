@@ -1,10 +1,21 @@
 {include file="admin_head.tpl"}  
 
-	<body><div id="body-wrapper"> <!-- Wrapper for the radial gradient background -->
-{include file="admin_sidebar.tpl"}
-		
-		<div id="main-content"> <!-- Main Content Section with everything -->
-			
+	<body>
+	<div class="contents">
+	
+	<div class="grid_wrapper">
+		<div class="g_6 contents_header">
+					<h3 class="i_16_dashboard tab_label">Whoogle Users</h3>
+					<div><span class="label">You know who you are!</span></div>
+				</div>
+				<div class="g_6 contents_options">
+					<div class="simple_buttons">
+						<a href="/admin/users/add"><div class="bwIcon i_16_add label">Add A New User</div></a>
+					</div>
+				</div>
+
+				<div class="g_12 separator"><span></span></div>
+				<div class="g_12">		
 			<noscript> <!-- Show a notification if the user has disabled javascript -->
 				<div class="notification error png_bg">
 					<div>
@@ -15,8 +26,7 @@
 {include file="admin_notification.tpl"}
 
 
-			<h2 id="page-intro">User Management</h2>
-			<div class="content-box"><!-- Start Content Box -->
+			<div class="g_12 content-box"><!-- Start Content Box -->
 				{if {$action}=="add"}
 					{include file="admin_users_form.tpl"}
 				{elseif {$action}=="edit"}
