@@ -29,7 +29,7 @@
 			
 			{* COPY OLD CODE HERE *}
 			
-			
+			<div class="g_12"><span class="label">"Whoogle" - a term coined by <a target="_blank" href="http://www.twitter.com/tobydolier" id="btBottom" title="Tweet Tobes">Toby D'Olier</a> - is a search engine and administration panel for the "Who's On Heart" competition on the Heart Network. <br /><br />This product is developed <a id="btRight" href="http://www.fredbradley.me/portfolio/whos-on-heart?utm_source=hosting&utm_medium=sitebuilder&utm_term=whoogle&utm_content=whoogle&utm_campaign=sitebuilder" title="Visit Fred's Site">Fred Bradley</a>.</span></div>
 			<!-- Quick Statistics -->
 				<div class="g_4 quick_stats">
 					<div class="big_stats visitor_stats">

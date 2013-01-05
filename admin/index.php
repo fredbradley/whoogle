@@ -74,7 +74,7 @@
 			}
                 } else {
                         if ($_POST) {
-                                $smarty->assign('error', "Looks like we had a problem logging you in! Give it another go...");
+                                $smarty->assign('error', "Give it another go...");
                         }
                         $smarty->display('admin_login.tpl');
                 }

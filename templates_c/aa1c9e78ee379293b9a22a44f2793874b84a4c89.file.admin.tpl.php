@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2013-01-04 15:56:38
+<?php /* Smarty version Smarty-3.1.8, created on 2013-01-05 13:58:10
          compiled from "/kunden/homepages/3/d298570323/htdocs/_smarty_sites/whoogle/templates/admin.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:129559142150e6fbb68dc527-42395207%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:112624267850e83172d75235-27730131%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'aa1c9e78ee379293b9a22a44f2793874b84a4c89' => 
     array (
       0 => '/kunden/homepages/3/d298570323/htdocs/_smarty_sites/whoogle/templates/admin.tpl',
-      1 => 1357305066,
+      1 => 1357394287,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '129559142150e6fbb68dc527-42395207',
+  'nocache_hash' => '112624267850e83172d75235-27730131',
   'function' => 
   array (
   ),
@@ -21,9 +21,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.8',
-  'unifunc' => 'content_50e6fbb69564e2_17199479',
+  'unifunc' => 'content_50e83172e07b21_83642968',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_50e6fbb69564e2_17199479')) {function content_50e6fbb69564e2_17199479($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("admin_head.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php if ($_valid && !is_callable('content_50e83172e07b21_83642968')) {function content_50e83172e07b21_83642968($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("admin_head.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
   
 
 	<body>
@@ -56,7 +56,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 			
 			
 			
-			
+			<div class="g_12"><span class="label">"Whoogle" - a term coined by <a target="_blank" href="http://www.twitter.com/tobydolier" id="btBottom" title="Tweet Tobes">Toby D'Olier</a> - is a search engine and administration panel for the "Who's On Heart" competition on the Heart Network. <br /><br />This product is developed <a id="btRight" href="http://www.fredbradley.me/portfolio/whos-on-heart?utm_source=hosting&utm_medium=sitebuilder&utm_term=whoogle&utm_content=whoogle&utm_campaign=sitebuilder" title="Visit Fred's Site">Fred Bradley</a>.</span></div>
 			<!-- Quick Statistics -->
 				<div class="g_4 quick_stats">
 					<div class="big_stats visitor_stats">

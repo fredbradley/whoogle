@@ -1,9 +1,38 @@
-<!DOCTYPE HTML>
+<?php /* Smarty version Smarty-3.1.8, created on 2013-01-05 13:41:23
+         compiled from "/kunden/homepages/3/d298570323/htdocs/_smarty_sites/whoogle/templates/admin_login.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:97929130450e82d83e91ea0-38613632%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_valid = $_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    'e75b8aa396a2a718c48ceae66b29a30715e24ef3' => 
+    array (
+      0 => '/kunden/homepages/3/d298570323/htdocs/_smarty_sites/whoogle/templates/admin_login.tpl',
+      1 => 1357392698,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '97929130450e82d83e91ea0-38613632',
+  'function' => 
+  array (
+  ),
+  'variables' => 
+  array (
+    'title' => 0,
+    'SITE' => 0,
+    'msg' => 0,
+    'error' => 0,
+  ),
+  'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.8',
+  'unifunc' => 'content_50e82d83f347d5_25968331',
+),false); /*/%%SmartyHeaderCode%%*/?>
+<?php if ($_valid && !is_callable('content_50e82d83f347d5_25968331')) {function content_50e82d83f347d5_25968331($_smarty_tpl) {?><!DOCTYPE HTML>
 <html lang="en-US">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>{$title} | Whoogle Admin</title>
+	<title><?php echo $_smarty_tpl->tpl_vars['title']->value;?>
+ | Whoogle Admin</title>
 	<!--[if lt IE 9]>
 		<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -65,25 +94,31 @@
 		<div id="wrapper contents_wrapper login-wrapper" class="png_bg">
 			<div class="login" id="login-content">
 			<div id="login-top">
-				<h1>{$SITE.name}</h1>
+				<h1><?php echo $_smarty_tpl->tpl_vars['SITE']->value['name'];?>
+</h1>
 				<!-- Logo (221px width) -->
-{*				<img id="logo" src="/assets/images/logo.png" style="width:100%" alt="{$SITE.name} logo" /> *}
-				<img id="logo" src="http://www.heart.co.uk/u/apps/asset_manager/uploaded/2013/00/whos-on-heart-2013-win-125000-1357315170.png" style="width:100%" alt="{$SITE.name} logo" />
+
+				<img id="logo" src="http://www.heart.co.uk/u/apps/asset_manager/uploaded/2013/00/whos-on-heart-2013-win-125000-1357315170.png" style="width:100%" alt="<?php echo $_smarty_tpl->tpl_vars['SITE']->value['name'];?>
+ logo" />
 
 				
 				
 			</div> <!-- End #logn-top -->
 			<div style="margin-top:10px;margin-bottom:10px;">
-			{if {$msg}} 
-						{$msg}
-					{/if}
-					{if {$error}}
+			<?php ob_start();?><?php echo $_smarty_tpl->tpl_vars['msg']->value;?>
+<?php $_tmp1=ob_get_clean();?><?php if ($_tmp1){?> 
+						<?php echo $_smarty_tpl->tpl_vars['msg']->value;?>
+
+					<?php }?>
+					<?php ob_start();?><?php echo $_smarty_tpl->tpl_vars['error']->value;?>
+<?php $_tmp2=ob_get_clean();?><?php if ($_tmp2){?>
 					<div style="margin-top:5px;margin-bottom:5px;" class="notification alert png_bg">
 						<div>
-							{$error}
+							<?php echo $_smarty_tpl->tpl_vars['error']->value;?>
+
 						</div>
 					</div>
-					{/if}
+					<?php }?>
 				</div>
 				<div class="widget_header">
 					<h4 class="widget_header_title wwIcon i_16_login">Login</h4>
@@ -135,19 +170,7 @@
 				</div>
 			</div>
 		</div> <!-- End #login-wrapper -->	
-		<script type="text/javascript">
-
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-24018806-11']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-
-</script>
   </body>  
 </html>
 
+<?php }} ?>

@@ -34,9 +34,14 @@
 	/* DO THE LOG OUT STUFF */
 		if (isset($_GET['message']) && $_GET['message'] == 'loggedout') {
 			if (isset($_GET['locked'])) {
-				$smarty->assign('msg', getMsg("attention", "Erm, ".$_GET['user'].", there's no easy way of telling you this! Your account has been locked. Please contact an administrator"));
+				if (!empty($_GET['user'])) {
+					$notifyuser = $_GET['user'].", ";
+				} else {
+					$notifyuser = "";
+				}
+				$smarty->assign('msg', getMsg("attention", "Erm, ".$notifyuser."there's no easy way of telling you this! Your account has been locked. Please contact an administrator"));
 			} else {
-				$smarty->assign('msg', getMsg("attention", "You have been logged out"));
+				$smarty->assign('msg', getMsg("alert", "You have been logged out"));
 			}
 		}
 ?>
