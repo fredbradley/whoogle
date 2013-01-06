@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2013-01-05 13:42:55
+<?php /* Smarty version Smarty-3.1.8, created on 2013-01-05 18:09:49
          compiled from "/kunden/homepages/3/d298570323/htdocs/_smarty_sites/whoogle/templates/admin_sites.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:138423044950e82ddf713c37-02632090%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:57859090650e86c6df18499-21685467%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '60a313e904ebc15ee050098dc43f9da17210e961' => 
     array (
       0 => '/kunden/homepages/3/d298570323/htdocs/_smarty_sites/whoogle/templates/admin_sites.tpl',
-      1 => 1357311602,
+      1 => 1357403600,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '138423044950e82ddf713c37-02632090',
+  'nocache_hash' => '57859090650e86c6df18499-21685467',
   'function' => 
   array (
   ),
@@ -21,9 +21,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.8',
-  'unifunc' => 'content_50e82ddf7ade78_04106847',
+  'unifunc' => 'content_50e86c6e072682_28993727',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_50e82ddf7ade78_04106847')) {function content_50e82ddf7ade78_04106847($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("admin_head.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php if ($_valid && !is_callable('content_50e86c6e072682_28993727')) {function content_50e86c6e072682_28993727($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("admin_head.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array('title'=>"Secret Celebs"), 0);?>
   
 
 	<body>
@@ -42,7 +42,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 					</div>
 				</div>
 
-				<div class="g_12 separator"><span></span></div>
 				<div class="g_12">
 				<noscript> <!-- Show a notification if the user has disabled javascript -->
 				<div class="notification error png_bg">

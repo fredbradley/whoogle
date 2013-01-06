@@ -11,14 +11,14 @@
                                                                    <th>Celebrity</th>
                                                                    <th>Times Guessed</th>
                                                                    <th>Last Updated</th>
-                                                                   <th>Edit</th>
+                                                                   {*<th>Delete</th> *}
                                                                 </tr>
 
                                                         </thead>
 
                                                         <tfoot>
                                                                 <tr>
-                                                                        <td colspan="6">
+                                                                        <td colspan="3">
                                                                         <!--    <div class="bulk-actions align-left">
                                                                                         <select name="dropdown">
                                                                                                 <option value="option1">Choose an action...</option>
@@ -49,11 +49,11 @@
                                                                         <td>{$site.timesguessed}</td>
 									{assign var="lastupdated" value="{$site.dateguessed|substr:-10}"}
                                                                         <td>{$lastupdated|relative_date}</td>
-                                                                        <td>
+                                                                      {*  <td>
                                                                                 <a href="/admin/guesses/edit/{$site.id}" title="Edit"><img src="/admin/resources/images/icons/pencil.png" alt="Edit" /></a>
                                                                                 <a href="/admin/guesses/delete/{$site.id}" title="Delete"><img src="/admin/resources/images/icons/cross.png" alt="Delete" /></a>
                                                                         <!--    <a href="#" title="Edit Meta"><img src="/admin/resources/images/icons/hammer_screwdriver.png" alt="Edit Meta" /></a>
-                                                                -->     </td>
+                                                                -->     </td> *}
 
                                                                 </tr>
                                                 {/foreach}

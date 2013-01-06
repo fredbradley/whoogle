@@ -3,6 +3,13 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="Title" content="{$title} | Whoogle Admin">
+	<meta name="Keywords" content="Whoogle, Who's On Heart, Heart, Radio">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:site" content="@fredbradley">
+	<meta name="twitter:creator" content="@fredbradley">
+	<meta name="description" content="Whoogle - an administration panel for the radio competition with the biggest cash prize in radio! Who's On Heart!">
+	<meta name="author" content="Fred Bradley">
 	<title>{$title} | Whoogle Admin</title>
 	<!--[if lt IE 9]>
 		<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
@@ -65,25 +72,9 @@
 	<!-- Top Panel -->
 	<div class="top_panel">
 		<div class="wrapper">
-			<div class="user">
-				<img src="/assets/images/user_avatar.png" alt="user_avatar" class="user_avatar">
-				<span class="label">{$SESH.user.info.first_name} {$SESH.user.info.last_name}</span>
-				<!-- Top Tooltip -->
-				<div class="top_tooltip">
-					<div>
-						<ul class="user_options">
-							<li class="i_16_profile"><a href="#" title="Profile"></a></li>
-							<li class="i_16_tasks"><a href="#" title="Tasks"></a></li>
-							<li class="i_16_notes"><a href="#" title="Notes"></a></li>
-							<li class="i_16_options"><a href="#" title="Options"></a></li>
-							<li class="i_16_logout"><a href="/logout.php" title="Log-Out"></a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
 			<div class="top_links">
 				<ul>
-					<li class="i_22_search search_icon">
+{*					<li class="i_22_search search_icon">
 						<div class="top_tooltip right_direction">
 							<div>
 								<form class="top_search_form">
@@ -95,57 +86,53 @@
 					</li>
 					<li class="i_22_settings">
 						<a href="#" title="Settings">
-							<span class="label">Settings</span>
+				<img src="/assets/images/user_avatar.png" alt="user_avatar" class="user_avatar">
 						</a>
-					</li>
+					</li> *}
 					<li class="i_22_upload">
 						<a href="#" title="Upload">
-							<span class="label">Upload</span>
+							<span class="label">Backup Database</span>
 						</a>
 						<!-- Drop Menu -->
+					
 						<ul class="drop_menu menu_with_icons right_direction">
 							<li>
-								<a class="i_16_add" href="#" title="New Flie">
-									<span class="label">New File</span>
-								</a>									
-							</li>
-							<li>
-								<a class="i_16_progress" href="#" title="2 Files Left">
-									<span class="label">Files Left</span>
-									<span class="small_count">2</span>
-								</a>
-							</li>
-							<li>
-								<a class="i_16_files" href="#" title="Browse Files">
-									<span class="label">Browse Files</span>
-								</a>
+								<a class="i_16_files" href="" title="Browse Files">
+									<form method="post">
+										<input type="hidden" name="dbaction" value="backup" />
+										<span class="label">
+											<input type="submit" class="i_16_progres disguised" value="Backup" />
+										</span>
+									</form>
+								</a>							
 							</li>
 						</ul>
 					</li>
-					<li class="i_22_inbox top_inbox">
+				{*	<li class="i_22_inbox top_inbox">
 						<a href="#" title="Inbox">
 							<span class="label lasCount">Inbox</span>
 							<span class="small_count">3</span>
 						</a>
-					</li>
-					<li class="i_22_pages">
-						<a href="#" title="Pages">
-							<span class="label">Pages</span>
+					</li> *}
+					<li class="">
+						<a href="#" title="User Profile">
+							<span class="label"><img src="/assets/images/user_avatar.png" alt="user_avatar" class="user_avatar">{$user.first_name} {$user.last_name} ({$user.email})</span>
 						</a>
 						<!-- Drop Menu -->
 						<ul class="drop_menu menu_without_icons">
 							<li>
-								<a title="403 Page" href="403.html">
-									<span class="label">403 Forbidden</span>
+								<a title="Change Password" href="/admin/users/changepassword/{$user.id}">
+									<span class="label">Change Password</span>
 								</a>									
 							</li>
 							<li>
-								<a href="404.html" title="404 Page">
-									<span class="label">404 Not Found</span>
+								<a title="Change Details" href="/admin/users/edit/{$user.id}">
+									<span class="label">Change Details</span>
 								</a>
 							</li>
 						</ul>
 					</li>
+
 				</ul>
 			</div>
 		</div>
@@ -165,12 +152,12 @@
 
 	<div class="wrapper small_menu">
 		<ul class="menu_small_buttons">
-			<li><a title="General Info" class="i_22_dashboard smActive" href="index.html"></a></li>
-			<li><a title="Your Messages" class="i_22_inbox" href="inbox.html"></a></li>
-			<li><a title="Visual Data" class="i_22_charts" href="charts.html"></a></li>
-			<li><a title="Kit elements" class="i_22_ui" href="ui.html"></a></li>
-			<li><a title="Some Rows" class="i_22_tables" href="tables.html"></a></li>
-			<li><a title="Some Fields" class="i_22_forms" href="forms.html"></a></li>
+			<li><a title="Home" class="i_22_dashboard {if {$smarty.get.page}==''}smActive{/if}" href="/admin/index.php"></a></li>
+			<li><a title="Your Messages" class="i_22_search {if {$smarty.get.page}=='sites'}smActive{/if}" href="/admin/guesses/list"></a></li>
+			<li><a title="Visual Data" class="i_22_ui {if {$smarty.get.page}=='users'}smActive{/if}" href="/admin/users/list"></a></li>
+			<li><a title="Kit elements" class="i_22_forms {if {$smarty.get.page}=='answers'}smActive{/if}" href="/admin/answers/list"></a></li>
+		{*	<li><a title="Some Rows" class="i_22_tables {if {$smarty.get.page}==''}smActive{/if}" href="tables.html"></a></li>
+			<li><a title="Some Fields" class="i_22_forms {if {$smarty.get.page}==''}smActive{/if}" href="forms.html"></a></li> *}
 		</ul>
 	</div>
 
@@ -184,7 +171,7 @@
 						<span class="tab_info">General Info</span>
 					</a>
 				</li>
-				<li class="i_32_inbox {if {$page}=="sites"}active_tab{/if}">
+				<li class="i_32_dollar cropped {if {$page}=="sites"}active_tab{/if}">
 					<a href="/admin/guesses/list" title="Guesses Manager">
 						<span class="tab_label">Celebs</span>
 						<span class="tab_info">View Guesses</span>
@@ -196,9 +183,9 @@
 						<span class="tab_info">View Users</span>
 					</a>
 				</li>
-				<li class="{if {$smarty.get.page}=='settings'}active_tab {/if}i_32_forms">
-					<a href="index.php?page=settings" title="Settings">
-						<span class="tab_label">Settings</span>
+				<li class="{if {$smarty.get.page}=='answers'}active_tab {/if}i_32_forms">
+					<a href="/admin/answers/list" title="Answers">
+						<span class="tab_label">Answers</span>
 						<span class="tab_info">Configuration</span>
 					</a>
 				</li>

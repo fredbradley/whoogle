@@ -28,17 +28,26 @@ $query = "CREATE TABLE ".DB_PREFIX."backup_".date('YmdHis')."_guesses SELECT * F
 $result = mysql_query($query);
 return $result;
 }
-function changePassword() {
-	$query = "SELECT * FROM ".DB_PREFIX."users WHERE id=".$_GET['id'];
-	
-	$update = "UPDATE ".DB_PREFIX."users SET passwd=".md5($_POST['newpasswd'])." WHERE id=".$_GET['id']." AND passwd='".md5($_POST['oldpasswd'])."'";
-	$result = mysql_query($update);
+function changePassword($username, $current, $new, $confirm) {
+	$query = "SELECT * FROM `".DB_PREFIX."users` WHERE `username` = '".mysql_real_escape_string($username)."' AND `passwd` = '".mysql_real_escape_string(md5($current))."'";
+	$check = mysql_num_rows(mysql_query($query));
+	if ($check == 1) {
+		if (md5($new) != md5($confirm)) {
+			$result = 3;
+		} else {
+			$update = "UPDATE ".DB_PREFIX."users SET passwd='".md5($new)."' WHERE username='".$username."' AND passwd='".md5($current)."'";
+			$result = mysql_query($update);
+			if ($result) {
+				$result = 1;
+			}
+		}
+	} else {
+		$result = 5;
+	}
 return $result;
 }
 function error($message) {
 	$output = "<div class=\"notification error png_bg\">";
-	$output .= "<a href=\"#\" class=\"close\">";
-	$output .= "<img src=\"resources/images/icons/cross_grey_small.png\" title=\"Close\" alt=\"close\" /></a>";
 	$output .= "<div>Error: ".$message;
 		if (mysql_error() != "") {
 			$output .= " <b><em>".mysql_error()."</em></b>";

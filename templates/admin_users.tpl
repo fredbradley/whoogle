@@ -1,4 +1,4 @@
-{include file="admin_head.tpl"}  
+{include file="admin_head.tpl" title="Users"}  
 
 	<body>
 	<div class="contents">
@@ -31,6 +31,8 @@
 					{include file="admin_users_form.tpl"}
 				{elseif {$action}=="edit"}
 					{include file="admin_users_form.tpl"}
+				{elseif {$action}=="changepassword"}
+					{include file="admin_users_form_changepassword.tpl"}
 				{elseif {$action}=="delete"}
 					{include file="admin_users_form.tpl"}
 				{else}

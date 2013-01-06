@@ -1,29 +1,29 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2013-01-05 13:53:08
+<?php /* Smarty version Smarty-3.1.8, created on 2013-01-06 13:28:22
          compiled from "/kunden/homepages/3/d298570323/htdocs/_smarty_sites/whoogle/templates/admin_users.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:77111396750e83044c6bc90-27417111%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:206256937650e86b71d94bd6-32759992%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'df025e5a9eb372e593036ceedcf153be884450a5' => 
     array (
       0 => '/kunden/homepages/3/d298570323/htdocs/_smarty_sites/whoogle/templates/admin_users.tpl',
-      1 => 1357312313,
+      1 => 1357478894,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '77111396750e83044c6bc90-27417111',
+  'nocache_hash' => '206256937650e86b71d94bd6-32759992',
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.8',
+  'unifunc' => 'content_50e86b71e2d9b8_07565917',
   'variables' => 
   array (
     'action' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.8',
-  'unifunc' => 'content_50e83044cedc68_50713136',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_50e83044cedc68_50713136')) {function content_50e83044cedc68_50713136($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("admin_head.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php if ($_valid && !is_callable('content_50e86b71e2d9b8_07565917')) {function content_50e86b71e2d9b8_07565917($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("admin_head.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array('title'=>"Users"), 0);?>
   
 
 	<body>
@@ -63,13 +63,17 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 					<?php echo $_smarty_tpl->getSubTemplate ("admin_users_form.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 				<?php }else{?><?php ob_start();?><?php echo $_smarty_tpl->tpl_vars['action']->value;?>
-<?php $_tmp3=ob_get_clean();?><?php if ($_tmp3=="delete"){?>
+<?php $_tmp3=ob_get_clean();?><?php if ($_tmp3=="changepassword"){?>
+					<?php echo $_smarty_tpl->getSubTemplate ("admin_users_form_changepassword.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+
+				<?php }else{?><?php ob_start();?><?php echo $_smarty_tpl->tpl_vars['action']->value;?>
+<?php $_tmp4=ob_get_clean();?><?php if ($_tmp4=="delete"){?>
 					<?php echo $_smarty_tpl->getSubTemplate ("admin_users_form.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 				<?php }else{ ?>
 					<?php echo $_smarty_tpl->getSubTemplate ("admin_users_list.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
-				<?php }}}?>
+				<?php }}}}?>
 				
 			</div> <!-- End .content-box -->
 			

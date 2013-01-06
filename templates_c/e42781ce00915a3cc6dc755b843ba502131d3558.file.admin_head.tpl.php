@@ -1,36 +1,43 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2013-01-05 13:58:10
+<?php /* Smarty version Smarty-3.1.8, created on 2013-01-06 15:46:08
          compiled from "/kunden/homepages/3/d298570323/htdocs/_smarty_sites/whoogle/templates/admin_head.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:211362259350e83172e0c988-39838395%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:28247641150e86c77d03782-56510708%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'e42781ce00915a3cc6dc755b843ba502131d3558' => 
     array (
       0 => '/kunden/homepages/3/d298570323/htdocs/_smarty_sites/whoogle/templates/admin_head.tpl',
-      1 => 1357392689,
+      1 => 1357487167,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '211362259350e83172e0c988-39838395',
+  'nocache_hash' => '28247641150e86c77d03782-56510708',
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.8',
+  'unifunc' => 'content_50e86c77dad0b5_98724897',
   'variables' => 
   array (
     'title' => 0,
-    'SESH' => 0,
     'user' => 0,
     'page' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.8',
-  'unifunc' => 'content_50e83172e78304_41206004',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_50e83172e78304_41206004')) {function content_50e83172e78304_41206004($_smarty_tpl) {?><!DOCTYPE HTML>
+<?php if ($_valid && !is_callable('content_50e86c77dad0b5_98724897')) {function content_50e86c77dad0b5_98724897($_smarty_tpl) {?><!DOCTYPE HTML>
 <html lang="en-US">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="Title" content="<?php echo $_smarty_tpl->tpl_vars['title']->value;?>
+ | Whoogle Admin">
+	<meta name="Keywords" content="Whoogle, Who's On Heart, Heart, Radio">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:site" content="@fredbradley">
+	<meta name="twitter:creator" content="@fredbradley">
+	<meta name="description" content="Whoogle - an administration panel for the radio competition with the biggest cash prize in radio! Who's On Heart!">
+	<meta name="author" content="Fred Bradley">
 	<title><?php echo $_smarty_tpl->tpl_vars['title']->value;?>
  | Whoogle Admin</title>
 	<!--[if lt IE 9]>
@@ -94,89 +101,53 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 	<!-- Top Panel -->
 	<div class="top_panel">
 		<div class="wrapper">
-			<div class="user">
-				<img src="/assets/images/user_avatar.png" alt="user_avatar" class="user_avatar">
-				<span class="label"><?php echo $_smarty_tpl->tpl_vars['SESH']->value['user']['info']['first_name'];?>
- <?php echo $_smarty_tpl->tpl_vars['SESH']->value['user']['info']['last_name'];?>
-</span>
-				<!-- Top Tooltip -->
-				<div class="top_tooltip">
-					<div>
-						<ul class="user_options">
-							<li class="i_16_profile"><a href="#" title="Profile"></a></li>
-							<li class="i_16_tasks"><a href="#" title="Tasks"></a></li>
-							<li class="i_16_notes"><a href="#" title="Notes"></a></li>
-							<li class="i_16_options"><a href="#" title="Options"></a></li>
-							<li class="i_16_logout"><a href="/logout.php" title="Log-Out"></a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
 			<div class="top_links">
 				<ul>
-					<li class="i_22_search search_icon">
-						<div class="top_tooltip right_direction">
-							<div>
-								<form class="top_search_form">
-									<input type="text" class="top_search_input">
-									<input type="submit" class="top_search_submit" value="">
-								</form>
-							</div>
-						</div>
-					</li>
-					<li class="i_22_settings">
-						<a href="#" title="Settings">
-							<span class="label">Settings</span>
-						</a>
-					</li>
+
 					<li class="i_22_upload">
 						<a href="#" title="Upload">
-							<span class="label">Upload</span>
+							<span class="label">Backup Database</span>
 						</a>
 						<!-- Drop Menu -->
+					
 						<ul class="drop_menu menu_with_icons right_direction">
 							<li>
-								<a class="i_16_add" href="#" title="New Flie">
-									<span class="label">New File</span>
-								</a>									
-							</li>
-							<li>
-								<a class="i_16_progress" href="#" title="2 Files Left">
-									<span class="label">Files Left</span>
-									<span class="small_count">2</span>
-								</a>
-							</li>
-							<li>
-								<a class="i_16_files" href="#" title="Browse Files">
-									<span class="label">Browse Files</span>
-								</a>
+								<a class="i_16_files" href="" title="Browse Files">
+									<form method="post">
+										<input type="hidden" name="dbaction" value="backup" />
+										<span class="label">
+											<input type="submit" class="i_16_progres disguised" value="Backup" />
+										</span>
+									</form>
+								</a>							
 							</li>
 						</ul>
 					</li>
-					<li class="i_22_inbox top_inbox">
-						<a href="#" title="Inbox">
-							<span class="label lasCount">Inbox</span>
-							<span class="small_count">3</span>
-						</a>
-					</li>
-					<li class="i_22_pages">
-						<a href="#" title="Pages">
-							<span class="label">Pages</span>
+				
+					<li class="">
+						<a href="#" title="User Profile">
+							<span class="label"><img src="/assets/images/user_avatar.png" alt="user_avatar" class="user_avatar"><?php echo $_smarty_tpl->tpl_vars['user']->value['first_name'];?>
+ <?php echo $_smarty_tpl->tpl_vars['user']->value['last_name'];?>
+ (<?php echo $_smarty_tpl->tpl_vars['user']->value['email'];?>
+)</span>
 						</a>
 						<!-- Drop Menu -->
 						<ul class="drop_menu menu_without_icons">
 							<li>
-								<a title="403 Page" href="403.html">
-									<span class="label">403 Forbidden</span>
+								<a title="Change Password" href="/admin/users/changepassword/<?php echo $_smarty_tpl->tpl_vars['user']->value['id'];?>
+">
+									<span class="label">Change Password</span>
 								</a>									
 							</li>
 							<li>
-								<a href="404.html" title="404 Page">
-									<span class="label">404 Not Found</span>
+								<a title="Change Details" href="/admin/users/edit/<?php echo $_smarty_tpl->tpl_vars['user']->value['id'];?>
+">
+									<span class="label">Change Details</span>
 								</a>
 							</li>
 						</ul>
 					</li>
+
 				</ul>
 			</div>
 		</div>
@@ -195,12 +166,15 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 
 	<div class="wrapper small_menu">
 		<ul class="menu_small_buttons">
-			<li><a title="General Info" class="i_22_dashboard smActive" href="index.html"></a></li>
-			<li><a title="Your Messages" class="i_22_inbox" href="inbox.html"></a></li>
-			<li><a title="Visual Data" class="i_22_charts" href="charts.html"></a></li>
-			<li><a title="Kit elements" class="i_22_ui" href="ui.html"></a></li>
-			<li><a title="Some Rows" class="i_22_tables" href="tables.html"></a></li>
-			<li><a title="Some Fields" class="i_22_forms" href="forms.html"></a></li>
+			<li><a title="Home" class="i_22_dashboard <?php ob_start();?><?php echo $_GET['page'];?>
+<?php $_tmp1=ob_get_clean();?><?php if ($_tmp1==''){?>smActive<?php }?>" href="/admin/index.php"></a></li>
+			<li><a title="Your Messages" class="i_22_search <?php ob_start();?><?php echo $_GET['page'];?>
+<?php $_tmp2=ob_get_clean();?><?php if ($_tmp2=='sites'){?>smActive<?php }?>" href="/admin/guesses/list"></a></li>
+			<li><a title="Visual Data" class="i_22_ui <?php ob_start();?><?php echo $_GET['page'];?>
+<?php $_tmp3=ob_get_clean();?><?php if ($_tmp3=='users'){?>smActive<?php }?>" href="/admin/users/list"></a></li>
+			<li><a title="Kit elements" class="i_22_forms <?php ob_start();?><?php echo $_GET['page'];?>
+<?php $_tmp4=ob_get_clean();?><?php if ($_tmp4=='answers'){?>smActive<?php }?>" href="/admin/answers/list"></a></li>
+		
 		</ul>
 	</div>
 
@@ -209,30 +183,30 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 		<aside class="sidebar">
 			<ul class="tab_nav">
 				<li class="<?php ob_start();?><?php echo $_GET['page'];?>
-<?php $_tmp1=ob_get_clean();?><?php if ($_tmp1==''){?>active_tab <?php }?>i_32_dashboard">
+<?php $_tmp5=ob_get_clean();?><?php if ($_tmp5==''){?>active_tab <?php }?>i_32_dashboard">
 					<a href="/admin/index.php" title="General Info">
 						<span class="tab_label">Dashboard</span>
 						<span class="tab_info">General Info</span>
 					</a>
 				</li>
-				<li class="i_32_inbox <?php ob_start();?><?php echo $_smarty_tpl->tpl_vars['page']->value;?>
-<?php $_tmp2=ob_get_clean();?><?php if ($_tmp2=="sites"){?>active_tab<?php }?>">
+				<li class="i_32_dollar cropped <?php ob_start();?><?php echo $_smarty_tpl->tpl_vars['page']->value;?>
+<?php $_tmp6=ob_get_clean();?><?php if ($_tmp6=="sites"){?>active_tab<?php }?>">
 					<a href="/admin/guesses/list" title="Guesses Manager">
 						<span class="tab_label">Celebs</span>
 						<span class="tab_info">View Guesses</span>
 					</a>
 				</li>
 				<li class="<?php ob_start();?><?php echo $_smarty_tpl->tpl_vars['page']->value;?>
-<?php $_tmp3=ob_get_clean();?><?php if ($_tmp3=="users"){?>active_tab <?php }?>i_32_ui">
+<?php $_tmp7=ob_get_clean();?><?php if ($_tmp7=="users"){?>active_tab <?php }?>i_32_ui">
 					<a href="/admin/users/list" title="Users">
 						<span class="tab_label">Users</span>
 						<span class="tab_info">View Users</span>
 					</a>
 				</li>
 				<li class="<?php ob_start();?><?php echo $_GET['page'];?>
-<?php $_tmp4=ob_get_clean();?><?php if ($_tmp4=='settings'){?>active_tab <?php }?>i_32_forms">
-					<a href="index.php?page=settings" title="Settings">
-						<span class="tab_label">Settings</span>
+<?php $_tmp8=ob_get_clean();?><?php if ($_tmp8=='answers'){?>active_tab <?php }?>i_32_forms">
+					<a href="/admin/answers/list" title="Answers">
+						<span class="tab_label">Answers</span>
 						<span class="tab_info">Configuration</span>
 					</a>
 				</li>

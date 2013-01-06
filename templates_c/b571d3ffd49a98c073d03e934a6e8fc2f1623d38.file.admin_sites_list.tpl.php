@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2013-01-05 13:42:55
+<?php /* Smarty version Smarty-3.1.8, created on 2013-01-05 18:09:50
          compiled from "/kunden/homepages/3/d298570323/htdocs/_smarty_sites/whoogle/templates/admin_sites_list.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:48494814450e82ddf839fe4-60742888%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:62225013150e86c6e13c7c0-53076635%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'b571d3ffd49a98c073d03e934a6e8fc2f1623d38' => 
     array (
       0 => '/kunden/homepages/3/d298570323/htdocs/_smarty_sites/whoogle/templates/admin_sites_list.tpl',
-      1 => 1357314406,
+      1 => 1357404113,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '48494814450e82ddf839fe4-60742888',
+  'nocache_hash' => '62225013150e86c6e13c7c0-53076635',
   'function' => 
   array (
   ),
@@ -23,9 +23,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.8',
-  'unifunc' => 'content_50e82ddf8b7c47_99822580',
+  'unifunc' => 'content_50e86c6e195f54_80955331',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_50e82ddf8b7c47_99822580')) {function content_50e82ddf8b7c47_99822580($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_capitalize')) include '/homepages/3/d298570323/htdocs/_smarty_sites/libs/plugins/modifier.capitalize.php';
+<?php if ($_valid && !is_callable('content_50e86c6e195f54_80955331')) {function content_50e86c6e195f54_80955331($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_capitalize')) include '/homepages/3/d298570323/htdocs/_smarty_sites/libs/plugins/modifier.capitalize.php';
 if (!is_callable('smarty_modifier_relative_date')) include '/homepages/3/d298570323/htdocs/_smarty_sites/libs/plugins/modifier.relative_date.php';
 ?>
                                 <div class="widget_contents noPadding content-box-content">
@@ -40,14 +40,14 @@ if (!is_callable('smarty_modifier_relative_date')) include '/homepages/3/d298570
                                                                    <th>Celebrity</th>
                                                                    <th>Times Guessed</th>
                                                                    <th>Last Updated</th>
-                                                                   <th>Edit</th>
+                                                                   
                                                                 </tr>
 
                                                         </thead>
 
                                                         <tfoot>
                                                                 <tr>
-                                                                        <td colspan="6">
+                                                                        <td colspan="3">
                                                                         <!--    <div class="bulk-actions align-left">
                                                                                         <select name="dropdown">
                                                                                                 <option value="option1">Choose an action...</option>
@@ -81,13 +81,7 @@ $_smarty_tpl->tpl_vars['site']->_loop = true;
 <?php $_tmp1=ob_get_clean();?><?php $_smarty_tpl->tpl_vars["lastupdated"] = new Smarty_variable($_tmp1, null, 0);?>
                                                                         <td><?php echo smarty_modifier_relative_date($_smarty_tpl->tpl_vars['lastupdated']->value);?>
 </td>
-                                                                        <td>
-                                                                                <a href="/admin/guesses/edit/<?php echo $_smarty_tpl->tpl_vars['site']->value['id'];?>
-" title="Edit"><img src="/admin/resources/images/icons/pencil.png" alt="Edit" /></a>
-                                                                                <a href="/admin/guesses/delete/<?php echo $_smarty_tpl->tpl_vars['site']->value['id'];?>
-" title="Delete"><img src="/admin/resources/images/icons/cross.png" alt="Delete" /></a>
-                                                                        <!--    <a href="#" title="Edit Meta"><img src="/admin/resources/images/icons/hammer_screwdriver.png" alt="Edit Meta" /></a>
-                                                                -->     </td>
+                                                                      
 
                                                                 </tr>
                                                 <?php } ?>

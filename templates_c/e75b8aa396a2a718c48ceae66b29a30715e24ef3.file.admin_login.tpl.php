@@ -1,20 +1,22 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2013-01-05 13:41:23
+<?php /* Smarty version Smarty-3.1.8, created on 2013-01-06 13:08:26
          compiled from "/kunden/homepages/3/d298570323/htdocs/_smarty_sites/whoogle/templates/admin_login.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:97929130450e82d83e91ea0-38613632%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:44347076550e8509922e6a1-17205065%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'e75b8aa396a2a718c48ceae66b29a30715e24ef3' => 
     array (
       0 => '/kunden/homepages/3/d298570323/htdocs/_smarty_sites/whoogle/templates/admin_login.tpl',
-      1 => 1357392698,
+      1 => 1357477703,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '97929130450e82d83e91ea0-38613632',
+  'nocache_hash' => '44347076550e8509922e6a1-17205065',
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.8',
+  'unifunc' => 'content_50e8509929be24_91873318',
   'variables' => 
   array (
     'title' => 0,
@@ -23,16 +25,21 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'error' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.8',
-  'unifunc' => 'content_50e82d83f347d5_25968331',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_50e82d83f347d5_25968331')) {function content_50e82d83f347d5_25968331($_smarty_tpl) {?><!DOCTYPE HTML>
+<?php if ($_valid && !is_callable('content_50e8509929be24_91873318')) {function content_50e8509929be24_91873318($_smarty_tpl) {?><!DOCTYPE HTML>
 <html lang="en-US">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title><?php echo $_smarty_tpl->tpl_vars['title']->value;?>
- | Whoogle Admin</title>
+	<meta name="Title" content="<?php echo $_smarty_tpl->tpl_vars['title']->value;?>
+ | Whoogle Admin">
+	<meta name="Keywords" content="Whoogle, Who's On Heart, Heart, Radio">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:site" content="@fredbradley">
+	<meta name="twitter:creator" content="@fredbradley">
+	<meta name="description" content="Whoogle - an administration panel for the radio competition with the biggest cash prize in radio! Who's On Heart!">
+	<meta name="author" content="Fred Bradley">
+	<title>Login | Whoogle Admin</title>
 	<!--[if lt IE 9]>
 		<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -170,6 +177,19 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 				</div>
 			</div>
 		</div> <!-- End #login-wrapper -->	
+		<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-24018806-11']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
   </body>  
 </html>
 

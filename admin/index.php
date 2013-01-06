@@ -46,6 +46,9 @@
 
         /* DISPLAY PAGE */
                 if (isset($_SESSION['user']['username'])) {
+                	if (isset($_GET['error']) && $_GET['error']=='404') {
+                		$smarty->display('admin_404.tpl');
+                	} else {
 			switch ($page) {
 				case "users": 
 					include_once 'inc/users.php';
@@ -55,15 +58,18 @@
 				case "sites":
 					include_once 'inc/sites.php';
 					$smarty->assign('sites', $sites);
-//					$smarty->display('admin_sites.tpl');
-			//		if ($_POST['returnmeto'])
-			//			header("Location:".$_POST['returnmeto']."?returnmeto=edited");
-				$smarty->display('admin_sites.tpl');
+					$smarty->display('admin_sites.tpl');
 					break;
 				case "guessattempts":
 					include_once 'inc/guessattempts.php';
 					$smarty->assign('atts', $guessatts);
 					$smarty->display('admin_guessattempts.tpl');
+					break;
+				case "answers":
+					include_once 'inc/answers.php';
+					$answers = $db->getConfig();
+					$smarty->assign('answers', $answers);
+					$smarty->display('admin_answers.tpl');
 					break;
 				default:
 					include_once 'inc/answers.php';
@@ -71,6 +77,7 @@
 					$smarty->assign('answers', $answers);
 					$smarty->display('admin.tpl');
 					break;
+			}
 			}
                 } else {
                         if ($_POST) {

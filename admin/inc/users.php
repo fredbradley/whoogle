@@ -26,6 +26,28 @@ if ($_POST) {
 			$smarty->assign('dbresult', $success);
 		}
 	}
+	if (isset($_GET['id']) && $_GET['action']=="changepassword") {
+		$changepassword = $db->changePassword($_POST['username'], $_POST['currentpassword'], $_POST['newpassword'], $_POST['confirmnewpassword']);
+		if ($changepassword == 0) {
+			$error = $db->error("Ensure you confirm your new password!");
+			$smarty->assign('dbresult', $error);
+		} elseif($changepassword == 5) {
+			$error = $db->error("Your 'Current Password' was incorrect!");
+			$smarty->assign('dbresult', $error);
+		} elseif($changepassword == 4) {
+			$error = $db->error("I'm Doing Well");
+			$smarty->assign('dbresult', $error);
+		} elseif($changepassword == 3) {
+			$error = $db->error("Your two new passwords didn't match!");
+			$smarty->assign('dbresult', $error);
+		} elseif($changepassword == 1) {
+			$success = successMsg("I've changed your password!");
+			$smarty->assign('dbresult', $success);
+		} else {
+			$error = $db->error("Something went tits up!");
+			$smarty->assign('dbresult', $error);
+		}
+	}
 }
 	if ($_GET['action']=="delete") {
 		if ($_GET['id']=="") {
@@ -50,7 +72,7 @@ if ($_POST) {
 /***
  * Edit User
  **/
-	if ($_GET['action']=="edit") {
+	if ($_GET['action']=="edit" || $_GET['action']=="changepassword") {
 		if ($_GET['id']=="") {
 			$smarty->assign('dbresult', $db->error("Hang on, what user am I editing? Go back and try again!"));
 		} else {
@@ -67,7 +89,6 @@ if ($_POST) {
 
 function successMsg($message) {
 	$output = "<div class=\"notification success png_bg\">";
-	$output .= "<a href=\"#\" class=\"close\"><img src=\"resources/images/icons/cross_grey_small.png\" title=\"Close this notification\" alt=\"close\" /></a>";
 	$output .= "<div>".$message."</div>";
 	$output .= "</div>";
 return $output;

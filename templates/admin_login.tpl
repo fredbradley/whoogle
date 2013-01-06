@@ -3,7 +3,14 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>{$title} | Whoogle Admin</title>
+	<meta name="Title" content="{$title} | Whoogle Admin">
+	<meta name="Keywords" content="Whoogle, Who's On Heart, Heart, Radio">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:site" content="@fredbradley">
+	<meta name="twitter:creator" content="@fredbradley">
+	<meta name="description" content="Whoogle - an administration panel for the radio competition with the biggest cash prize in radio! Who's On Heart!">
+	<meta name="author" content="Fred Bradley">
+	<title>Login | Whoogle Admin</title>
 	<!--[if lt IE 9]>
 		<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>

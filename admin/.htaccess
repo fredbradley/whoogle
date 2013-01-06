@@ -1,5 +1,8 @@
 RewriteEngine On
 RewriteBase /admin
+
+ErrorDocument 404 /admin/index.php?error=404
+
 RewriteRule ^guesses/([a-z0-9]+)(/)?$ index.php?page=sites&action=$1 [L]
 RewriteRule ^guesses/([a-z0-9]+)/([0-9]+)(/)?$ index.php?page=sites&action=$1&id=$2 [L]
 RewriteRule ^guesses/([a-z0-9]+)/([a-z0-9]+)/([a-z0-9]+)(/)?$ index.php?page=sites&action=$1&sort=$2&order=$3 [L]
@@ -9,3 +12,6 @@ RewriteRule ^users/([a-z0-9]+)/([0-9]+)(/)?$ index.php?page=users&action=$1&id=$
 
 RewriteRule ^searched/([a-z0-9]+)(/)?$ index.php?page=guessattempts&action=$1 [L]
 RewriteRule ^searched/([a-z0-9]+)/([a-z0-9]+)(/)?$ index.php?page=guessattempts&action=$1&listpage=$2 [L]
+
+RewriteRule ^answers/([a-z0-9]+)(/)?$ index.php?page=answers&action=$1 [L]
+RewriteRule ^answers/([a-z0-9]+)/([0-9]+)(/)?$ index.php?page=answers&action=$1&id=$2 [L]

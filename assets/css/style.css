@@ -2367,3 +2367,17 @@
 	#pattern6 {
 		background: url("/assets/images/Patterns/pattern6.png") no-repeat 0 0;
 	}
+
+
+/*Freds Edits */
+input.disguised {
+	border:none;
+	font-family: Droid Sans;
+	color: #8f8f8f;
+	font-size: 13px;
+	text-shadow: 0 1px 0 #FFFFFF;
+	background: none;
+	}
+.i_32_dollar.cropped {
+		background: url("/assets/images/Icons/32/i_32_dollarsingle.png") 10px 32px no-repeat scroll;
+	}

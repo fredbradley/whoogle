@@ -48,13 +48,17 @@
         <input value="{$edit.username}" class="simple_field text-input small-input" type="text" id="username" name="username" />
       </div></div>
       {if {$action}=='edit'}
-      <div class="line_grid"><div class="g_3">
-        <label class="label">Change Password</label>
-        </div><div class="g_9">
-        <input style="background:#ff0000;color:#ffffff;" class="simple_field text-input small-input" type="text" readonly id="nonedit" name="nonedit" value="Sorry, you can't change your password" />
-        {if {$smarty.get.id}=={$user.id}} 
-        <div class="field_notice">Feature coming soon</div>{/if}
-         </div></div>
+      	<div class="line_grid">
+      		<div class="g_3">
+        		<label class="label">Change Password</label>
+        	</div>
+        	<div class="g_9">
+				<div class="simple_buttons">
+					<a href="/admin/users/changepassword/{$edit.id}"><div class="label">Change Password</div></a>
+				</div>
+				<div class="field_notice">Changes Page</div>
+			</div>
+		</div>
       {else}
       <div class="line_grid"><div class="g_3">
         <label class="label">Password</label></div><div class="g_9">
@@ -78,8 +82,8 @@
       <input type="hidden" name="submittype" value="{$type|default: 'error'}" />
       <div class="line_grid">
       <div class="g_3"></div>
-      <div class="g_9">
-        <input class="simple_buttons submitItbutton" type="Submit" value="Submit" />
+      <div class="g_9 label">
+        <input class="simple_buttons submitIt button" type="Submit" value="Save User" />
       </div></div>
     <div class="clear"></div>
     <!-- End .clear -->

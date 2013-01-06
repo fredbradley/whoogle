@@ -24,7 +24,7 @@ if ($_POST) {
                         $error = $db->error("Couldn't Update!");
                         $smarty->assign('dbresult', $error);
                 } else {
-                        $success = successMsg("Now, I've moved some things around and that's all good! I'll take you back to the list in 5 seconds!");
+                        $success = successMsg("Now, I've moved some things around and that's all good!");
                         $smarty->assign('dbresult', $success);
                 }
         }
@@ -69,7 +69,6 @@ if ($_POST) {
 
 function successMsg($message) {
         $output = "<div class=\"notification success png_bg\">";
-        $output .= "<a href=\"#\" class=\"close\"><img src=\"resources/images/icons/cross_grey_small.png\" title=\"Close this notification\" alt=\"close\" /></a>";
         $output .= "<div>".$message."</div>";
         $output .= "</div>";
 return $output;

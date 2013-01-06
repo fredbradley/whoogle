@@ -1,4 +1,4 @@
-{include file="admin_head.tpl"}  
+{include file="admin_head.tpl" title="Secret Celebs"}  
 
 	<body>
 	
@@ -16,7 +16,6 @@
 					</div>
 				</div>
 
-				<div class="g_12 separator"><span></span></div>
 				<div class="g_12">
 				<noscript> <!-- Show a notification if the user has disabled javascript -->
 				<div class="notification error png_bg">

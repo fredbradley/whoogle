@@ -24,7 +24,6 @@ if ($_POST) {
 }
 function successMsg($message) {
         $output = "<div class=\"notification success png_bg\">";
-        $output .= "<a href=\"#\" class=\"close\"><img src=\"resources/images/icons/cross_grey_small.png\" title=\"Close this notification\" alt=\"close\" /></a>";
         $output .= "<div>".$message."</div>";
         $output .= "</div>";
 return $output;

@@ -1,20 +1,22 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2013-01-05 13:53:08
+<?php /* Smarty version Smarty-3.1.8, created on 2013-01-06 15:54:01
          compiled from "/kunden/homepages/3/d298570323/htdocs/_smarty_sites/whoogle/templates/admin_users_form.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:198930207950e83044d69b23-03729812%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:202103274850e8654d55f6d7-62377904%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '7740e399e33787998bb872d59c3056a9ea00ef41' => 
     array (
       0 => '/kunden/homepages/3/d298570323/htdocs/_smarty_sites/whoogle/templates/admin_users_form.tpl',
-      1 => 1357313846,
+      1 => 1357487640,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '198930207950e83044d69b23-03729812',
+  'nocache_hash' => '202103274850e8654d55f6d7-62377904',
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.8',
+  'unifunc' => 'content_50e8654d61c8c0_06595954',
   'variables' => 
   array (
     'action' => 0,
@@ -24,10 +26,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'type' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.8',
-  'unifunc' => 'content_50e83044e23f76_86611830',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_50e83044e23f76_86611830')) {function content_50e83044e23f76_86611830($_smarty_tpl) {?>
+<?php if ($_valid && !is_callable('content_50e8654d61c8c0_06595954')) {function content_50e8654d61c8c0_06595954($_smarty_tpl) {?>
 <div class="widget_header content-box-header">
   <h4 class="widget_header_title"><?php ob_start();?><?php echo $_smarty_tpl->tpl_vars['action']->value;?>
 <?php $_tmp1=ob_get_clean();?><?php if ($_tmp1=='edit'){?>Edit User<?php }else{?><?php ob_start();?><?php echo $_smarty_tpl->tpl_vars['action']->value;?>
@@ -92,15 +92,18 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       </div></div>
       <?php ob_start();?><?php echo $_smarty_tpl->tpl_vars['action']->value;?>
 <?php $_tmp4=ob_get_clean();?><?php if ($_tmp4=='edit'){?>
-      <div class="line_grid"><div class="g_3">
-        <label class="label">Change Password</label>
-        </div><div class="g_9">
-        <input style="background:#ff0000;color:#ffffff;" class="simple_field text-input small-input" type="text" readonly id="nonedit" name="nonedit" value="Sorry, you can't change your password" />
-        <?php ob_start();?><?php echo $_GET['id'];?>
-<?php $_tmp5=ob_get_clean();?><?php ob_start();?><?php echo $_smarty_tpl->tpl_vars['user']->value['id'];?>
-<?php $_tmp6=ob_get_clean();?><?php if ($_tmp5==$_tmp6){?> 
-        <div class="field_notice">Feature coming soon</div><?php }?>
-         </div></div>
+      	<div class="line_grid">
+      		<div class="g_3">
+        		<label class="label">Change Password</label>
+        	</div>
+        	<div class="g_9">
+				<div class="simple_buttons">
+					<a href="/admin/users/changepassword/<?php echo $_smarty_tpl->tpl_vars['edit']->value['id'];?>
+"><div class="label">Change Password</div></a>
+				</div>
+				<div class="field_notice">Changes Page</div>
+			</div>
+		</div>
       <?php }else{ ?>
       <div class="line_grid"><div class="g_3">
         <label class="label">Password</label></div><div class="g_9">
@@ -114,18 +117,18 @@ $_valid = $_smarty_tpl->decodeProperties(array (
           <option value="<?php echo $_smarty_tpl->tpl_vars['edit']->value['acl'];?>
 ">--- SELECT ---</option>
           <option <?php ob_start();?><?php echo $_smarty_tpl->tpl_vars['edit']->value['acl'];?>
-<?php $_tmp7=ob_get_clean();?><?php if ($_tmp7=='0'){?>selected <?php }?>value="0">Locked Out</option>
+<?php $_tmp5=ob_get_clean();?><?php if ($_tmp5=='0'){?>selected <?php }?>value="0">Locked Out</option>
           <option <?php ob_start();?><?php echo $_smarty_tpl->tpl_vars['edit']->value['acl'];?>
-<?php $_tmp8=ob_get_clean();?><?php if ($_tmp8=='1'){?>selected <?php }?>value="1">Edit & Delete Sites Only</option>
+<?php $_tmp6=ob_get_clean();?><?php if ($_tmp6=='1'){?>selected <?php }?>value="1">Edit & Delete Sites Only</option>
           <option <?php ob_start();?><?php echo $_smarty_tpl->tpl_vars['edit']->value['acl'];?>
-<?php $_tmp9=ob_get_clean();?><?php if ($_tmp9=='2'){?>selected <?php }?>value="2">Full Guesses Management</option>
+<?php $_tmp7=ob_get_clean();?><?php if ($_tmp7=='2'){?>selected <?php }?>value="2">Full Guesses Management</option>
           <option <?php ob_start();?><?php echo $_smarty_tpl->tpl_vars['edit']->value['acl'];?>
-<?php $_tmp10=ob_get_clean();?><?php if ($_tmp10=='3'){?>selected <?php }?>value="3">Full Admin (Users & Site)</option>
+<?php $_tmp8=ob_get_clean();?><?php if ($_tmp8=='3'){?>selected <?php }?>value="3">Full Admin (Users & Site)</option>
           <?php ob_start();?><?php echo $_smarty_tpl->tpl_vars['edit']->value['acl'];?>
-<?php $_tmp11=ob_get_clean();?><?php ob_start();?><?php echo $_smarty_tpl->tpl_vars['user']->value['acl'];?>
-<?php $_tmp12=ob_get_clean();?><?php if ($_tmp11=='9'||$_tmp12=='9'){?> 
+<?php $_tmp9=ob_get_clean();?><?php ob_start();?><?php echo $_smarty_tpl->tpl_vars['user']->value['acl'];?>
+<?php $_tmp10=ob_get_clean();?><?php if ($_tmp9=='9'||$_tmp10=='9'){?> 
           <option <?php ob_start();?><?php echo $_smarty_tpl->tpl_vars['edit']->value['acl'];?>
-<?php $_tmp13=ob_get_clean();?><?php if ($_tmp13=='9'){?>selected <?php }?>value="9">God</option>
+<?php $_tmp11=ob_get_clean();?><?php if ($_tmp11=='9'){?>selected <?php }?>value="9">God</option>
           <?php }?>
         </select></div>
       </div>
@@ -133,8 +136,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 " />
       <div class="line_grid">
       <div class="g_3"></div>
-      <div class="g_9">
-        <input class="simple_buttons submitItbutton" type="Submit" value="Submit" />
+      <div class="g_9 label">
+        <input class="simple_buttons submitIt button" type="Submit" value="Save User" />
       </div></div>
     <div class="clear"></div>
     <!-- End .clear -->
