@@ -23,6 +23,34 @@ function query ($query) {
   return $this->result;
 }
 
+function bugReport($username, $bug) {
+	$query = "INSERT INTO ".DB_PREFIX."bugs (username, bug, date) VALUES ('".$username."', '".$bug."', '".time()."')";
+	$result = mysql_query($query);
+	
+	// Get User Details
+	$user_details = $this->getUsers($username);	
+	$user = $user_details[0];	
+
+	$subject = "Whoogle Bug Report submitted by ".$user['username'];
+	// To send HTML mail, the Content-type header must be set
+	$headers  = 'MIME-Version: 1.0' . "\r\n";
+	$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+
+// Additional headers
+	$headers .= 'To: Fred Bradley <fredbradley@me.com>' . "\r\n";
+	$headers .= 'From: '.$user['first_name'].' '.$user['last_name'].' <'.$user['email'].'>' . "\r\n";
+//	$headers .= 'Cc: birthdayarchive@example.com' . "\r\n";
+//	$headers .= 'Bcc: birthdaycheck@example.com' . "\r\n";
+
+	$message = $bug;
+	
+
+// Mail it
+mail('fredbradley@me.com', $subject, $message, $headers);
+
+return $result;
+}
+
 function databaseBackup() {
 $query = "CREATE TABLE ".DB_PREFIX."backup_".date('YmdHis')."_guesses SELECT * FROM ".DB_PREFIX."guesses";
 $result = mysql_query($query);
@@ -328,8 +356,11 @@ function getGuesses($query, $named=1) {
 //	mysql_free_result($result);
 return $output;
 }
-function getUsers() {
+function getUsers($username="") {
 	$query = "SELECT * FROM ".DB_PREFIX."users";
+	if (!empty($username)) {
+	$query .= " WHERE username='".$username."'";
+	}
 	$this->result = mysql_query($query);
 	while($row = mysql_fetch_assoc($this->result)) {
 		$output[] = $row;

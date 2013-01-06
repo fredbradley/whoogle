@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2013-01-06 16:25:55
+<?php /* Smarty version Smarty-3.1.8, created on 2013-01-06 16:31:48
          compiled from "/kunden/homepages/3/d298570323/htdocs/_smarty_sites/whoogle/templates/admin_head.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:28247641150e86c77d03782-56510708%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'e42781ce00915a3cc6dc755b843ba502131d3558' => 
     array (
       0 => '/kunden/homepages/3/d298570323/htdocs/_smarty_sites/whoogle/templates/admin_head.tpl',
-      1 => 1357489552,
+      1 => 1357489905,
       2 => 'file',
     ),
   ),
@@ -212,7 +212,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 <?php $_tmp8=ob_get_clean();?><?php if ($_tmp8=='answers'){?>active_tab <?php }?>i_32_forms">
 					<a href="/admin/answers/list" title="Answers">
 						<span class="tab_label">Answers</span>
-						<span class="tab_info">Configuration</span>
+						<span class="tab_info">Hooray! At last!</span>
+					</a>
+				</li>
+				<li class="<?php ob_start();?><?php echo $_GET['page'];?>
+<?php $_tmp9=ob_get_clean();?><?php if ($_tmp9=='logout'){?>active_tab <?php }?>i_32_tables">
+					<a href="/admin/index.php?logout" title="Log Out">
+						<span class="tab_label">Log Out</span>
+						<span class="tab_info">Clock Off</span>
 					</a>
 				</li>
 			</ul>

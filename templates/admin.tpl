@@ -9,7 +9,24 @@
 			</div>
 			<div class="g_6 contents_options">
 				<div class="simple_buttons">
-					<div class="bwIcon i_16_help">Help</div>
+					<div class="bwIcon i_16_help bdC">Bug Report</div>
+				</div>
+				<div class="dialog bDialog" title="Report a bug, or request a feature…">
+					<form method="post">
+					<input type="hidden" name="bugreport" value="1" />
+					<input type="hidden" name="username" value="{$user.username}" />
+					<div class="line_grid">
+						<div class="g_12">
+							<textarea name="bug" class="simple_field"></textarea>
+						</div>
+					</div>
+					<div class="line_grid">
+						<div class="g_3"></div>
+						<div class="g_9">
+							<input type="submit" class="simple_buttons submitIt label" />
+						</div>
+					</div>
+					</form>
 				</div>
 			</div>
 			<div class="g_12 separator"><span></span></div>
@@ -45,7 +62,7 @@
 				</div>
 			</div>
 			<div class="g_12 separator under_stat"><span></span></div>
-			<div class="g_12">
+		{*	<div class="g_12">
 				<div class="widget_header">
 					<h4 class="widget_header_title wwIcon i_16_chats">Useful Stats</h4>
 				</div>
@@ -57,7 +74,7 @@
 						<p><a href="#databasebackup" rel="modal"><strong>Backup Database</strong></a></p>
 					</div> <!-- End #tab3 -->        					
 				</div> <!-- End .content-box-content -->
-			</div> <!-- End .content-box -->
+			</div> <!-- End .content-box --> *}
 		</div>		
 	</div>
 </div>

@@ -191,7 +191,13 @@
 				<li class="{if {$smarty.get.page}=='answers'}active_tab {/if}i_32_forms">
 					<a href="/admin/answers/list" title="Answers">
 						<span class="tab_label">Answers</span>
-						<span class="tab_info">Configuration</span>
+						<span class="tab_info">Hooray! At last!</span>
+					</a>
+				</li>
+				<li class="{if {$smarty.get.page}=='logout'}active_tab {/if}i_32_tables">
+					<a href="/admin/index.php?logout" title="Log Out">
+						<span class="tab_label">Log Out</span>
+						<span class="tab_info">Clock Off</span>
 					</a>
 				</li>
 			</ul>

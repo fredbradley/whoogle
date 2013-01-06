@@ -73,6 +73,7 @@
 					break;
 				default:
 					include_once 'inc/answers.php';
+					include_once 'inc/bugreport.php';
 					$answers = $db->getConfig();
 					$smarty->assign('answers', $answers);
 					$smarty->display('admin.tpl');

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2013-01-06 13:10:01
+<?php /* Smarty version Smarty-3.1.8, created on 2013-01-06 17:26:55
          compiled from "/kunden/homepages/3/d298570323/htdocs/_smarty_sites/whoogle/templates/admin.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:190827320850e86c77c74955-37321090%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'aa1c9e78ee379293b9a22a44f2793874b84a4c89' => 
     array (
       0 => '/kunden/homepages/3/d298570323/htdocs/_smarty_sites/whoogle/templates/admin.tpl',
-      1 => 1357477796,
+      1 => 1357493213,
       2 => 'file',
     ),
   ),
@@ -19,6 +19,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'unifunc' => 'content_50e86c77cfe535_72208774',
   'variables' => 
   array (
+    'user' => 0,
     'stats' => 0,
   ),
   'has_nocache_code' => false,
@@ -35,7 +36,25 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 			</div>
 			<div class="g_6 contents_options">
 				<div class="simple_buttons">
-					<div class="bwIcon i_16_help">Help</div>
+					<div class="bwIcon i_16_help bdC">Bug Report</div>
+				</div>
+				<div class="dialog bDialog" title="Report a bug, or request a feature…">
+					<form method="post">
+					<input type="hidden" name="bugreport" value="1" />
+					<input type="hidden" name="username" value="<?php echo $_smarty_tpl->tpl_vars['user']->value['username'];?>
+" />
+					<div class="line_grid">
+						<div class="g_12">
+							<textarea name="bug" class="simple_field"></textarea>
+						</div>
+					</div>
+					<div class="line_grid">
+						<div class="g_3"></div>
+						<div class="g_9">
+							<input type="submit" class="simple_buttons submitIt label" />
+						</div>
+					</div>
+					</form>
 				</div>
 			</div>
 			<div class="g_12 separator"><span></span></div>
@@ -75,22 +94,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 				</div>
 			</div>
 			<div class="g_12 separator under_stat"><span></span></div>
-			<div class="g_12">
-				<div class="widget_header">
-					<h4 class="widget_header_title wwIcon i_16_chats">Useful Stats</h4>
-				</div>
-				<div class="widget_contents">
-					<div class="tab-content default-tab">
-						<p><strong>Unique User Submits:</strong> <?php echo (($tmp = @$_smarty_tpl->tpl_vars['stats']->value['guesssubmits'])===null||$tmp==='' ? "Database Currently Too Big To Compute" : $tmp);?>
-</p>
-						<p><strong>Most Guessed Name:</strong> <?php echo $_smarty_tpl->tpl_vars['stats']->value['mostguessed'];?>
-</p>
-						<p><strong>Next Game play:</strong> <?php echo $_smarty_tpl->tpl_vars['stats']->value['nextplay'];?>
-</p>
-						<p><a href="#databasebackup" rel="modal"><strong>Backup Database</strong></a></p>
-					</div> <!-- End #tab3 -->        					
-				</div> <!-- End .content-box-content -->
-			</div> <!-- End .content-box -->
+		
 		</div>		
 	</div>
 </div>
