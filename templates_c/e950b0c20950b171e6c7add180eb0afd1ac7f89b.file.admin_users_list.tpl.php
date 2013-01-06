@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2013-01-05 18:05:37
+<?php /* Smarty version Smarty-3.1.8, created on 2013-01-06 16:27:08
          compiled from "/kunden/homepages/3/d298570323/htdocs/_smarty_sites/whoogle/templates/admin_users_list.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:62023676350e86b71f099d3-71668945%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'e950b0c20950b171e6c7add180eb0afd1ac7f89b' => 
     array (
       0 => '/kunden/homepages/3/d298570323/htdocs/_smarty_sites/whoogle/templates/admin_users_list.tpl',
-      1 => 1357386962,
+      1 => 1357489624,
       2 => 'file',
     ),
   ),
@@ -15,14 +15,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
-  'variables' => 
-  array (
-    'users' => 0,
-    'user' => 0,
-  ),
-  'has_nocache_code' => false,
   'version' => 'Smarty-3.1.8',
   'unifunc' => 'content_50e86b72009fe9_11593310',
+  'variables' => 
+  array (
+    'user' => 0,
+    'users' => 0,
+  ),
+  'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_50e86b72009fe9_11593310')) {function content_50e86b72009fe9_11593310($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_relative_date')) include '/homepages/3/d298570323/htdocs/_smarty_sites/libs/plugins/modifier.relative_date.php';
 ?>
@@ -37,7 +37,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                                                                    <th>Email</th>
                                                                    <th>Access</th>
                                                                    <th>Last Login</th>
-                                                                   <th>Delete</th>
+                                                                   <?php ob_start();?><?php echo $_smarty_tpl->tpl_vars['user']->value['acl'];?>
+<?php $_tmp1=ob_get_clean();?><?php if ($_tmp1=='9'){?><th>Delete</th><?php }?>
                                                                 </tr>
 
                                                         </thead>
@@ -68,8 +69,9 @@ $_smarty_tpl->tpl_vars['user']->_loop = true;
 </td>
                                                                         <td><?php echo smarty_modifier_relative_date($_smarty_tpl->tpl_vars['user']->value['last_login']);?>
 </td>
-                                                                        <td><a href="delete/<?php echo $_smarty_tpl->tpl_vars['user']->value['id'];?>
-" title="Delete"><img src="/admin/resources/images/icons/cross.png" alt="Delete" /></a></td>
+                                                                        <?php ob_start();?><?php echo $_SESSION['user']['acl'];?>
+<?php $_tmp2=ob_get_clean();?><?php if ($_tmp2=='9'){?><td><a href="/admin/users/delete/<?php echo $_smarty_tpl->tpl_vars['user']->value['id'];?>
+" title="Delete"><img src="/admin/resources/images/icons/cross.png" alt="Delete" /></a></td><?php }?>
 
                                                                 </tr>
                                                 <?php } ?>

@@ -130,6 +130,11 @@
 									<span class="label">Change Details</span>
 								</a>
 							</li>
+							<li>
+								<a title="Log Out" href="/admin/index.php?logout">
+									<span class="label">Logout</span>
+								</a>
+							</li>
 						</ul>
 					</li>
 
