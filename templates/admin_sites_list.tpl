@@ -7,11 +7,12 @@
                                                         <thead>
                                                                 <tr>
                                                                  {*  <th><input class="check-all" type="checkbox" /></th> *}
-                                                                 <th style="display:none;">Nicknames</th>
                                                                    <th>Celebrity</th>
                                                                    <th>Times Guessed</th>
                                                                    <th>Last Updated</th>
                                                                    {*<th>Delete</th> *}
+																	<th style="display:none;">Nicknames</th>
+
                                                                 </tr>
 
                                                         </thead>
@@ -44,7 +45,6 @@
                                                 {foreach $sites as $site}
                                                                 <tr>
                                                                        {* <td><input type="checkbox" /></td> *}
-                                                                       <td style="display:none;">{$site.nicknames}</td>
                                                                         <td><a href="/admin/guesses/edit/{$site.id}">{$site.firstname|capitalize} {$site.surname|capitalize}</a></td>
                                                                         <td>{$site.timesguessed}</td>
 									{assign var="lastupdated" value="{$site.dateguessed|substr:-10}"}
@@ -53,7 +53,8 @@
                                                                                 <a href="/admin/guesses/edit/{$site.id}" title="Edit"><img src="/admin/resources/images/icons/pencil.png" alt="Edit" /></a>
                                                                                 <a href="/admin/guesses/delete/{$site.id}" title="Delete"><img src="/admin/resources/images/icons/cross.png" alt="Delete" /></a>
                                                                         <!--    <a href="#" title="Edit Meta"><img src="/admin/resources/images/icons/hammer_screwdriver.png" alt="Edit Meta" /></a>
-                                                                -->     </td> *}
+                                                                -->     </td> *}                                                                       <td style="display:none;">{$site.nicknames}</td>
+
 
                                                                 </tr>
                                                 {/foreach}

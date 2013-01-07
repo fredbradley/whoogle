@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2013-01-05 18:09:49
+<?php /* Smarty version Smarty-3.1.8, created on 2013-01-07 13:46:18
          compiled from "/kunden/homepages/3/d298570323/htdocs/_smarty_sites/whoogle/templates/admin_sites.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:57859090650e86c6df18499-21685467%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '60a313e904ebc15ee050098dc43f9da17210e961' => 
     array (
       0 => '/kunden/homepages/3/d298570323/htdocs/_smarty_sites/whoogle/templates/admin_sites.tpl',
-      1 => 1357403600,
+      1 => 1357565255,
       2 => 'file',
     ),
   ),
@@ -15,15 +15,18 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.8',
+  'unifunc' => 'content_50e86c6e072682_28993727',
   'variables' => 
   array (
+    'edit' => 0,
     'action' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.8',
-  'unifunc' => 'content_50e86c6e072682_28993727',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_50e86c6e072682_28993727')) {function content_50e86c6e072682_28993727($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("admin_head.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array('title'=>"Secret Celebs"), 0);?>
+<?php if ($_valid && !is_callable('content_50e86c6e072682_28993727')) {function content_50e86c6e072682_28993727($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_capitalize')) include '/homepages/3/d298570323/htdocs/_smarty_sites/libs/plugins/modifier.capitalize.php';
+?><?php ob_start();?><?php echo (($tmp = @smarty_modifier_capitalize($_smarty_tpl->tpl_vars['edit']->value['cname']))===null||$tmp==='' ? 'Secret Celebs' : $tmp);?>
+<?php $_tmp1=ob_get_clean();?><?php echo $_smarty_tpl->getSubTemplate ("admin_head.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array('title'=>$_tmp1), 0);?>
   
 
 	<body>
@@ -57,15 +60,15 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 			
 			<div class="g_12 content-box"><!-- Start Content Box -->
 				<?php ob_start();?><?php echo $_smarty_tpl->tpl_vars['action']->value;?>
-<?php $_tmp1=ob_get_clean();?><?php if ($_tmp1=="add"){?>
+<?php $_tmp2=ob_get_clean();?><?php if ($_tmp2=="add"){?>
 					<?php echo $_smarty_tpl->getSubTemplate ("admin_sites_form.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 				<?php }else{?><?php ob_start();?><?php echo $_smarty_tpl->tpl_vars['action']->value;?>
-<?php $_tmp2=ob_get_clean();?><?php if ($_tmp2=="edit"){?>
+<?php $_tmp3=ob_get_clean();?><?php if ($_tmp3=="edit"){?>
 					<?php echo $_smarty_tpl->getSubTemplate ("admin_sites_form.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 				<?php }else{?><?php ob_start();?><?php echo $_smarty_tpl->tpl_vars['action']->value;?>
-<?php $_tmp3=ob_get_clean();?><?php if ($_tmp3=="delete"){?>
+<?php $_tmp4=ob_get_clean();?><?php if ($_tmp4=="delete"){?>
                                         <?php echo $_smarty_tpl->getSubTemplate ("admin_sites_form.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 				<?php }else{ ?>

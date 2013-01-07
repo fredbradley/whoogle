@@ -1,4 +1,4 @@
-{include file="admin_head.tpl" title="Secret Celebs"}  
+{include file="admin_head.tpl" title="{$edit.cname|capitalize|default:'Secret Celebs'}"}  
 
 	<body>
 	

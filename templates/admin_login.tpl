@@ -1,15 +1,23 @@
 <!DOCTYPE HTML>
 <html lang="en-US">
-<head>
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# profile: http://ogp.me/ns/profile#">
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="Title" content="{$title} | Whoogle Admin">
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="&quot;Whoogle&quot; for Who's On Heart" />
+
+	<meta property="og:url" content="http://whoogle.fredb.me">
+	<meta name="Title" content="Login | Whoogle Admin">
 	<meta name="Keywords" content="Whoogle, Who's On Heart, Heart, Radio">
 	<meta name="twitter:card" content="summary">
+	<meta name="title" content="Whoogle | Admin Login">
 	<meta name="twitter:site" content="@fredbradley">
 	<meta name="twitter:creator" content="@fredbradley">
+	<meta property="og:description" content="an administration panel for the radio competition with the biggest cash prize in radio! Who's On Heart!">
 	<meta name="description" content="Whoogle - an administration panel for the radio competition with the biggest cash prize in radio! Who's On Heart!">
 	<meta name="author" content="Fred Bradley">
+	<meta property="og:image" content="http://whoogle.fredb.me/assets/images/woh_logo.png">
+
 	<title>Login | Whoogle Admin</title>
 	<!--[if lt IE 9]>
 		<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
@@ -75,7 +83,7 @@
 				<h1>{$SITE.name}</h1>
 				<!-- Logo (221px width) -->
 {*				<img id="logo" src="/assets/images/logo.png" style="width:100%" alt="{$SITE.name} logo" /> *}
-				<img id="logo" src="http://www.heart.co.uk/u/apps/asset_manager/uploaded/2013/00/whos-on-heart-2013-win-125000-1357315170.png" style="width:100%" alt="{$SITE.name} logo" />
+				<img id="logo" src="/assets/images/woh_logo.png" style="width:100%" alt="{$SITE.name} logo" />
 
 				
 				
@@ -96,39 +104,48 @@
 					<h4 class="widget_header_title wwIcon i_16_login">Login</h4>
 				</div>
 				<div class="widget_contents lgNoPadding">
-				<form action="/admin/index.php" method="POST">					
-					<div class="line_grid">
-						<div class="g_2 g_2M"><label class="label">User</label></div>
-						<div class="g_10 g_10M">
-							<input class="simple_field tooltip text-input" title="Your Username" placeholder="Username" name="username" type="text" />
+					<form action="/admin/index.php" method="POST">					
+						<div class="line_grid">
+							<div class="g_2 g_2M">
+								<label class="label">User</label>
+							</div>
+							<div class="g_10 g_10M">
+								<input class="simple_field tooltip text-input" title="Your Username" placeholder="Username" name="username" type="text" />
+							</div>
+							<div class="clear"></div>
 						</div>
-						<div class="clear"></div>
-					</div>
-					<div class="line_grid">
-						<div class="g_2 g_2M"><label class="label">Pass</label></div>
-						<div class="g_10 g_10M">
-							<input class="simple_field tooltip text-input" title="Your Secret" type="password" name="password" />
+						<div class="line_grid">
+							<div class="g_2 g_2M"><label class="label">Pass</label></div>
+							<div class="g_10 g_10M">
+								<input class="simple_field tooltip text-input" title="Your Secret" type="password" name="password" />
+							</div>
+							<div class="clear"></div>
 						</div>
-						<div class="clear"></div>
-					</div>
-					<div class="clear"></div>
-					<div class="line_grid">
-					<div class="g_6 g_6M">
-						<input class="submitIt simple_buttons" value="Log In" type="submit">
-					</div>
-					<div class="g_6 g_6M">
-<div class="simple_buttons">
-						<div class="bwIcon bdC i_16_help">Help</div>
-						<div class="dialog bDialog" title="You need help!">
-							<span class="label lwParagraph">Your username is the same as your work login username. </span><br /><br /><span class="label lwParagraph">If you've forgotten your password, you're a muppet. For now, email <a href="http://www.fredbradley.me/contact">Fred</a> and he'll sort you out. (An automatic 'forgotten password' function will appear soon!)</span><br /><br /><span class="label lwParagraph">If you're new to the game, and think you need to be added as a user for Whoogle, then you better check with Toby D first!</span>
+						<div class="line_grid">
+							<div class="g_6 g_6M">
+								<input class="submitIt simple_buttons" value="Log In" type="submit">
+							</div>
+							<div class="g_6 g_6M">
+								<div class="simple_buttons">
+									<div class="bwIcon bdC i_16_help">Help</div>
+									<div class="dialog bDialog" title="You need help!">
+										<span class="label lwParagraph">Your username is the same as your work login username. </span>
+										<br /><br />
+										<span class="label lwParagraph">If you've forgotten your password, you're a muppet. For now, email <a href="http://www.fredbradley.me/contact">Fred</a> and he'll sort you out. (An automatic 'forgotten password' function will appear soon!)</span>
+										<br /><br />
+										<span class="label lwParagraph">If you're new to the game, and think you need to be added as a user for Whoogle, then you better check with Toby D first!</span>
+									</div>
+								</div>
+							</div>
+							<div class="clear"></div>
 						</div>
-
-					</div>
-					</div>
-					<div class="clear"></div>
-				</div>
-
-				</form>
+						<div class="line_grid">
+							<div class="g_12 g_12M">
+								<span class="label">Are you a little lost? <a href="http://www.heart.co.uk/win/whos-heart/" target="_blank" class="label">Click here to find out more about Who's On Heart, and learn how you could be in with a chance to win £125,000.<a/></span>
+							</div>
+							<div class="clear"></div>
+						</div>
+					</form>
 				</div>
 				<div class="g_12" id="btTop" title="Visit Fred's Site">
 					<a id="btLeft" href="http://www.fredbradley.me/portfolio/whos-on-heart?utm_source=hosting&utm_medium=sitebuilder&utm_term=whoogle&utm_content=whoogle&utm_campaign=sitebuilder" title="Visit Fred's Site">

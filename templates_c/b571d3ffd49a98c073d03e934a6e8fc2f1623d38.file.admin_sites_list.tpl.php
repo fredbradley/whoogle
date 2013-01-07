@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2013-01-05 18:09:50
+<?php /* Smarty version Smarty-3.1.8, created on 2013-01-06 17:35:45
          compiled from "/kunden/homepages/3/d298570323/htdocs/_smarty_sites/whoogle/templates/admin_sites_list.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:62225013150e86c6e13c7c0-53076635%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'b571d3ffd49a98c073d03e934a6e8fc2f1623d38' => 
     array (
       0 => '/kunden/homepages/3/d298570323/htdocs/_smarty_sites/whoogle/templates/admin_sites_list.tpl',
-      1 => 1357404113,
+      1 => 1357493741,
       2 => 'file',
     ),
   ),
@@ -15,6 +15,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.8',
+  'unifunc' => 'content_50e86c6e195f54_80955331',
   'variables' => 
   array (
     'sites' => 0,
@@ -22,8 +24,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'lastupdated' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.8',
-  'unifunc' => 'content_50e86c6e195f54_80955331',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_50e86c6e195f54_80955331')) {function content_50e86c6e195f54_80955331($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_capitalize')) include '/homepages/3/d298570323/htdocs/_smarty_sites/libs/plugins/modifier.capitalize.php';
 if (!is_callable('smarty_modifier_relative_date')) include '/homepages/3/d298570323/htdocs/_smarty_sites/libs/plugins/modifier.relative_date.php';
@@ -36,11 +36,12 @@ if (!is_callable('smarty_modifier_relative_date')) include '/homepages/3/d298570
                                                         <thead>
                                                                 <tr>
                                                                  
-                                                                 <th style="display:none;">Nicknames</th>
                                                                    <th>Celebrity</th>
                                                                    <th>Times Guessed</th>
                                                                    <th>Last Updated</th>
                                                                    
+																	<th style="display:none;">Nicknames</th>
+
                                                                 </tr>
 
                                                         </thead>
@@ -69,8 +70,6 @@ $_smarty_tpl->tpl_vars['site']->_loop = true;
 ?>
                                                                 <tr>
                                                                        
-                                                                       <td style="display:none;"><?php echo $_smarty_tpl->tpl_vars['site']->value['nicknames'];?>
-</td>
                                                                         <td><a href="/admin/guesses/edit/<?php echo $_smarty_tpl->tpl_vars['site']->value['id'];?>
 "><?php echo smarty_modifier_capitalize($_smarty_tpl->tpl_vars['site']->value['firstname']);?>
  <?php echo smarty_modifier_capitalize($_smarty_tpl->tpl_vars['site']->value['surname']);?>
@@ -81,7 +80,9 @@ $_smarty_tpl->tpl_vars['site']->_loop = true;
 <?php $_tmp1=ob_get_clean();?><?php $_smarty_tpl->tpl_vars["lastupdated"] = new Smarty_variable($_tmp1, null, 0);?>
                                                                         <td><?php echo smarty_modifier_relative_date($_smarty_tpl->tpl_vars['lastupdated']->value);?>
 </td>
-                                                                      
+                                                                                                                                             <td style="display:none;"><?php echo $_smarty_tpl->tpl_vars['site']->value['nicknames'];?>
+</td>
+
 
                                                                 </tr>
                                                 <?php } ?>
