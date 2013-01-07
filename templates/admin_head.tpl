@@ -10,6 +10,8 @@
 	<meta name="twitter:creator" content="@fredbradley">
 	<meta name="description" content="Whoogle - an administration panel for the radio competition with the biggest cash prize in radio! Who's On Heart!">
 	<meta name="author" content="Fred Bradley">
+		<link rel="shortcut icon" href="/assets/images/heart_favicon.ico">
+
 	<title>{$title} | Whoogle Admin</title>
 	<!--[if lt IE 9]>
 		<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>

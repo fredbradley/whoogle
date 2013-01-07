@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta property="og:type" content="website">
 	<meta property="og:title" content="&quot;Whoogle&quot; for Who's On Heart" />
-
+	<link rel="shortcut icon" href="/assets/images/heart_favicon.ico">
 	<meta property="og:url" content="http://whoogle.fredb.me">
 	<meta name="Title" content="Login | Whoogle Admin">
 	<meta name="Keywords" content="Whoogle, Who's On Heart, Heart, Radio">

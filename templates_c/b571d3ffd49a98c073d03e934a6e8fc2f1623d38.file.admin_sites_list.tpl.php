@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2013-01-07 15:59:00
+<?php /* Smarty version Smarty-3.1.8, created on 2013-01-07 16:25:48
          compiled from "/kunden/homepages/3/d298570323/htdocs/_smarty_sites/whoogle/templates/admin_sites_list.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:62225013150e86c6e13c7c0-53076635%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'b571d3ffd49a98c073d03e934a6e8fc2f1623d38' => 
     array (
       0 => '/kunden/homepages/3/d298570323/htdocs/_smarty_sites/whoogle/templates/admin_sites_list.tpl',
-      1 => 1357574337,
+      1 => 1357574447,
       2 => 'file',
     ),
   ),
@@ -36,7 +36,6 @@ if (!is_callable('smarty_modifier_relative_date')) include '/homepages/3/d298570
 
                                                         <thead>
                                                                 <tr>
-                                                                 
                                                                    <th>Celebrity</th>
                                                                    <th>Times Guessed</th>
                                                                    <th>Last Updated</th>
@@ -51,16 +50,7 @@ if (!is_callable('smarty_modifier_relative_date')) include '/homepages/3/d298570
                                                         <tfoot>
                                                                 <tr>
                                                                         <td colspan="3">
-                                                                        <!--    <div class="bulk-actions align-left">
-                                                                                        <select name="dropdown">
-                                                                                                <option value="option1">Choose an action...</option>
-                                                                                                <option value="option2">Edit</option>
-                                                                                                <option value="option3">Delete</option>
-                                                                                        </select>
-                                                                                        <a class="button" href="#">Apply to selected</a>
-                                                                                </div> -->
-
-                                                                               
+                                                                 
                                                                         </td>
                                                                 </tr>
                                                         </tfoot>
@@ -71,7 +61,6 @@ foreach ($_from as $_smarty_tpl->tpl_vars['site']->key => $_smarty_tpl->tpl_vars
 $_smarty_tpl->tpl_vars['site']->_loop = true;
 ?>
                                                                 <tr>
-                                                                       
                                                                         <td><a href="/admin/guesses/edit/<?php echo $_smarty_tpl->tpl_vars['site']->value['id'];?>
 "><?php echo smarty_modifier_capitalize($_smarty_tpl->tpl_vars['site']->value['firstname']);?>
  <?php echo smarty_modifier_capitalize($_smarty_tpl->tpl_vars['site']->value['surname']);?>
@@ -84,9 +73,7 @@ $_smarty_tpl->tpl_vars['site']->_loop = true;
 </td>
                                                                       <?php ob_start();?><?php echo $_smarty_tpl->tpl_vars['user']->value['acl']=='9';?>
 <?php $_tmp3=ob_get_clean();?><?php if ($_tmp3){?> <td>
-                                                                                <a href="/admin/guesses/edit/<?php echo $_smarty_tpl->tpl_vars['site']->value['id'];?>
-" title="Edit"><img src="/admin/resources/images/icons/pencil.png" alt="Edit" /></a>
-                                                                                <a href="/admin/guesses/delete/<?php echo $_smarty_tpl->tpl_vars['site']->value['id'];?>
+                                                                                                                                                                <a href="/admin/guesses/delete/<?php echo $_smarty_tpl->tpl_vars['site']->value['id'];?>
 " title="Delete"><img src="/admin/resources/images/icons/cross.png" alt="Delete" /></a>
                                                                         <!--    <a href="#" title="Edit Meta"><img src="/admin/resources/images/icons/hammer_screwdriver.png" alt="Edit Meta" /></a>
                                                                 -->     </td> <?php }?>                                                                       <td style="display:none;"><?php echo $_smarty_tpl->tpl_vars['site']->value['nicknames'];?>
