@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2013-01-06 16:31:48
+<?php /* Smarty version Smarty-3.1.8, created on 2013-01-07 16:35:38
          compiled from "/kunden/homepages/3/d298570323/htdocs/_smarty_sites/whoogle/templates/admin_head.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:28247641150e86c77d03782-56510708%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'e42781ce00915a3cc6dc755b843ba502131d3558' => 
     array (
       0 => '/kunden/homepages/3/d298570323/htdocs/_smarty_sites/whoogle/templates/admin_head.tpl',
-      1 => 1357489905,
+      1 => 1357576510,
       2 => 'file',
     ),
   ),
@@ -38,6 +38,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 	<meta name="twitter:creator" content="@fredbradley">
 	<meta name="description" content="Whoogle - an administration panel for the radio competition with the biggest cash prize in radio! Who's On Heart!">
 	<meta name="author" content="Fred Bradley">
+		<link rel="shortcut icon" href="/assets/images/heart_favicon.ico">
+
 	<title><?php echo $_smarty_tpl->tpl_vars['title']->value;?>
  | Whoogle Admin</title>
 	<!--[if lt IE 9]>

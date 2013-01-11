@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2013-01-07 15:05:20
+<?php /* Smarty version Smarty-3.1.8, created on 2013-01-07 17:14:43
          compiled from "/kunden/homepages/3/d298570323/htdocs/_smarty_sites/whoogle/templates/admin_login.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:44347076550e8509922e6a1-17205065%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'e75b8aa396a2a718c48ceae66b29a30715e24ef3' => 
     array (
       0 => '/kunden/homepages/3/d298570323/htdocs/_smarty_sites/whoogle/templates/admin_login.tpl',
-      1 => 1357571110,
+      1 => 1357576502,
       2 => 'file',
     ),
   ),
@@ -32,7 +32,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta property="og:type" content="website">
 	<meta property="og:title" content="&quot;Whoogle&quot; for Who's On Heart" />
-
+	<link rel="shortcut icon" href="/assets/images/heart_favicon.ico">
 	<meta property="og:url" content="http://whoogle.fredb.me">
 	<meta name="Title" content="Login | Whoogle Admin">
 	<meta name="Keywords" content="Whoogle, Who's On Heart, Heart, Radio">

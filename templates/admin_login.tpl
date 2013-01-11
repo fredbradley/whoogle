@@ -17,6 +17,8 @@
 	<meta name="description" content="Whoogle - an administration panel for the radio competition with the biggest cash prize in radio! Who's On Heart!">
 	<meta name="author" content="Fred Bradley">
 	<meta property="og:image" content="http://whoogle.fredb.me/assets/images/woh_logo.png">
+	<link rel="canonical" href="http://whoogle.fredb.me/admin/login"/>
+
 
 	<title>Login | Whoogle Admin</title>
 	<!--[if lt IE 9]>

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2013-01-07 16:25:48
+<?php /* Smarty version Smarty-3.1.8, created on 2013-01-08 09:43:55
          compiled from "/kunden/homepages/3/d298570323/htdocs/_smarty_sites/whoogle/templates/admin_sites_list.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:62225013150e86c6e13c7c0-53076635%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'b571d3ffd49a98c073d03e934a6e8fc2f1623d38' => 
     array (
       0 => '/kunden/homepages/3/d298570323/htdocs/_smarty_sites/whoogle/templates/admin_sites_list.tpl',
-      1 => 1357574447,
+      1 => 1357576075,
       2 => 'file',
     ),
   ),
