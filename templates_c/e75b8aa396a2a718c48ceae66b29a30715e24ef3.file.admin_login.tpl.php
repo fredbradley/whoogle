@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2013-01-07 17:14:43
+<?php /* Smarty version Smarty-3.1.8, created on 2013-01-11 12:42:36
          compiled from "/kunden/homepages/3/d298570323/htdocs/_smarty_sites/whoogle/templates/admin_login.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:44347076550e8509922e6a1-17205065%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'e75b8aa396a2a718c48ceae66b29a30715e24ef3' => 
     array (
       0 => '/kunden/homepages/3/d298570323/htdocs/_smarty_sites/whoogle/templates/admin_login.tpl',
-      1 => 1357576502,
+      1 => 1357901556,
       2 => 'file',
     ),
   ),
@@ -44,6 +44,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 	<meta name="description" content="Whoogle - an administration panel for the radio competition with the biggest cash prize in radio! Who's On Heart!">
 	<meta name="author" content="Fred Bradley">
 	<meta property="og:image" content="http://whoogle.fredb.me/assets/images/woh_logo.png">
+	<link rel="canonical" href="http://whoogle.fredb.me/admin/login"/>
+
 
 	<title>Login | Whoogle Admin</title>
 	<!--[if lt IE 9]>
