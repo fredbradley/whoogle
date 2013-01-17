@@ -32,6 +32,9 @@
 		$db = new Database;
 		$db->connect(DB_USER, DB_PASSWORD, DB_HOST, DB_DATABASE);
 
+	/* WHAT TIME IS IT */
+		date_default_timezone_set('Europe/London');
+
 	/* LOAD FUNCTIONS */
 		require_once($SITE_PATH.'inc/functions/common.php');
 		require_once($SITE_PATH.'inc/functions/levenstein.php');
