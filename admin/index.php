@@ -27,7 +27,9 @@
 	}
 		$stats = $db->usefulStats();
 		$recent = $db->recentlyGuessed();
+	if ($_GET['dofunction'] == "copyTimes") {
 		$copy = $db->copyTimes();
+	}
 	/* LOAD FUNCTIONS */
 		require_once($SITE_PATH."inc/functions/common.php");
 	/* SMARTY ASSIGNS */
