@@ -26,11 +26,14 @@
 		$smarty->assign('message', "I created a backup of the database!");
 	}
 		$stats = $db->usefulStats();
+		$recent = $db->recentlyGuessed();
+	//	$copy = $db->copyTimes();
 	/* LOAD FUNCTIONS */
 		require_once($SITE_PATH."inc/functions/common.php");
 	/* SMARTY ASSIGNS */
 		$smarty->assign('stats', $stats);
 		$smarty->assign('user', $user);
+		$smarty->assign('recentguesses', $recent);
 	if (isset($page)) {
 		$smarty->assign('page', $page);
 	}

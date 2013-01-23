@@ -42,26 +42,57 @@
 					<span class="label">"Whoogle" - a term coined by <a target="_blank" href="http://www.twitter.com/tobydolier" id="btBottom" title="Tweet Tobes">Toby D'Olier</a> - is a search engine and administration panel for the "Who's On Heart" competition on the Heart Network. <br /><br />This product is developed <a id="btRight" href="http://www.fredbradley.me/portfolio/whos-on-heart?utm_source=hosting&utm_medium=sitebuilder&utm_term=whoogle&utm_content=whoogle&utm_campaign=sitebuilder" title="Visit Fred's Site">Fred Bradley</a>.</span>
 				</div>
 			<!-- Quick Statistics -->
-				<div class="g_4 quick_stats">
+				<div class="g_3 quick_stats">
 					<div class="big_stats visitor_stats">
 						{$stats.numguesses}
 					</div>
 					<h5 class="stats_info">Celebrities</h5>
 				</div>
-				<div class="g_4 quick_stats">
+				<div class="g_3 quick_stats">
 					<div class="big_stats tickets_stats">
 						{$stats.guessattempts}
 					</div>
 					<h5 class="stats_info">Guess Attempts</h5>
 				</div>
-				<div class="g_4 quick_stats">
+				<div class="g_3 quick_stats">
 					<div class="big_stats users_stats">
 						{$stats.guessesinhour}
 					</div>
 					<h5 class="stats_info">Guesses In Last Hour</h5>
 				</div>
+				<div class="g_3 quick_stats">
+					<div class="big_stats orders_stats">
+						{$stats.numrounds}
+					</div>
+					<h5 class="stats_info">Rounds Played</h5>
+				</div>
 			</div>
 			<div class="g_12 separator under_stat"><span></span></div>
+			<div class="g_12">
+				<div class="widget_header">
+					<h4 class="widget_header_title wwIcon i_16_tables">Guesses in the last 24 hours *</h4>
+				</div>
+				<div class="widget_contents noPadding">
+				<table class="tables">
+	{*				<thead>
+					<tr>
+						<td>Celebrity</td>
+						<th>Last Updated</th>
+					</tr>
+					</thead>
+*}					<tbody>
+				{foreach $recentguesses as $recent}
+					<tr>
+						<td><a href="/admin/guesses/edit/{$recent.id}">{$recent.cname|ucwords}</a>, guessed {$recent.timesguessed} times in total!</td>
+						{assign var="lastupdated" value="{$recent.dateguessed|substr:-10}"}
+						<td>{$recent.lastguessed|date_format:'%A, %B %e, %I:%M %p'}</td>
+					</tr>
+				{/foreach}
+					</tbody>
+				</table>
+				</div>
+				<span class="label">* If one celebrity has been guessed more than once in 24 hours it will only show in this list once!</span>
+			</div>
 		{*	<div class="g_12">
 				<div class="widget_header">
 					<h4 class="widget_header_title wwIcon i_16_chats">Useful Stats</h4>

@@ -24,7 +24,9 @@
   {else}
   <form action="/admin/index.php?{$smarty.server.QUERY_STRING}" method="post">
     {if {$action}=='edit'}
-    <input type="hidden" name="returnmeto" value="{$smarty.server.HTTP_REFERER}" />
+	<div class="line_grid">
+	<span class="label">This record was last edited on {$edit.lastguessed|relative_date}</span>
+	</div>
     {/if}
     <input type="hidden" name="id" id="id" value="{$edit.id}" />
     <div class="line_grid">
@@ -69,7 +71,15 @@
       <!--<p><label>Time Stamp</label>-->
       <input type="hidden" id="dateguessed" name="dateguessed" value="{$smarty.now}" />
       <!--<br /><small>{$smarty.now|date_format}</small></p>-->
-      
+<div class="line_grid">
+	<div class="g_3">
+		<label class="label">Is this edit a result of a <b>real guess</b> from a listener?</label>
+	</div>
+	<div class="g_9">
+		<input type="checkbox" class="simple_form" name="recordguess" checked="checked">
+		<div class="field_notice">(If you're just making an amendment - like adding or removing nickanmes) then you can uncheck this, and your edit won't count as a 'guess')</div>
+	</div>
+</div>      
       <div class="line_grid">
       	<div class="g_3"></div>
       	<div class="g_9">

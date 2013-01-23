@@ -60,7 +60,7 @@
 		$smarty->setCompileDir($SITE_PATH.'templates_c');
 		$smarty->setCacheDir($SITE_PATH.'cache');
 		$smarty->setConfigDir($SITE_PATH.'configs');
-	//	$smarty->force_compile = true;
+		$smarty->force_compile = true;
 	//	$smarty->debugging = true;
 
 	

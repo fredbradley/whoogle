@@ -159,7 +159,7 @@ function addGuess() {
 	$timesguessed = $_POST['timesguessed'];
 	$dateguessed = $_POST['dateguessed'];
 
-	$query = "INSERT INTO ".DB_PREFIX."guesses (firstname, surname, cname, nicknames, timesguessed, dateguessed) VALUES ('$firstname', '$surname', '$cname', '$nicknames', '$timesguessed', '$dateguessed')";
+	$query = "INSERT INTO ".DB_PREFIX."guesses (firstname, surname, cname, nicknames, timesguessed, dateguessed, lastguessed) VALUES ('$firstname', '$surname', '$cname', '$nicknames', '$timesguessed', '$dateguessed', '$dateguessed')";
 	$result = mysql_query($query);
 return $result;
 }
@@ -175,7 +175,11 @@ global $ROOT_PATH;
 	$nicknames = htmlspecialchars(strtolower($_POST['nicknames']), ENT_QUOTES);
 	$timesguessed = $_POST['timesguessed'];
 	$dateguessed = $date.",".$_POST['dateguessed'];
-	$values = "firstname='$firstname', surname='$surname', cname='$cname', nicknames='$nicknames', timesguessed='$timesguessed', dateguessed='$dateguessed'";
+	$justnow = $_POST['dateguessed'];
+	$values = "firstname='$firstname', surname='$surname', cname='$cname', nicknames='$nicknames', timesguessed='$timesguessed'";
+	if ($_POST['recordguess'] == true) {
+		$values .= ", dateguessed='$dateguessed', lastguessed='$justnow'";
+	}
 	$update = "UPDATE ".DB_PREFIX."guesses SET ".$values." WHERE id=".$id;
 	$result = mysql_query($update);
 
@@ -434,6 +438,10 @@ function getMenu($parent) {
 
 /* Stats for Toby */
 function usefulStats() {
+	$query = "SELECT sum(timesguessed) FROM ".DB_PREFIX."guesses";
+	$numguesses = mysql_result(mysql_query($query), 0);
+	$rounds = $numguesses / 3;
+	$output['numrounds'] = $rounds;
 	$query = "SELECT * FROM ".DB_PREFIX."guesses";
 	$output['numguesses'] = $this->count($query);
 	$query = "SELECT guess FROM ".DB_PREFIX."guessattempts";
@@ -449,6 +457,21 @@ function usefulStats() {
 
 	return $output;
 }
+
+/* Function to Order Recently Guessed */
+function recentlyGuessed() {
+	$yesterday = strtotime("-24 hours");
+//	$query = "SELECT id, cname, timesguessed, lastguessed FROM ".DB_PREFIX."guesses WHERE timesguessed > 0 ORDER BY lastguessed DESC LIMIT 20";
+//	$query = "SELECT `id`, `cname`, `timesguessed`, `lastguessed` FORM `".DB_PREFIX."guesses` WHERE `timesguessed` >0 AND `lastguessed` < ".$yesterday.")";
+	$query = "SELECT * FROM `woh_guesses` WHERE `timesguessed` > 0 AND `lastguessed` > $yesterday ORDER BY lastguessed DESC ";
+
+	$result = mysql_query($query) or die("Error:".mysql_error());
+	while($row = mysql_fetch_array($result)) {
+		$rows[] = $row;
+	}
+	return $rows;
+}
+
 
 function nextPlay() {
 date_default_timezone_set('Europe/London');
@@ -503,6 +526,21 @@ function count ($query) {
 function escapedata($data) {
     return mysql_real_escape_string($data);
 }
+
+/* Do Table Copies */
+function copyTimes() {
+	$select = "SELECT * FROM ".DB_PREFIX."guesses";
+	$query = mysql_query($select);
+	while($row = mysql_fetch_array($query)) {
+		$get = substr($row['dateguessed'], -10);
+		$id = $row['id'];
+		$update = "UPDATE ".DB_PREFIX."guesses SET `lastguessed`=".$get." WHERE `id`=".$id;
+		$do_update = mysql_query($update);
+	}		
+}
+
+
+
 
 /* Close connection */
 function __destruct(){ @mysql_close($this->connection); }

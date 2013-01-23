@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2013-01-17 11:27:51
+<?php /* Smarty version Smarty-3.1.8, created on 2013-01-23 17:53:45
          compiled from "/Users/fredbradley/Sites/smarty_site/whoogle/templates/admin.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:39738723950f7e0379ab406-91179223%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:1457430237510023a96fdc85-38630786%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '6f64e243dcac482e62db21e4827c279518919a1e' => 
     array (
       0 => '/Users/fredbradley/Sites/smarty_site/whoogle/templates/admin.tpl',
-      1 => 1358351926,
+      1 => 1358959110,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '39738723950f7e0379ab406-91179223',
+  'nocache_hash' => '1457430237510023a96fdc85-38630786',
   'function' => 
   array (
   ),
@@ -19,12 +19,15 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   array (
     'user' => 0,
     'stats' => 0,
+    'recentguesses' => 0,
+    'recent' => 0,
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.8',
-  'unifunc' => 'content_50f7e037a10189_18626279',
+  'unifunc' => 'content_510023a9762170_44570921',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_50f7e037a10189_18626279')) {function content_50f7e037a10189_18626279($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("admin_head.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array('title'=>"Home"), 0);?>
+<?php if ($_valid && !is_callable('content_510023a9762170_44570921')) {function content_510023a9762170_44570921($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_date_format')) include '/Users/fredbradley/Sites/smarty_site/libs/plugins/modifier.date_format.php';
+?><?php echo $_smarty_tpl->getSubTemplate ("admin_head.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array('title'=>"Home"), 0);?>
   
 
 <body>	
@@ -71,29 +74,64 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 					<span class="label">"Whoogle" - a term coined by <a target="_blank" href="http://www.twitter.com/tobydolier" id="btBottom" title="Tweet Tobes">Toby D'Olier</a> - is a search engine and administration panel for the "Who's On Heart" competition on the Heart Network. <br /><br />This product is developed <a id="btRight" href="http://www.fredbradley.me/portfolio/whos-on-heart?utm_source=hosting&utm_medium=sitebuilder&utm_term=whoogle&utm_content=whoogle&utm_campaign=sitebuilder" title="Visit Fred's Site">Fred Bradley</a>.</span>
 				</div>
 			<!-- Quick Statistics -->
-				<div class="g_4 quick_stats">
+				<div class="g_3 quick_stats">
 					<div class="big_stats visitor_stats">
 						<?php echo $_smarty_tpl->tpl_vars['stats']->value['numguesses'];?>
 
 					</div>
 					<h5 class="stats_info">Celebrities</h5>
 				</div>
-				<div class="g_4 quick_stats">
+				<div class="g_3 quick_stats">
 					<div class="big_stats tickets_stats">
 						<?php echo $_smarty_tpl->tpl_vars['stats']->value['guessattempts'];?>
 
 					</div>
 					<h5 class="stats_info">Guess Attempts</h5>
 				</div>
-				<div class="g_4 quick_stats">
+				<div class="g_3 quick_stats">
 					<div class="big_stats users_stats">
 						<?php echo $_smarty_tpl->tpl_vars['stats']->value['guessesinhour'];?>
 
 					</div>
 					<h5 class="stats_info">Guesses In Last Hour</h5>
 				</div>
+				<div class="g_3 quick_stats">
+					<div class="big_stats orders_stats">
+						<?php echo $_smarty_tpl->tpl_vars['stats']->value['numrounds'];?>
+
+					</div>
+					<h5 class="stats_info">Rounds Played</h5>
+				</div>
 			</div>
 			<div class="g_12 separator under_stat"><span></span></div>
+			<div class="g_12">
+				<div class="widget_header">
+					<h4 class="widget_header_title wwIcon i_16_tables">Guesses in the last 24 hours *</h4>
+				</div>
+				<div class="widget_contents noPadding">
+				<table class="tables">
+						<tbody>
+				<?php  $_smarty_tpl->tpl_vars['recent'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['recent']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['recentguesses']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['recent']->key => $_smarty_tpl->tpl_vars['recent']->value){
+$_smarty_tpl->tpl_vars['recent']->_loop = true;
+?>
+					<tr>
+						<td><a href="/admin/guesses/edit/<?php echo $_smarty_tpl->tpl_vars['recent']->value['id'];?>
+"><?php echo ucwords($_smarty_tpl->tpl_vars['recent']->value['cname']);?>
+</a>, guessed <?php echo $_smarty_tpl->tpl_vars['recent']->value['timesguessed'];?>
+ times in total!</td>
+						<?php ob_start();?><?php echo substr($_smarty_tpl->tpl_vars['recent']->value['dateguessed'],-10);?>
+<?php $_tmp1=ob_get_clean();?><?php $_smarty_tpl->tpl_vars["lastupdated"] = new Smarty_variable($_tmp1, null, 0);?>
+						<td><?php echo smarty_modifier_date_format($_smarty_tpl->tpl_vars['recent']->value['lastguessed'],'%A, %B %e, %I:%M %p');?>
+</td>
+					</tr>
+				<?php } ?>
+					</tbody>
+				</table>
+				</div>
+				<span class="label">* If one celebrity has been guessed more than once in 24 hours it will only show in this list once!</span>
+			</div>
 		
 		</div>		
 	</div>
