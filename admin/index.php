@@ -27,6 +27,11 @@
 	}
 		$stats = $db->usefulStats();
 		$recent = $db->recentlyGuessed();
+
+	/* Get Most Guessed Celeb Portrait */
+		$stats_mostguessed = $stats['mostguessed'];
+		$portraitphoto = $db->getCelebPhoto($stats_mostguessed);
+
 	if ($_GET['dofunction'] == "copyTimes") {
 		$copy = $db->copyTimes();
 	}
@@ -79,6 +84,11 @@
 				default:
 					include_once 'inc/answers.php';
 					include_once 'inc/bugreport.php';
+					 /* Get Most Guessed Celeb Portrait */
+				        $stats_mostguessed = $stats['mostguessed'];
+				//	$stats_mostguessed = $_GET['celeb'];
+				        $portraitphoto = $db->getCelebPhoto($stats_mostguessed);
+					$smarty->assign('topceleb', $portraitphoto);
 					$answers = $db->getConfig();
 					$smarty->assign('answers', $answers);
 					$smarty->display('admin.tpl');

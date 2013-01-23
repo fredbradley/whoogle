@@ -1,32 +1,33 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2013-01-23 17:53:45
+<?php /* Smarty version Smarty-3.1.8, created on 2013-01-23 21:07:57
          compiled from "/Users/fredbradley/Sites/smarty_site/whoogle/templates/admin.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:1457430237510023a96fdc85-38630786%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:8056772525100512d264179-01325975%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '6f64e243dcac482e62db21e4827c279518919a1e' => 
     array (
       0 => '/Users/fredbradley/Sites/smarty_site/whoogle/templates/admin.tpl',
-      1 => 1358959110,
+      1 => 1358975254,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '1457430237510023a96fdc85-38630786',
+  'nocache_hash' => '8056772525100512d264179-01325975',
   'function' => 
   array (
   ),
   'variables' => 
   array (
     'user' => 0,
+    'topceleb' => 0,
     'stats' => 0,
     'recentguesses' => 0,
     'recent' => 0,
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.8',
-  'unifunc' => 'content_510023a9762170_44570921',
+  'unifunc' => 'content_5100512d2d9b94_11776738',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_510023a9762170_44570921')) {function content_510023a9762170_44570921($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_date_format')) include '/Users/fredbradley/Sites/smarty_site/libs/plugins/modifier.date_format.php';
+<?php if ($_valid && !is_callable('content_5100512d2d9b94_11776738')) {function content_5100512d2d9b94_11776738($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_date_format')) include '/Users/fredbradley/Sites/smarty_site/libs/plugins/modifier.date_format.php';
 ?><?php echo $_smarty_tpl->getSubTemplate ("admin_head.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array('title'=>"Home"), 0);?>
   
 
@@ -69,10 +70,17 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 				</noscript>
 				<?php echo $_smarty_tpl->getSubTemplate ("admin_notification.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
-			
-				<div class="g_12">
-					<span class="label">"Whoogle" - a term coined by <a target="_blank" href="http://www.twitter.com/tobydolier" id="btBottom" title="Tweet Tobes">Toby D'Olier</a> - is a search engine and administration panel for the "Who's On Heart" competition on the Heart Network. <br /><br />This product is developed <a id="btRight" href="http://www.fredbradley.me/portfolio/whos-on-heart?utm_source=hosting&utm_medium=sitebuilder&utm_term=whoogle&utm_content=whoogle&utm_campaign=sitebuilder" title="Visit Fred's Site">Fred Bradley</a>.</span>
+				<div class="g_6">
+					<div class="widget_header">
+						<h4 class="widget_header_title">Most Guessed Celeb</h4>
+					</div>
+					<div class="widget_contents noPadding">
+						<center><img src="<?php echo $_smarty_tpl->tpl_vars['topceleb']->value;?>
+" class="g_12" style="text-align:center;margin:auto;width:auto;max-height:200px;" /></center>
+					</div>
 				</div>
+				<div class="g_6"></div>
+				<div class="g_12 separator"><span></span></div>
 			<!-- Quick Statistics -->
 				<div class="g_3 quick_stats">
 					<div class="big_stats visitor_stats">
@@ -132,13 +140,28 @@ $_smarty_tpl->tpl_vars['recent']->_loop = true;
 				</div>
 				<span class="label">* If one celebrity has been guessed more than once in 24 hours it will only show in this list once!</span>
 			</div>
-		
+			<div class="g_12">
+				<div class="widget_header">
+					<h4 class="widget_header_title wwIcon i_16_chats">Useful Stats</h4>
+				</div>
+				<div class="widget_contents">
+					<div class="tab-content default-tab">
+						<p><strong>Unique User Submits:</strong> <?php echo (($tmp = @$_smarty_tpl->tpl_vars['stats']->value['guesssubmits'])===null||$tmp==='' ? "Database Currently Too Big To Compute" : $tmp);?>
+</p>
+						<p><strong>Most Guessed Name:</strong> <?php echo $_smarty_tpl->tpl_vars['stats']->value['mostguessed'];?>
+</p>
+						<p><strong>Next Game play:</strong> <?php echo $_smarty_tpl->tpl_vars['stats']->value['nextplay'];?>
+</p>
+						<p><a href="#databasebackup" rel="modal"><strong>Backup Database</strong></a></p>
+					</div> <!-- End #tab3 -->        					
+				</div> <!-- End .content-box-content -->
+			</div> <!-- End .content-box -->
 		</div>		
 	</div>
 </div>
 	
-		
-			
+<img src="<?php echo $_smarty_tpl->tpl_vars['topceleb']->value;?>
+" />		
 <?php echo $_smarty_tpl->getSubTemplate ("admin_bottom.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 <?php }} ?>

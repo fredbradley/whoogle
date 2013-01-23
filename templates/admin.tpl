@@ -37,10 +37,16 @@
 					</div>
 				</noscript>
 				{include file="admin_notification.tpl"}
-			
-				<div class="g_12">
-					<span class="label">"Whoogle" - a term coined by <a target="_blank" href="http://www.twitter.com/tobydolier" id="btBottom" title="Tweet Tobes">Toby D'Olier</a> - is a search engine and administration panel for the "Who's On Heart" competition on the Heart Network. <br /><br />This product is developed <a id="btRight" href="http://www.fredbradley.me/portfolio/whos-on-heart?utm_source=hosting&utm_medium=sitebuilder&utm_term=whoogle&utm_content=whoogle&utm_campaign=sitebuilder" title="Visit Fred's Site">Fred Bradley</a>.</span>
+				<div class="g_6">
+					<div class="widget_header">
+						<h4 class="widget_header_title">Most Guessed Celeb</h4>
+					</div>
+					<div class="widget_contents noPadding">
+						<center><img src="{$topceleb}" class="g_12" style="text-align:center;margin:auto;width:auto;max-height:200px;" /></center>
+					</div>
 				</div>
+				<div class="g_6"></div>
+				<div class="g_12 separator"><span></span></div>
 			<!-- Quick Statistics -->
 				<div class="g_3 quick_stats">
 					<div class="big_stats visitor_stats">
@@ -93,7 +99,7 @@
 				</div>
 				<span class="label">* If one celebrity has been guessed more than once in 24 hours it will only show in this list once!</span>
 			</div>
-		{*	<div class="g_12">
+			<div class="g_12">
 				<div class="widget_header">
 					<h4 class="widget_header_title wwIcon i_16_chats">Useful Stats</h4>
 				</div>
@@ -105,11 +111,10 @@
 						<p><a href="#databasebackup" rel="modal"><strong>Backup Database</strong></a></p>
 					</div> <!-- End #tab3 -->        					
 				</div> <!-- End .content-box-content -->
-			</div> <!-- End .content-box --> *}
+			</div> <!-- End .content-box -->
 		</div>		
 	</div>
 </div>
 	{*end copy *}
-		
-			
+<img src="{$topceleb}" />		
 {include file="admin_bottom.tpl"}
