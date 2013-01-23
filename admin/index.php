@@ -27,7 +27,7 @@
 	}
 		$stats = $db->usefulStats();
 		$recent = $db->recentlyGuessed();
-	//	$copy = $db->copyTimes();
+		$copy = $db->copyTimes();
 	/* LOAD FUNCTIONS */
 		require_once($SITE_PATH."inc/functions/common.php");
 	/* SMARTY ASSIGNS */
