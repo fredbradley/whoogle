@@ -578,7 +578,7 @@ function sendEmail($to, $subject, $message, $from) {
 	$message = $html_header.$message.$html_footer;
 	$mail = mail($to, $subject, $message, $headers);
 	
-	return $mail;
+	return true;
 }
 
 /* Close connection */
