@@ -576,7 +576,9 @@ function sendEmail($to, $subject, $message, $from) {
 	$html_footer = "<p>Copyright &copy; Fred Bradley</p></body></html>";
 	
 	$message = $html_header.$message.$html_footer;
-return mail($to, $subject, $message, $headers);
+	$mail = mail($to, $subject, $message, $headers);
+	
+	return $mail;
 }
 
 /* Close connection */
