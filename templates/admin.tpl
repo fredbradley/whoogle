@@ -41,12 +41,10 @@
 					<div class="widget_header">
 						<h4 class="widget_header_title">Most Guessed Celeb</h4>
 					</div>
-					<div class="widget_contents noPadding">
-						<center><img src="{$topceleb}" class="g_12" style="text-align:center;margin:auto;width:auto;max-height:200px;" /></center>
+					<div class="widget_contents noPadding" style="background:url({$topceleb}) center center no-repeat;height:250px;">
 					</div>
 				</div>
-				<div class="g_6"></div>
-				<div class="g_12 separator"><span></span></div>
+			<!--	<div class="g_12 separator"><span></span></div> -->
 			<!-- Quick Statistics -->
 				<div class="g_3 quick_stats">
 					<div class="big_stats visitor_stats">
@@ -99,7 +97,7 @@
 				</div>
 				<span class="label">* If one celebrity has been guessed more than once in 24 hours it will only show in this list once!</span>
 			</div>
-			<div class="g_12">
+{*			<div class="g_12">
 				<div class="widget_header">
 					<h4 class="widget_header_title wwIcon i_16_chats">Useful Stats</h4>
 				</div>
@@ -111,10 +109,9 @@
 						<p><a href="#databasebackup" rel="modal"><strong>Backup Database</strong></a></p>
 					</div> <!-- End #tab3 -->        					
 				</div> <!-- End .content-box-content -->
-			</div> <!-- End .content-box -->
+			</div> <!-- End .content-box --> *}
 		</div>		
 	</div>
 </div>
 	{*end copy *}
-<img src="{$topceleb}" />		
 {include file="admin_bottom.tpl"}

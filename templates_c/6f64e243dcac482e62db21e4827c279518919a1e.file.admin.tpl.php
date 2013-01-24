@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2013-01-23 21:07:57
+<?php /* Smarty version Smarty-3.1.8, created on 2013-01-24 07:26:16
          compiled from "/Users/fredbradley/Sites/smarty_site/whoogle/templates/admin.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:8056772525100512d264179-01325975%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:131082795100e218943a48-30687823%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '6f64e243dcac482e62db21e4827c279518919a1e' => 
     array (
       0 => '/Users/fredbradley/Sites/smarty_site/whoogle/templates/admin.tpl',
-      1 => 1358975254,
+      1 => 1359012374,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '8056772525100512d264179-01325975',
+  'nocache_hash' => '131082795100e218943a48-30687823',
   'function' => 
   array (
   ),
@@ -25,9 +25,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.8',
-  'unifunc' => 'content_5100512d2d9b94_11776738',
+  'unifunc' => 'content_5100e2189be1a5_38284290',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5100512d2d9b94_11776738')) {function content_5100512d2d9b94_11776738($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_date_format')) include '/Users/fredbradley/Sites/smarty_site/libs/plugins/modifier.date_format.php';
+<?php if ($_valid && !is_callable('content_5100e2189be1a5_38284290')) {function content_5100e2189be1a5_38284290($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_date_format')) include '/Users/fredbradley/Sites/smarty_site/libs/plugins/modifier.date_format.php';
 ?><?php echo $_smarty_tpl->getSubTemplate ("admin_head.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array('title'=>"Home"), 0);?>
   
 
@@ -74,13 +74,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 					<div class="widget_header">
 						<h4 class="widget_header_title">Most Guessed Celeb</h4>
 					</div>
-					<div class="widget_contents noPadding">
-						<center><img src="<?php echo $_smarty_tpl->tpl_vars['topceleb']->value;?>
-" class="g_12" style="text-align:center;margin:auto;width:auto;max-height:200px;" /></center>
+					<div class="widget_contents noPadding" style="background:url(<?php echo $_smarty_tpl->tpl_vars['topceleb']->value;?>
+) center center no-repeat;height:250px;">
 					</div>
 				</div>
-				<div class="g_6"></div>
-				<div class="g_12 separator"><span></span></div>
+			<!--	<div class="g_12 separator"><span></span></div> -->
 			<!-- Quick Statistics -->
 				<div class="g_3 quick_stats">
 					<div class="big_stats visitor_stats">
@@ -140,28 +138,11 @@ $_smarty_tpl->tpl_vars['recent']->_loop = true;
 				</div>
 				<span class="label">* If one celebrity has been guessed more than once in 24 hours it will only show in this list once!</span>
 			</div>
-			<div class="g_12">
-				<div class="widget_header">
-					<h4 class="widget_header_title wwIcon i_16_chats">Useful Stats</h4>
-				</div>
-				<div class="widget_contents">
-					<div class="tab-content default-tab">
-						<p><strong>Unique User Submits:</strong> <?php echo (($tmp = @$_smarty_tpl->tpl_vars['stats']->value['guesssubmits'])===null||$tmp==='' ? "Database Currently Too Big To Compute" : $tmp);?>
-</p>
-						<p><strong>Most Guessed Name:</strong> <?php echo $_smarty_tpl->tpl_vars['stats']->value['mostguessed'];?>
-</p>
-						<p><strong>Next Game play:</strong> <?php echo $_smarty_tpl->tpl_vars['stats']->value['nextplay'];?>
-</p>
-						<p><a href="#databasebackup" rel="modal"><strong>Backup Database</strong></a></p>
-					</div> <!-- End #tab3 -->        					
-				</div> <!-- End .content-box-content -->
-			</div> <!-- End .content-box -->
+
 		</div>		
 	</div>
 </div>
 	
-<img src="<?php echo $_smarty_tpl->tpl_vars['topceleb']->value;?>
-" />		
 <?php echo $_smarty_tpl->getSubTemplate ("admin_bottom.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 <?php }} ?>
