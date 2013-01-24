@@ -92,6 +92,7 @@
 					$smarty->assign('answers', $answers);
 					$sendemail = $db->sendEmail('fredbradley@me.com', 'Special Email from Whoogle', 'This is my important message', 'no-reply@whoogle.com');
 					echo $sendemail;
+					$send = mail('fredbradley@me.com', 'Not working?', 'What about this?');
 					$smarty->display('admin.tpl');
 					break;
 			}
