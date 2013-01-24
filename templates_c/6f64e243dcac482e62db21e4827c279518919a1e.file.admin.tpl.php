@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2013-01-24 07:38:42
+<?php /* Smarty version Smarty-3.1.8, created on 2013-01-24 20:39:41
          compiled from "/Users/fredbradley/Sites/smarty_site/whoogle/templates/admin.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:13456203275100e5023b6535-89711305%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:111204868751019c0d933be6-11035935%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '6f64e243dcac482e62db21e4827c279518919a1e' => 
     array (
       0 => '/Users/fredbradley/Sites/smarty_site/whoogle/templates/admin.tpl',
-      1 => 1359012374,
+      1 => 1359044601,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '13456203275100e5023b6535-89711305',
+  'nocache_hash' => '111204868751019c0d933be6-11035935',
   'function' => 
   array (
   ),
@@ -25,9 +25,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.8',
-  'unifunc' => 'content_5100e50242cea4_32264280',
+  'unifunc' => 'content_51019c0dc0e0a3_78492181',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5100e50242cea4_32264280')) {function content_5100e50242cea4_32264280($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_date_format')) include '/Users/fredbradley/Sites/smarty_site/libs/plugins/modifier.date_format.php';
+<?php if ($_valid && !is_callable('content_51019c0dc0e0a3_78492181')) {function content_51019c0dc0e0a3_78492181($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_date_format')) include '/Users/fredbradley/Sites/smarty_site/libs/plugins/modifier.date_format.php';
 ?><?php echo $_smarty_tpl->getSubTemplate ("admin_head.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array('title'=>"Home"), 0);?>
   
 
@@ -115,6 +115,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 					<h4 class="widget_header_title wwIcon i_16_tables">Guesses in the last 24 hours *</h4>
 				</div>
 				<div class="widget_contents noPadding">
+<?php if (count($_smarty_tpl->tpl_vars['recentguesses']->value)>0){?>
 				<table class="tables">
 						<tbody>
 				<?php  $_smarty_tpl->tpl_vars['recent'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['recent']->_loop = false;
@@ -135,9 +136,12 @@ $_smarty_tpl->tpl_vars['recent']->_loop = true;
 				<?php } ?>
 					</tbody>
 				</table>
+<?php }else{ ?>
+<p class="alert">No Guessed made in the last 24 hours! (Is it Sunday or Monday?)</p>
 				</div>
 				<span class="label">* If one celebrity has been guessed more than once in 24 hours it will only show in this list once!</span>
 			</div>
+<?php }?>
 
 		</div>		
 	</div>

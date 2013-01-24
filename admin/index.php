@@ -86,11 +86,12 @@
 					include_once 'inc/bugreport.php';
 					 /* Get Most Guessed Celeb Portrait */
 				        $stats_mostguessed = $stats['mostguessed'];
-				//	$stats_mostguessed = $_GET['celeb'];
 				        $portraitphoto = $db->getCelebPhoto($stats_mostguessed);
 					$smarty->assign('topceleb', $portraitphoto);
 					$answers = $db->getConfig();
 					$smarty->assign('answers', $answers);
+					$sendemail = $db->sendEmail('fredbradley@me.com', 'Special Email from Whoogle', 'This is my important message', 'no-reply@whoogle.com');
+					echo $sendemail;
 					$smarty->display('admin.tpl');
 					break;
 			}

@@ -77,6 +77,7 @@
 					<h4 class="widget_header_title wwIcon i_16_tables">Guesses in the last 24 hours *</h4>
 				</div>
 				<div class="widget_contents noPadding">
+{if  $recentguesses|@count gt 0}
 				<table class="tables">
 	{*				<thead>
 					<tr>
@@ -94,9 +95,12 @@
 				{/foreach}
 					</tbody>
 				</table>
+{else}
+<p class="alert">No Guessed made in the last 24 hours! (Is it Sunday or Monday?)</p>
 				</div>
 				<span class="label">* If one celebrity has been guessed more than once in 24 hours it will only show in this list once!</span>
 			</div>
+{/if}
 {*			<div class="g_12">
 				<div class="widget_header">
 					<h4 class="widget_header_title wwIcon i_16_chats">Useful Stats</h4>

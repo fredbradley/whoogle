@@ -539,7 +539,6 @@ function copyTimes() {
 	}		
 }
 
-
 function getCelebPhoto($celeb) {
 	$celeb = urlencode($celeb);
         $url = "https://ajax.googleapis.com/ajax/services/search/images?v=1.0&q=".$celeb;
@@ -562,6 +561,22 @@ function getCelebPhoto($celeb) {
         $url = $image->url;
 
 return $url;
+}
+
+
+function sendEmail($to, $subject, $message, $from) {
+	$headers = "From: "	. strip_tags($from) . "\r\n";
+	$headers .= "Reply-To: ". strip_tags($from) . "\r\n";
+	$headers .= "MIME-Version: 1.0\r\n";
+	$headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+
+	$html_header = "<html><body>";
+	$html_header .= '<img src="http://css-tricks.com/examples/WebsiteChangeRequestForm/images/wcrf-header.png" alt="Website Change Request" />';
+	
+	$html_footer = "<p>Copyright &copy; Fred Bradley</p></body></html>";
+	
+	$message = $html_header.$message.$html_footer;
+return mail($to, $subject, $message, $headers);
 }
 
 /* Close connection */
