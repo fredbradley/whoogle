@@ -74,6 +74,9 @@
 	<!-- Top Panel -->
 	<div class="top_panel">
 		<div class="wrapper">
+			<div class="user">
+				<span class="label">{$greeting} {$user.first_name}!</span>
+			</div>
 			<div class="top_links">
 				<ul>
 {*					<li class="i_22_search search_icon">
@@ -151,8 +154,6 @@
 				{*<a href="#" Title="Kanrisha Home">
 					<img src="/assets/images/TalentCow/daisy.png" alt="Talent Cow Logo">
 				</a> *}
-					<h2>Welcome {$user.first_name}</h2>
-			<p id="page-intro">Welcome to the updated 'Whoogle'!</p>
 			</div>
 		</div>
 	</header>

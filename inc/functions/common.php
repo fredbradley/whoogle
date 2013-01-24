@@ -1,4 +1,11 @@
 <?php
+$greetings = array('Hello', 'Hi', 'Welcome', 'Yo', 'Sup', 'Yellow', 'Bonjour', 'Hola');
+shuffle($greetings);
+$smarty->assign('greeting', $greetings[0]);
+
+
+
+
 function getMsg($type, $content) {
 	$output = "<div class=\"notification ".$type;
 	if ($type == 'attention') {

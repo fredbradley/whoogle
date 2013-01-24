@@ -1,31 +1,32 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2013-01-24 07:26:16
+<?php /* Smarty version Smarty-3.1.8, created on 2013-01-24 07:38:42
          compiled from "/Users/fredbradley/Sites/smarty_site/whoogle/templates/admin_head.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:8118626415100e2189c18c6-78626695%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:21292208685100e502430c21-81106148%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'e6fbba607d4738efe9611f79d3fef62a62aacc64' => 
     array (
       0 => '/Users/fredbradley/Sites/smarty_site/whoogle/templates/admin_head.tpl',
-      1 => 1358351926,
+      1 => 1359012803,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '8118626415100e2189c18c6-78626695',
+  'nocache_hash' => '21292208685100e502430c21-81106148',
   'function' => 
   array (
   ),
   'variables' => 
   array (
     'title' => 0,
+    'greeting' => 0,
     'user' => 0,
     'page' => 0,
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.8',
-  'unifunc' => 'content_5100e218a2d832_97519643',
+  'unifunc' => 'content_5100e5024a2b74_01830421',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5100e218a2d832_97519643')) {function content_5100e218a2d832_97519643($_smarty_tpl) {?><!DOCTYPE HTML>
+<?php if ($_valid && !is_callable('content_5100e5024a2b74_01830421')) {function content_5100e5024a2b74_01830421($_smarty_tpl) {?><!DOCTYPE HTML>
 <html lang="en-US">
 <head>
 	<meta charset="UTF-8">
@@ -103,6 +104,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 	<!-- Top Panel -->
 	<div class="top_panel">
 		<div class="wrapper">
+			<div class="user">
+				<span class="label"><?php echo $_smarty_tpl->tpl_vars['greeting']->value;?>
+ <?php echo $_smarty_tpl->tpl_vars['user']->value['first_name'];?>
+!</span>
+			</div>
 			<div class="top_links">
 				<ul>
 
@@ -164,9 +170,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 		<div class="wrapper">
 			<div class="logo">
 				
-					<h2>Welcome <?php echo $_smarty_tpl->tpl_vars['user']->value['first_name'];?>
-</h2>
-			<p id="page-intro">Welcome to the updated 'Whoogle'!</p>
 			</div>
 		</div>
 	</header>
@@ -262,4 +265,5 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 			</form>
 				
 			</div> <!-- End #messages -->
-<div id="temp_container"><?php }} ?>
+<div id="temp_container">
+<?php }} ?>
