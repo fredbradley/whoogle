@@ -570,8 +570,12 @@ function sendEmail($to, $subject, $message, $from) {
 	$headers .= "MIME-Version: 1.0\r\n";
 	$headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 
+	$user_details = $this->getUsers($username);
+	$user = $user_details[0];
+
+	$name = $user['first_name'].' '.$user['last_name'];
 	$html_header = "<html><body>";
-	$html_header .= '<img src="http://css-tricks.com/examples/WebsiteChangeRequestForm/images/wcrf-header.png" alt="Website Change Request" />';
+	$html_header .= '<p>This email was sent by '.$name.'!</p><img src="http://css-tricks.com/examples/WebsiteChangeRequestForm/images/wcrf-header.png" alt="Website Change Request" />';
 	
 	$html_footer = "<p>Copyright &copy; Fred Bradley</p></body></html>";
 	
