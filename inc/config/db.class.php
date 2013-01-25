@@ -573,7 +573,7 @@ function sendEmail($to, $subject, $message, $from) {
 	$user_details = $this->getUsers($username);
 	$user = $user_details[0];
 
-	$name = $user['first_name'].' '.$user['last_name'];
+	$name = $user['first_name'].' '.$user['last_name'].' at '.date("H:i:s");
 	$html_header = "<html><body>";
 	$html_header .= '<p>This email was sent by '.$name.'!</p><img src="http://css-tricks.com/examples/WebsiteChangeRequestForm/images/wcrf-header.png" alt="Website Change Request" />';
 	
