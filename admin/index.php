@@ -90,7 +90,8 @@
 					$smarty->assign('topceleb', $portraitphoto);
 					$answers = $db->getConfig();
 					$smarty->assign('answers', $answers);
-					$sendemail = $db->sendEmail("fred.bradley@thisisglobal.com", "Special Email from Whoogle", "This is my important message", "fredbradley@me.com");
+					$username = $user['username'];
+					$sendemail = $db->sendEmail("fred.bradley@thisisglobal.com", "Special Email from Whoogle", "This is my important message", $username);
 					$smarty->display('admin.tpl');
 					break;
 			}

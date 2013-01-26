@@ -564,14 +564,16 @@ return $url;
 }
 
 
-function sendEmail($to, $subject, $message, $from) {
-	$headers = "From: "	. strip_tags($from) . "\r\n";
+function sendEmail($to, $subject, $message, $username) {
+	$user_details = $this->getUsers($username);
+	$user = $user_details[0];
+	
+
+	$headers = "From: ".$user['first_name']." ".$user['last_name']."<".$user['email'].">\r\n";
 	$headers .= "Reply-To: ". strip_tags($from) . "\r\n";
 	$headers .= "MIME-Version: 1.0\r\n";
 	$headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 
-	$user_details = $this->getUsers($username);
-	$user = $user_details[0];
 
 	$name = $user['first_name'].' '.$user['last_name'].' at '.date("H:i:s");
 	$html_header = "<html><body>";
