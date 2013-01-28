@@ -141,7 +141,7 @@
                                                                 <tr>
                                                                         <td><a href="/admin/guesses/edit/{$fuckup.id}">{$fuckup.cname|ucwords}</a></td>
                                                                         <td>{$fuckup.timesguessed}</td>
-                                                                        <td>{$fuckup.lastguessed} ({$fuckup.lastguessed|date_format:'%a, %b %e, %I%:%M %p'})</td>
+                                                                        <td>{$fuckup.lastguessed} ({$fuckup.lastguessed|date_format:'%a, %b %e, %I:%M %p'})</td>
                                                                 </tr>
                                                 {/foreach}
                                                         </tbody>
