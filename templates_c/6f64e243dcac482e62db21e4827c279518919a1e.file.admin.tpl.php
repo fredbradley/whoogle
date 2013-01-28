@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2013-01-26 12:52:57
+<?php /* Smarty version Smarty-3.1.8, created on 2013-01-28 21:17:04
          compiled from "/Users/fredbradley/Sites/smarty_site/whoogle/templates/admin.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:19792174555103d1a9c913f9-32931894%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:13736658365106ead0cf51c5-85992336%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '6f64e243dcac482e62db21e4827c279518919a1e' => 
     array (
       0 => '/Users/fredbradley/Sites/smarty_site/whoogle/templates/admin.tpl',
-      1 => 1359044601,
+      1 => 1359407788,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '19792174555103d1a9c913f9-32931894',
+  'nocache_hash' => '13736658365106ead0cf51c5-85992336',
   'function' => 
   array (
   ),
@@ -22,12 +22,16 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'stats' => 0,
     'recentguesses' => 0,
     'recent' => 0,
+    'mostguessed' => 0,
+    'guess' => 0,
+    'fuckups' => 0,
+    'fuckup' => 0,
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.8',
-  'unifunc' => 'content_5103d1a9e0ab09_22913026',
+  'unifunc' => 'content_5106ead0db5394_43895484',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5103d1a9e0ab09_22913026')) {function content_5103d1a9e0ab09_22913026($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_date_format')) include '/Users/fredbradley/Sites/smarty_site/libs/plugins/modifier.date_format.php';
+<?php if ($_valid && !is_callable('content_5106ead0db5394_43895484')) {function content_5106ead0db5394_43895484($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_date_format')) include '/Users/fredbradley/Sites/smarty_site/libs/plugins/modifier.date_format.php';
 ?><?php echo $_smarty_tpl->getSubTemplate ("admin_head.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array('title'=>"Home"), 0);?>
   
 
@@ -72,7 +76,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 
 				<div class="g_6">
 					<div class="widget_header">
-						<h4 class="widget_header_title">Most Guessed Celeb</h4>
+						<h4 class="widget_header_title">Most Guessed Celebrity</h4>
 					</div>
 					<div class="widget_contents noPadding" style="background:url(<?php echo $_smarty_tpl->tpl_vars['topceleb']->value;?>
 ) center center no-repeat;height:250px;">
@@ -88,6 +92,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 					<h5 class="stats_info">Celebrities</h5>
 				</div>
 				<div class="g_3 quick_stats">
+					<div class="big_stats orders_stats">
+						<?php echo $_smarty_tpl->tpl_vars['stats']->value['numrounds'];?>
+
+					</div>
+					<h5 class="stats_info">Rounds Played</h5>
+				</div>
+				<div class="g_3 quick_stats">
 					<div class="big_stats tickets_stats">
 						<?php echo $_smarty_tpl->tpl_vars['stats']->value['guessattempts'];?>
 
@@ -101,23 +112,20 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 					</div>
 					<h5 class="stats_info">Guesses In Last Hour</h5>
 				</div>
-				<div class="g_3 quick_stats">
-					<div class="big_stats orders_stats">
-						<?php echo $_smarty_tpl->tpl_vars['stats']->value['numrounds'];?>
-
-					</div>
-					<h5 class="stats_info">Rounds Played</h5>
-				</div>
 			</div>
 			<div class="g_12 separator under_stat"><span></span></div>
-			<div class="g_12">
-				<div class="widget_header">
-					<h4 class="widget_header_title wwIcon i_16_tables">Guesses in the last 24 hours *</h4>
+			<div class="g_12" id="table_wTabs">
+				<div class="widget_header wwOptions">
+					<h4 class="widget_header_title wwIcon i_16_tables">Recent and Most Guessed</h4>
+					<ul class="w_Tabs">
+						<li><a href="#table_wTabs-2" title="Recently Guessed">Recent Guesses</a></li>
+						<li><a href="#table_wTabs-1" title="Most Guessed">Most Guessed</a></li>
+					</ul>
 				</div>
 				<div class="widget_contents noPadding">
-<?php if (count($_smarty_tpl->tpl_vars['recentguesses']->value)>0){?>
-				<table class="tables">
-						<tbody>
+				<table class="tables" id="table_wTabs-2">
+					<tbody>
+	<?php if (count($_smarty_tpl->tpl_vars['recentguesses']->value)>0){?>
 				<?php  $_smarty_tpl->tpl_vars['recent'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['recent']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['recentguesses']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 foreach ($_from as $_smarty_tpl->tpl_vars['recent']->key => $_smarty_tpl->tpl_vars['recent']->value){
@@ -134,15 +142,87 @@ $_smarty_tpl->tpl_vars['recent']->_loop = true;
 </td>
 					</tr>
 				<?php } ?>
-					</tbody>
-				</table>
-<?php }else{ ?>
-<p class="alert">No Guessed made in the last 24 hours! (Is it Sunday or Monday?)</p>
+	<?php }else{ ?><tr>
+		<td class="alert">No Guesses made in the last 24 hours! (Is it Sunday or Monday?)</td></tr>
+	<?php }?>
+	</tbody>
+</table>
+<table class="tables" id="table_wTabs-1">
+	<tbody>
+		<?php  $_smarty_tpl->tpl_vars['guess'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['guess']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['mostguessed']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['guess']->key => $_smarty_tpl->tpl_vars['guess']->value){
+$_smarty_tpl->tpl_vars['guess']->_loop = true;
+?>
+		<tr>
+			<td><a href="/admin/guesses/edit/<?php echo $_smarty_tpl->tpl_vars['guess']->value['id'];?>
+"><?php echo ucwords($_smarty_tpl->tpl_vars['guess']->value['cname']);?>
+</a></td>
+			<td><?php echo $_smarty_tpl->tpl_vars['guess']->value['timesguessed'];?>
+</td>
+			<td><?php echo smarty_modifier_date_format($_smarty_tpl->tpl_vars['guess']->value['lastguessed'],'%A, %B %e, %I:%M %p');?>
+</td>
+		</tr>
+		<?php } ?>
+	</tbody>
+</table>
+	
 				</div>
-				<span class="label">* If one celebrity has been guessed more than once in 24 hours it will only show in this list once!</span>
+				
 			</div>
-<?php }?>
+			<div class="g_12 separator"><span></span></div>
+			
+			<?php if ($_SESSION['user']['username']=="toby"||$_SESSION['user']['username']=="toby.dolier"||$_SESSION['user']['username']=="fredbradley"){?>
+			<div class="g_12">
+					<div class="widget_header"><h4 class="wwIcon i_16_tables widget_header_title">All Guesses with Timestamps (That's <?php echo count($_smarty_tpl->tpl_vars['fuckups']->value);?>
+) (<?php ob_start();?><?php echo count($_smarty_tpl->tpl_vars['fuckups']->value);?>
+<?php $_tmp2=ob_get_clean();?><?php ob_start();?><?php echo $_smarty_tpl->tpl_vars['stats']->value['numguesses'];?>
+<?php $_tmp3=ob_get_clean();?><?php echo $_tmp2-$_tmp3;?>
+ records were edited, but no guesses inputted)</h4></div>
+					<div class="widget_contents">
+ 						<table class="datatable tables">
 
+                                                        <thead>
+                                                                <tr>
+                                                                   <th>Celebrity</th>
+                                                                   <th>Amount of Times Guessed (On record)</th>
+                                                                   <th>Time of Last Edited</th>
+                                                                </tr>
+
+                                                        </thead>
+
+                                                        <tfoot>
+                                                                <tr>
+                                                                        <td colspan="5">
+
+                                                                                <div class="clear"></div>
+                                                                        </td>
+                                                                </tr>
+                                                        </tfoot>
+                                                        <tbody>
+                                                <?php  $_smarty_tpl->tpl_vars['fuckup'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['fuckup']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['fuckups']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['fuckup']->key => $_smarty_tpl->tpl_vars['fuckup']->value){
+$_smarty_tpl->tpl_vars['fuckup']->_loop = true;
+?>
+                                                                <tr>
+                                                                        <td><a href="/admin/guesses/edit/<?php echo $_smarty_tpl->tpl_vars['fuckup']->value['id'];?>
+"><?php echo ucwords($_smarty_tpl->tpl_vars['fuckup']->value['cname']);?>
+</a></td>
+                                                                        <td><?php echo $_smarty_tpl->tpl_vars['fuckup']->value['timesguessed'];?>
+</td>
+                                                                        <td><?php echo $_smarty_tpl->tpl_vars['fuckup']->value['lastguessed'];?>
+ (<?php echo smarty_modifier_date_format($_smarty_tpl->tpl_vars['fuckup']->value['lastguessed'],'%a, %b %e, %I%:%M %p');?>
+)</td>
+                                                                </tr>
+                                                <?php } ?>
+                                                        </tbody>
+
+                                                </table>
+</div>
+                                        </div> <!-- End Content Box Content -->
+                                        <?php }?>
+			
 		</div>		
 	</div>
 </div>

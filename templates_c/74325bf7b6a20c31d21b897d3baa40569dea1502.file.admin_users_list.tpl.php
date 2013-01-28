@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2013-01-26 12:54:03
+<?php /* Smarty version Smarty-3.1.8, created on 2013-01-27 14:20:53
          compiled from "/Users/fredbradley/Sites/smarty_site/whoogle/templates/admin_users_list.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:1079724425103d1eb326160-19109323%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:1923029542510537c5680e18-75304541%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '74325bf7b6a20c31d21b897d3baa40569dea1502' => 
     array (
       0 => '/Users/fredbradley/Sites/smarty_site/whoogle/templates/admin_users_list.tpl',
-      1 => 1358351926,
+      1 => 1359207954,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '1079724425103d1eb326160-19109323',
+  'nocache_hash' => '1923029542510537c5680e18-75304541',
   'function' => 
   array (
   ),
@@ -22,9 +22,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.8',
-  'unifunc' => 'content_5103d1eb35a870_71972685',
+  'unifunc' => 'content_510537c56b2921_86952567',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5103d1eb35a870_71972685')) {function content_5103d1eb35a870_71972685($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_relative_date')) include '/Users/fredbradley/Sites/smarty_site/libs/plugins/modifier.relative_date.php';
+<?php if ($_valid && !is_callable('content_510537c56b2921_86952567')) {function content_510537c56b2921_86952567($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_relative_date')) include '/Users/fredbradley/Sites/smarty_site/libs/plugins/modifier.relative_date.php';
 ?>
 
                                 <div class="widget_contents noPadding content-box-content">
@@ -36,7 +36,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                                                                    <th>Name (Username)</th>
                                                                    <th>Email</th>
                                                                    <th>Access</th>
-                                                                   <th>Last Login</th>
+                                                                   <th>Last Active</th>
                                                                    <?php ob_start();?><?php echo $_smarty_tpl->tpl_vars['user']->value['acl'];?>
 <?php $_tmp1=ob_get_clean();?><?php if ($_tmp1=='9'){?><th>Delete</th><?php }?>
                                                                 </tr>
@@ -67,7 +67,7 @@ $_smarty_tpl->tpl_vars['user']->_loop = true;
 </td>
                                                                         <td><?php echo $_smarty_tpl->tpl_vars['user']->value['acl'];?>
 </td>
-                                                                        <td><?php echo smarty_modifier_relative_date($_smarty_tpl->tpl_vars['user']->value['last_login']);?>
+                                                                        <td><?php echo smarty_modifier_relative_date($_smarty_tpl->tpl_vars['user']->value['last_active']);?>
 </td>
                                                                         <?php ob_start();?><?php echo $_SESSION['user']['acl'];?>
 <?php $_tmp2=ob_get_clean();?><?php if ($_tmp2=='9'){?><td><a href="/admin/users/delete/<?php echo $_smarty_tpl->tpl_vars['user']->value['id'];?>

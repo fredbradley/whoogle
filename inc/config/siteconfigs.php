@@ -48,6 +48,10 @@
 				header('location: /admin/index.php?message=loggedout');
 			}
 		}
+		if (isset($_GET['timeout'])) {
+			session_destroy();
+			header('location: /admin/index.php?message=timeout');
+		}
 	/* EASY VARIABLES */
 		$user = $_SESSION['user'];
 		$fanpage = "heartlondon";

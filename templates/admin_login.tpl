@@ -101,6 +101,13 @@
 						</div>
 					</div>
 					{/if}
+										{if {$message}}
+					<div style="margin-top:5px;margin-bottom:5px;" class="notification error png_bg">
+						<div>
+							{$message}
+						</div>
+					</div>
+					{/if}
 				</div>
 				<div class="widget_header">
 					<h4 class="widget_header_title wwIcon i_16_login">Login</h4>

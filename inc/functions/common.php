@@ -24,6 +24,10 @@ function systemMsg($code) {
 		case 'Cancelled':
 			return "Abort, abort abort! No worries, we've cancelled that for you!";
 			break;
+		case 'timeout';
+			return "Your have been logged out for 'dilly-dallying'!";
+		case 'loggedout';
+			return "";
 		default:
 			return "I still have to code this bit! Was going to be a database of messages key'd on a single word, then a function to pick each message out based on keyword";
 	}

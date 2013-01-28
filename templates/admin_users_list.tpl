@@ -9,7 +9,7 @@
                                                                    <th>Name (Username)</th>
                                                                    <th>Email</th>
                                                                    <th>Access</th>
-                                                                   <th>Last Login</th>
+                                                                   <th>Last Active</th>
                                                                    {if {$user.acl}=='9'}<th>Delete</th>{/if}
                                                                 </tr>
 
@@ -29,7 +29,7 @@
                                                                         <td><a href="edit/{$user.id}">{$user.first_name} {$user.last_name} ({$user.username})</a></td>
                                                                         <td>{$user.email}</td>
                                                                         <td>{$user.acl}</td>
-                                                                        <td>{$user.last_login|relative_date}</td>
+                                                                        <td>{$user.last_active|relative_date}</td>
                                                                         {if {$smarty.session.user.acl}=='9'}<td><a href="/admin/users/delete/{$user.id}" title="Delete"><img src="/admin/resources/images/icons/cross.png" alt="Delete" /></a></td>{/if}
 
                                                                 </tr>

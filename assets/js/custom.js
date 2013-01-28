@@ -119,3 +119,28 @@ $(document).ready(function() {
         
 			
 });
+// EXAMPLE 2
+var countdownTimer, countdownCurrent = 30000;
+$(document).ready(function() {
+	countdownTimer = $.timer(function() {
+		var min = parseInt(countdownCurrent/6000);
+		var sec = parseInt(countdownCurrent/100)-(min*60);
+		var micro = pad(countdownCurrent-(sec*100)-(min*6000),2);
+		var output = "00"; if(min > 0) {output = pad(min,2);}
+		$('.countdowntime').html(output+":"+pad(sec,2)+":"+micro);
+		if(countdownCurrent == 0) {
+			countdownTimer.stop();
+			alert('Example 2: Countdown timer complete!');
+			countdownReset();
+		} else {
+			countdownCurrent-=7;
+			if(countdownCurrent < 0) {countdownCurrent=0;}
+		}
+	}, 70, true);
+	$('#countdown').bind('keyup', function(e) {if(e.keyCode == 13) {countdownReset();}});
+});
+function countdownReset() {
+	var newCount = parseInt($('input[name=startTime]').val())*100;
+	if(newCount > 0) {countdownCurrent = newCount;}
+	countdownTimer.stop().once();
+}

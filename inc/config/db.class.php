@@ -183,6 +183,7 @@ global $ROOT_PATH;
 	$update = "UPDATE ".DB_PREFIX."guesses SET ".$values." WHERE id=".$id;
 	$result = mysql_query($update);
 
+
 /* Backup not working on remote database
 	$table_name = DB_PREFIX."guesses";
 	$backup_file = "".$ROOT_PATH."database_backups/backup_guesses".date('YmdHis').".sql";
@@ -442,7 +443,7 @@ function usefulStats() {
 	$numguesses = mysql_result(mysql_query($query), 0);
 	$rounds = $numguesses / 3;
 	$output['numrounds'] = $rounds;
-	$query = "SELECT * FROM ".DB_PREFIX."guesses";
+	$query = "SELECT * FROM ".DB_PREFIX."guesses WHERE timesguessed > 0";
 	$output['numguesses'] = $this->count($query);
 	$query = "SELECT guess FROM ".DB_PREFIX."guessattempts";
 	$output['guessattempts'] = $this->count($query);
@@ -465,6 +466,16 @@ function recentlyGuessed() {
 //	$query = "SELECT `id`, `cname`, `timesguessed`, `lastguessed` FORM `".DB_PREFIX."guesses` WHERE `timesguessed` >0 AND `lastguessed` < ".$yesterday.")";
 	$query = "SELECT * FROM `woh_guesses` WHERE `timesguessed` > 0 AND `lastguessed` > $yesterday ORDER BY lastguessed DESC ";
 
+	$result = mysql_query($query) or die("Error:".mysql_error());
+	while($row = mysql_fetch_array($result)) {
+		$rows[] = $row;
+	}
+	return $rows;
+}
+
+/* Function to display top 10 most guessed. */
+function mostGuessed() {
+	$query = "SELECT * FROM ".DB_PREFIX."guesses ORDER BY timesguessed DESC LIMIT 10";
 	$result = mysql_query($query) or die("Error:".mysql_error());
 	while($row = mysql_fetch_array($result)) {
 		$rows[] = $row;
@@ -561,6 +572,18 @@ function getCelebPhoto($celeb) {
         $url = $image->url;
 
 return $url;
+}
+
+/* Function to list of all rounds with time stamps since jan 7th */ 
+function listFuckUps() {
+	$query = "SELECT * FROM ".DB_PREFIX."guesses WHERE dateguessed !=''";
+	$result = mysql_query($query);
+	while($row = mysql_fetch_array($result)) {
+		$output[] = $row;
+	}
+
+
+return $output;
 }
 
 

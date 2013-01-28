@@ -15,6 +15,10 @@
 
 	/* LOAD VARIABLES */
 		$user = $_SESSION['user'];
+		
+		$listfuckups = $db->listFuckUps();
+		$smarty->assign('fuckups', $listfuckups);
+		
 	if (isset($_GET['page'])) {
 		$page = $_GET['page'];
 	}
@@ -27,6 +31,7 @@
 	}
 		$stats = $db->usefulStats();
 		$recent = $db->recentlyGuessed();
+		$mostguessed = $db->mostGuessed();
 
 	/* Get Most Guessed Celeb Portrait */
 		$stats_mostguessed = $stats['mostguessed'];
@@ -41,24 +46,27 @@
 		$smarty->assign('stats', $stats);
 		$smarty->assign('user', $user);
 		$smarty->assign('recentguesses', $recent);
+		$smarty->assign('mostguessed', $mostguessed);
 	if (isset($page)) {
 		$smarty->assign('page', $page);
 	}
 	if (isset($_GET['action'])) {
 		$smarty->assign('action', $_GET['action']);
 	}
-		if (isset($_GET['message']))
-			$smarty->assign('message', $systemMsg);
-		if (isset($_GET['emailSent']))
-			$smarty->assign('message', "Thankyou, your email was sent!");
-		if (isset($_GET['error']))
-			$smarty->assign('message', "There was some kind of error, we're not 100% sure what happened, sorry!");
+	if (isset($_GET['message']))
+		$smarty->assign('message', $systemMsg);
+	if (isset($_GET['emailSent']))
+		$smarty->assign('message', "Thankyou, your email was sent!");
+	if (isset($_GET['error']))
+		$smarty->assign('message', "There was some kind of error, we're not 100% sure what happened, sorry!");
 
-        /* DISPLAY PAGE */
-                if (isset($_SESSION['user']['username'])) {
-                	if (isset($_GET['error']) && $_GET['error']=='404') {
-                		$smarty->display('admin_404.tpl');
-                	} else {
+/*
+ * Display The Page
+ * ***********************************/
+	if (isset($_SESSION['user']['username'])) {
+		if (isset($_GET['error']) && $_GET['error']=='404') {
+			$smarty->display('admin_404.tpl');
+		} else {
 			switch ($page) {
 				case "users": 
 					include_once 'inc/users.php';
@@ -85,8 +93,8 @@
 					include_once 'inc/answers.php';
 					include_once 'inc/bugreport.php';
 					 /* Get Most Guessed Celeb Portrait */
-				        $stats_mostguessed = $stats['mostguessed'];
-				        $portraitphoto = $db->getCelebPhoto($stats_mostguessed);
+					$stats_mostguessed = $stats['mostguessed'];
+					$portraitphoto = $db->getCelebPhoto($stats_mostguessed);
 					$smarty->assign('topceleb', $portraitphoto);
 					$answers = $db->getConfig();
 					$smarty->assign('answers', $answers);
@@ -95,12 +103,12 @@
 					$smarty->display('admin.tpl');
 					break;
 			}
-			}
-                } else {
-                        if ($_POST) {
-                                $smarty->assign('error', "Give it another go...");
-                        }
-                        $smarty->display('admin_login.tpl');
-                }
+		}
+	} else {
+		if ($_POST) {
+			$smarty->assign('error', "Give it another go...");
+		}
+		$smarty->display('admin_login.tpl');
+	}
 
 ?>

@@ -55,7 +55,83 @@
 	<!-- Color Box -->
 	<script src="/assets/javascript/ColorBox/jquery.colorbox.js"></script>
 	<!-- Kanrisha Script -->
+
 	<script src="/assets/javascript/kanrisha.js"></script>
+<script type="text/javascript">
+//
+ // This jQuery Plugin is from: http://davidwalsh.name/demo/jquery-countdown.php
+ // ***********************************/
+	$(document).ready(function() {
+			
+			/* delay function */
+			jQuery.fn.delay = function(time,func){
+				return this.each(function(){
+					setTimeout(func,time);
+				});
+			};
+			
+			
+			jQuery.fn.countDown = function(settings,to) {
+				settings = jQuery.extend({
+					startFontSize: '12px',
+					endFontSize: '12px',
+					duration: 1000,
+					startNumber: 10,
+					endNumber: 0,
+					callBack: function() { }
+				}, settings);
+				return this.each(function() {
+					
+					if(!to && to != settings.endNumber) { to = settings.startNumber; }
+					
+					//set the countdown to the starting number
+					$(this).text(to).css('fontSize',settings.startFontSize);
+					
+					//loopage
+					$(this).animate({
+						'fontSize': settings.endFontSize
+					},settings.duration,'',function() {
+						if(to > settings.endNumber + 1) {
+							$(this).css('fontSize',settings.startFontSize).text(to - 1).countDown(settings,to - 1);
+						}
+						else
+						{
+							settings.callBack(this);
+						}
+					});
+							
+				});
+			};
+			
+			$('#countdown').countDown({
+				startNumber: 900, 
+				callBack: function(me) {
+					$('#countdownresult').html('<div class=\'error g_12\' style=\'padding-right:20px;padding-left:20px;\'>You have timed out!</div>').css('class','label');
+					$('#countdown').hide().delay(3);
+					alert('Oops! I\'m afraid you have spent too long doing nothing, and for security the system has logged you out! \r\n\nIf you are in the middle of adding or editing an entry, I suggest you copy the details down then you have them when you log back in again. \r\n\n(You will not be able to save any changes!)');
+				}
+			});
+			
+		});
+	</script>
+{if $autocomplete=1}
+<script type="text/javascript">
+/* Script to use AutoComplete */
+ $(function() {
+    var availableTags = [
+    {foreach $celebs as $celeb}
+    	"{$celeb.cname|ucwords}",
+    {/foreach}
+      "Celeb Not Listed"
+    ];
+    $( ".celebslist" ).autocomplete({
+      source: availableTags
+    });
+  });
+
+
+</script>
+{/if}
 	<script type="text/javascript">
 
   var _gaq = _gaq || [];
@@ -74,8 +150,8 @@
 	<!-- Top Panel -->
 	<div class="top_panel">
 		<div class="wrapper">
-			<div class="user">
-				<span class="label">{$greeting} {$user.first_name}!</span>
+			<div class="user" id="countdownresult">
+				<span class="label">{$greeting} {$user.first_name}! You have </span><span class="label" id="countdown">1800</span><span class="label"> seconds remaining!</span>
 			</div>
 			<div class="top_links">
 				<ul>
@@ -153,7 +229,7 @@
 			<div class="logo">
 				{*<a href="#" Title="Kanrisha Home">
 					<img src="/assets/images/TalentCow/daisy.png" alt="Talent Cow Logo">
-				</a> *}
+				</a> *}				
 			</div>
 		</div>
 	</header>
@@ -239,3 +315,5 @@
 				
 			</div> <!-- End #messages -->
 <div id="temp_container">
+<div class="wrapper">
+<div id='countdownresult'></div>		</div>

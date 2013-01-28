@@ -1,0 +1,312 @@
+<html>
+<head>
+		<title>EMail</title>
+	<!--[if lt IE 9]>
+		<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<script src="http://whoogle.fredb.me/assets/javascript/Flot/excanvas.js"></script>
+	<![endif]-->
+	<!-- The Fonts -->
+	<link href="http://fonts.googleapis.com/css?family=Oswald|Droid+Sans:400,700" rel="stylesheet">
+	<!-- The Main CSS File -->
+	<link rel="stylesheet" href="http://whoogle.fredb.me/assets/css/style.css">
+	<!-- jQuery -->
+	<script src="http://whoogle.fredb.me/assets/javascript/jQuery/jquery-1.7.2.min.js"></script>
+	<!-- Flot -->
+	<script src="http://whoogle.fredb.me/assets/javascript/Flot/jquery.flot.js"></script>
+	<script src="http://whoogle.fredb.me/assets/javascript/Flot/jquery.flot.resize.js"></script>
+	<script src="http://whoogle.fredb.me/assets/javascript/Flot/jquery.flot.pie.js"></script>
+	<!-- DataTables -->
+	<script src="http://whoogle.fredb.me/assets/javascript/DataTables/jquery.dataTables.min.js"></script>
+	<!-- ColResizable -->
+	<script src="http://whoogle.fredb.me/assets/javascript/ColResizable/colResizable-1.3.js"></script>
+	<!-- jQuryUI -->
+	<script src="http://whoogle.fredb.me/assets/javascript/jQueryUI/jquery-ui-1.8.21.min.js"></script>
+	<!-- Uniform -->
+	<script src="http://whoogle.fredb.me/assets/javascript/Uniform/jquery.uniform.js"></script>
+	<!-- Tipsy -->
+	<script src="http://whoogle.fredb.me/assets/javascript/Tipsy/jquery.tipsy.js"></script>
+	<!-- Elastic -->
+	<script src="http://whoogle.fredb.me/assets/javascript/Elastic/jquery.elastic.js"></script>
+	<!-- ColorPicker -->
+	<script src="http://whoogle.fredb.me/assets/javascript/ColorPicker/colorpicker.js"></script>
+	<!-- SuperTextarea -->
+	<script src="http://whoogle.fredb.me/assets/javascript/SuperTextarea/jquery.supertextarea.min.js"></script>
+	<!-- UISpinner -->
+	<script src="http://whoogle.fredb.me/assets/javascript/UISpinner/ui.spinner.js"></script>
+	<!-- MaskedInput -->
+	<script src="http://whoogle.fredb.me/assets/javascript/MaskedInput/jquery.maskedinput-1.3.js"></script>
+	<!-- ClEditor -->
+	<script src="http://whoogle.fredb.me/assets/javascript/ClEditor/jquery.cleditor.js"></script>
+	<!-- Full Calendar -->
+	<script src="http://whoogle.fredb.me/assets/javascript/FullCalendar/fullcalendar.js"></script>
+	<!-- Color Box -->
+	<script src="http://whoogle.fredb.me/assets/javascript/ColorBox/jquery.colorbox.js"></script>
+	<!-- Kanrisha Script -->
+
+	<script src="http://whoogle.fredb.me/assets/javascript/kanrisha.js"></script>
+<script type="text/javascript">
+//
+ // This jQuery Plugin is from: http://davidwalsh.name/demo/jquery-countdown.php
+ // ***********************************/
+	$(document).ready(function() {
+			
+			/* delay function */
+			jQuery.fn.delay = function(time,func){
+				return this.each(function(){
+					setTimeout(func,time);
+				});
+			};
+			
+			
+			jQuery.fn.countDown = function(settings,to) {
+				settings = jQuery.extend({
+					startFontSize: '12px',
+					endFontSize: '12px',
+					duration: 1000,
+					startNumber: 10,
+					endNumber: 0,
+					callBack: function() { }
+				}, settings);
+				return this.each(function() {
+					
+					if(!to && to != settings.endNumber) { to = settings.startNumber; }
+					
+					//set the countdown to the starting number
+					$(this).text(to).css('fontSize',settings.startFontSize);
+					
+					//loopage
+					$(this).animate({
+						'fontSize': settings.endFontSize
+					},settings.duration,'',function() {
+						if(to > settings.endNumber + 1) {
+							$(this).css('fontSize',settings.startFontSize).text(to - 1).countDown(settings,to - 1);
+						}
+						else
+						{
+							settings.callBack(this);
+						}
+					});
+							
+				});
+			};
+			
+			$('#countdown').countDown({
+				startNumber: 900, 
+				callBack: function(me) {
+					$('#countdownresult').html('<div class=\'error g_12\' style=\'padding-right:20px;padding-left:20px;\'>You have timed out!</div>').css('class','label');
+					$('#countdown').hide().delay(3);
+					alert('Oops! I\'m afraid you have spent too long doing nothing, and for security the system has logged you out! \r\n\nIf you are in the middle of adding or editing an entry, I suggest you copy the details down then you have them when you log back in again. \r\n\n(You will not be able to save any changes!)');
+				}
+			});
+			
+		});
+	</script>
+<script type="text/javascript">
+/* Script to use AutoComplete */
+ $(function() {
+    var availableTags = [
+          "Celeb Not Listed"
+    ];
+    $( ".celebslist" ).autocomplete({
+      source: availableTags
+    });
+  });
+
+
+</script>
+	<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-24018806-11']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</head>
+
+	<!-- Top Panel -->
+	<div class="top_panel">
+		<div class="wrapper">
+			<div class="user" id="countdownresult">
+				<span class="label">You are receiving this email because you are an admin of &quot;Whoogle&quot;!</span>
+			</div>
+			<div class="top_links">
+				<ul>				
+					<li class="i_22_pages">
+						<a href="http://whoogle.fredb.me/admin/" title="Log In">
+							<span class="label">Visit Whoogle!</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="wrapper contents_wrapper">
+		<aside class="sidebar"></aside>
+<div id="temp_container">
+
+<body>	
+	<div class="contents">
+		<div class="grid_wrapper">
+			<div class="g_6 contents_header">
+				<h3 class="i_16_dashboard tab_label">!!TITLE!!</h3>
+				<div><span class="label">!!DESCRIPTION!!</span></div>
+			</div>
+			<div class="g_12 separator"><span></span></div>
+			<div class="g_12">
+				<p class="label">Hello! Here is an important update from &quot;Whoogle&quot;, the database that runs the Who's On Heart competition across the Heart Network!</p>
+			</div>
+			<div class="g_12">
+				<noscript> <!-- Show a notification if the user has disabled javascript -->
+					<div class="notification error png_bg">
+						<div>Javascript is disabled or is not supported by your browser. Please <a href="http://browsehappy.com/" title="Upgrade to a better browser">upgrade</a> your browser or <a href="http://www.google.com/support/bin/answer.py?answer=23852" title="Enable Javascript in your browser">enable</a> Javascript to navigate the interface properly.</div>
+					</div>
+				</noscript>
+				
+
+				<div class="g_6">
+					<div class="widget_header">
+						<h4 class="widget_header_title">Most Guessed Celebrity</h4>
+					</div>
+					<div class="widget_contents noPadding" style="background:url(http://www.starscolor.com/images/jo-brand-01.jpg) center center no-repeat;height:250px;">
+					</div>
+				</div>
+			<!--	<div class="g_12 separator"><span></span></div> -->
+			<!-- Quick Statistics -->
+				<div class="g_3 quick_stats">
+					<div class="big_stats visitor_stats">
+						196
+					</div>
+					<h5 class="stats_info">Celebrities</h5>
+				</div>
+				<div class="g_3 quick_stats">
+					<div class="big_stats orders_stats">
+						104
+					</div>
+					<h5 class="stats_info">Rounds Played</h5>
+				</div>
+				<div class="g_3 quick_stats">
+					<div class="big_stats tickets_stats">
+						0
+					</div>
+					<h5 class="stats_info">Guess Attempts</h5>
+				</div>
+				<div class="g_3 quick_stats">
+					<div class="big_stats users_stats">
+						0
+					</div>
+					<h5 class="stats_info">Guesses In Last Hour</h5>
+				</div>
+			</div>
+			<div class="g_12 separator under_stat"><span></span></div>
+			<div class="g_12" id="table_wTabs">
+				<div class="widget_header wwOptions">
+					<h4 class="widget_header_title wwIcon i_16_tables">Guesses in the last 24 hours *</h4>
+					<ul class="w_Tabs">
+						<li><a href="#table_wTabs-2" title="Recently Guessed">Recent Guesses</a></li>
+						<li><a href="#table_wTabs-1" title="Most Guessed">Most Guessed</a></li>
+					</ul>
+				</div>
+				<div class="widget_contents noPadding">
+				<table class="tables" id="table_wTabs-2">
+					<tbody>
+										<tr>
+						<td><a href="/admin/guesses/edit/1146">A Heart Presenter</a>, guessed 3 times in total!</td>
+												<td>Sunday, January 27, 02:12 PM</td>
+					</tr>
+						</tbody>
+</table>
+<table class="tables" id="table_wTabs-1">
+	<tbody>
+				<tr>
+			<td><a href="/admin/guesses/edit/643">Jo Brand</a></td>
+			<td>14</td>
+			<td>Tuesday, January 22, 02:46 PM</td>
+		</tr>
+				<tr>
+			<td><a href="/admin/guesses/edit/227">Dannii Minogue</a></td>
+			<td>11</td>
+			<td>Monday, January 21, 02:47 PM</td>
+		</tr>
+				<tr>
+			<td><a href="/admin/guesses/edit/1078">Kylie Minogue</a></td>
+			<td>10</td>
+			<td>Monday, January 21, 02:47 PM</td>
+		</tr>
+				<tr>
+			<td><a href="/admin/guesses/edit/397">Tom Daley</a></td>
+			<td>7</td>
+			<td>Tuesday, January 22, 02:46 PM</td>
+		</tr>
+				<tr>
+			<td><a href="/admin/guesses/edit/1082">Cheryl Cole</a></td>
+			<td>5</td>
+			<td>Tuesday, January 22, 11:47 AM</td>
+		</tr>
+				<tr>
+			<td><a href="/admin/guesses/edit/1121">Gary Barlow</a></td>
+			<td>5</td>
+			<td>Wednesday, January 23, 03:46 PM</td>
+		</tr>
+				<tr>
+			<td><a href="/admin/guesses/edit/1125">Olly Murs</a></td>
+			<td>5</td>
+			<td>Wednesday, January 16, 09:56 AM</td>
+		</tr>
+				<tr>
+			<td><a href="/admin/guesses/edit/194">Paul O&#039;grady</a></td>
+			<td>4</td>
+			<td>Tuesday, January 22, 11:47 AM</td>
+		</tr>
+				<tr>
+			<td><a href="/admin/guesses/edit/412">Harry Styles</a></td>
+			<td>4</td>
+			<td>Tuesday, January 22, 12:44 PM</td>
+		</tr>
+				<tr>
+			<td><a href="/admin/guesses/edit/1116">Robbie Williams</a></td>
+			<td>4</td>
+			<td>Thursday, January 17, 10:00 AM</td>
+		</tr>
+			</tbody>
+</table>
+	
+				</div>
+				
+			</div>
+
+		</div>		
+	</div>
+</div>
+	
+</div>
+</div>
+</div>
+	<footer>
+		<div class="wrapper">
+			<div class="g_12">
+				<span class="label">"Whoogle" - a term coined by <a target="_blank" href="http://www.twitter.com/tobydolier" id="btBottom" title="Tweet Tobes">Toby D'Olier</a> - is a search engine and administration panel for the "Who's On Heart" competition on the Heart Network. </span>
+			</div>
+			<div class="g_9">
+			<span class="copyright">
+			 A product developed by <a href="http://www.fredbradley.me/portfolio/whos-on-heart?utm_source=hosting&utm_medium=sitebuilder&utm_term=whoogle&utm_content=whoogle&utm_campaign=sitebuilder">Fred Bradley</a>. Template by: <a href="http://themeforest.net/item/kanrisha-premium-html5-responsive-admin-template/2631918" target="_blank">Mahieddine Abd-kader</a>. <br /><br />&copy; <a href="http://www.fredbradley.me/portfolio/whos-on-heart?utm_source=hosting&utm_medium=sitebuilder&utm_term=whoogle&utm_content=whoogle&utm_campaign=sitebuilder">Fred Bradley</a> 2012-2013
+			</span>
+		</div>
+			<div class="g_3" id="btTop" title="Visit Fred's Site">
+					<a id="btLeft" href="http://www.fredbradley.me/portfolio/whos-on-heart?utm_source=hosting&utm_medium=sitebuilder&utm_term=whoogle&utm_content=whoogle&utm_campaign=sitebuilder" title="Visit Fred's Site">
+						<img id="btRight" src="http://fredbradley.me/wp-content/uploads/2012/04/fredbradleylogo-415x110.png" alt="Fred Bradley Logo" title="Visit Fred's Site" style="width:100%;margin-bottom:10px;" />
+					</a>
+				</div>
+		</div>
+	</footer>
+</body>
+</html>
+
