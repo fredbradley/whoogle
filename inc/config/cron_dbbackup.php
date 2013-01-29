@@ -1,5 +1,6 @@
 <?php
 require_once '../../../db.whoogle.php';
+date_default_timezone_set('Europe/London');
 
 
 define('DB_PREFIX', 'woh_');
