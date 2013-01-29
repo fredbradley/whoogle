@@ -1,6 +1,14 @@
 <?php
 require_once '../../../db.whoogle.php';
-date_default_timezone_set('Europe/London');
+
+if(function_exists('date_default_timezone_set') 
+{ 
+   date_default_timezone_set('Europe/London'); 
+} 
+else 
+{ 
+   putenv("TZ=Europe/London"); 
+}  
 
 
 define('DB_PREFIX', 'woh_');
