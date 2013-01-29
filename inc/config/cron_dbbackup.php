@@ -1,8 +1,29 @@
 <?php
-require_once 'siteconfigs.php';
+date_default_timezone_set("Europe/London"); 
+require_once '../../../db.whoogle.php';
 
 
-$backup = $db->databaseBackup();
+define('DB_PREFIX', 'woh_');
+
+
+
+function databaseBackup() {
+
+$link = mysql_connect(DB_HOST, DB_USER, DB_PASSWORD);
+if (!$link) {
+    die('Not connected : ' . mysql_error());
+}
+
+// make foo the current db
+$db_selected = mysql_select_db(DB_DATABASE, $link);
+if (!$db_selected) {
+    die ('Can\'t use foo : ' . mysql_error());
+}
+$query = "CREATE TABLE ".DB_PREFIX."backup_".date('Y_m_d_H_i_s')."_guesses SELECT * FROM ".DB_PREFIX."guesses";
+$result = mysql_query($query);
+return $result;
+}
+$backup = databaseBackup();
 echo "done";
 
 /*
