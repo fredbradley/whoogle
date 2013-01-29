@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2013-01-28 21:23:06
+<?php /* Smarty version Smarty-3.1.8, created on 2013-01-29 07:45:13
          compiled from "/Users/fredbradley/Sites/smarty_site/whoogle/templates/admin.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:907045455106ec3ada4ad8-81071455%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:43825912951077e09346ce5-74418033%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '6f64e243dcac482e62db21e4827c279518919a1e' => 
     array (
       0 => '/Users/fredbradley/Sites/smarty_site/whoogle/templates/admin.tpl',
-      1 => 1359407788,
+      1 => 1359408220,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '907045455106ec3ada4ad8-81071455',
+  'nocache_hash' => '43825912951077e09346ce5-74418033',
   'function' => 
   array (
   ),
@@ -29,9 +29,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.8',
-  'unifunc' => 'content_5106ec3ae66ae7_92557449',
+  'unifunc' => 'content_51077e09464368_36641425',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5106ec3ae66ae7_92557449')) {function content_5106ec3ae66ae7_92557449($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_date_format')) include '/Users/fredbradley/Sites/smarty_site/libs/plugins/modifier.date_format.php';
+<?php if ($_valid && !is_callable('content_51077e09464368_36641425')) {function content_51077e09464368_36641425($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_date_format')) include '/Users/fredbradley/Sites/smarty_site/libs/plugins/modifier.date_format.php';
 ?><?php echo $_smarty_tpl->getSubTemplate ("admin_head.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array('title'=>"Home"), 0);?>
   
 
@@ -212,7 +212,7 @@ $_smarty_tpl->tpl_vars['fuckup']->_loop = true;
                                                                         <td><?php echo $_smarty_tpl->tpl_vars['fuckup']->value['timesguessed'];?>
 </td>
                                                                         <td><?php echo $_smarty_tpl->tpl_vars['fuckup']->value['lastguessed'];?>
- (<?php echo smarty_modifier_date_format($_smarty_tpl->tpl_vars['fuckup']->value['lastguessed'],'%a, %b %e, %I%:%M %p');?>
+ (<?php echo smarty_modifier_date_format($_smarty_tpl->tpl_vars['fuckup']->value['lastguessed'],'%a, %b %e, %I:%M %p');?>
 )</td>
                                                                 </tr>
                                                 <?php } ?>

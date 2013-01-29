@@ -52,7 +52,7 @@ return $result;
 }
 
 function databaseBackup() {
-$query = "CREATE TABLE ".DB_PREFIX."backup_".date('YmdHis')."_guesses SELECT * FROM ".DB_PREFIX."guesses";
+$query = "CREATE TABLE ".DB_PREFIX."backup_".date('Y_m_d_H_i_s')."_guesses SELECT * FROM ".DB_PREFIX."guesses";
 $result = mysql_query($query);
 return $result;
 }
@@ -576,6 +576,7 @@ return $url;
 
 /* Function to list of all rounds with time stamps since jan 7th */ 
 function listFuckUps() {
+	
 	$query = "SELECT * FROM ".DB_PREFIX."guesses WHERE dateguessed !=''";
 	$result = mysql_query($query);
 	while($row = mysql_fetch_array($result)) {
