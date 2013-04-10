@@ -37,38 +37,51 @@
 					</div>
 				</noscript>
 				{include file="admin_notification.tpl"}
-				<div class="g_6">
+<!--				<div class="g_4">
 					<div class="widget_header">
 						<h4 class="widget_header_title">Most Guessed Celebrity</h4>
 					</div>
-					<div class="widget_contents noPadding" style="background:url({$topceleb}) center center no-repeat;height:250px;">
+					<div class="widget_contents noPadding" style="margin:0px;text-align:center;">
+					<center><img src="{$topceleb}" style="padding:0px;margin:0px;width:100%;" /></center>
 					</div>
-				</div>
+				</div> -->
 			<!--	<div class="g_12 separator"><span></span></div> -->
 			<!-- Quick Statistics -->
-				<div class="g_3 quick_stats">
+				<div class="g_4 quick_stats">
 					<div class="big_stats visitor_stats">
 						{$stats.numguesses}
 					</div>
 					<h5 class="stats_info">Guessed Celebrities</h5>
 				</div>
-				<div class="g_3 quick_stats">
+				<div class="g_4 quick_stats">
 					<div class="big_stats orders_stats">
 						{$stats.numrounds}
 					</div>
 					<h5 class="stats_info">Rounds Played</h5>
 				</div>
-				<div class="g_3 quick_stats">
+				<div class="g_4 quick_stats">
+					<div class="big_stats orders_stats">
+						{$stats.mostguessed}
+					</div>
+					<h5 class="stats_info">Most Guessed</h5>
+				</div>
+                                <div class="g_4 quick_stats">
+                                        <div class="big_stats users_stats">
+                                                {$stats.yesterdaysSearches}
+                                        </div>
+                                        <h5 class="stats_info">Searches Yesterday</h5>
+                                </div>
+				<div class="g_4 quick_stats">
 					<div class="big_stats tickets_stats">
 						{$stats.guessattempts}
 					</div>
-					<h5 class="stats_info">Search Guess Attempts</h5>
+					<h5 class="stats_info">Searches Today</h5>
 				</div>
-				<div class="g_3 quick_stats">
+				<div class="g_4 quick_stats">
 					<div class="big_stats users_stats">
 						{$stats.guessesinhour}
 					</div>
-					<h5 class="stats_info">Guesses In Last Hour</h5>
+					<h5 class="stats_info">Searches In Last Hour</h5>
 				</div>
 			</div>
 			<div class="g_12 separator under_stat"><span></span></div>
@@ -111,6 +124,7 @@
 				</div>
 				
 			</div>
+{* I HAVE COMMENTED THE NEXT TABLE OUT AS I BELIEVE TOBY NO LONGER NEEDS IT .....
 			<div class="g_12 separator"><span></span></div>
 			
 			{if $smarty.session.user.username == "toby" || $smarty.session.user.username == "toby.dolier" || $smarty.session.user.username == "fredbradley"}
@@ -150,6 +164,9 @@
 </div>
                                         </div> <!-- End Content Box Content -->
                                         {/if}
+
+*}
+
 			{*			<div class="g_12">
 				<div class="widget_header">
 					<h4 class="widget_header_title wwIcon i_16_chats">Useful Stats</h4>

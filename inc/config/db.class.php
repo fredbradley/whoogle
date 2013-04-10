@@ -455,8 +455,24 @@ function usefulStats() {
 	$list = $this->getrows("SELECT * FROM ".DB_PREFIX."guesses ORDER BY timesguessed DESC LIMIT 1");
 	$output['mostguessed'] = ucwords($list[0]['cname']);
 	$output['nextplay'] = $this->nextPlay();
-
+	$output['yesterdaysSearches'] = $this->yesterdaysSearches();
 	return $output;
+}
+
+function yesterdaysSearches() {
+	$query = "SHOW tables FROM ".DB_DATABASE;
+	$loop = mysql_query($query);
+	while($table = mysql_fetch_array($loop)) {
+		if (substr($table[0], 0, 8) == "woh_dump") {
+			$array[] = $table[0];
+		}
+	}
+	$array = array_reverse($array);
+	$yesterdaysData = $array[0];
+
+	$query = mysql_query("SELECT COUNT(*) FROM ".$yesterdaysData);
+	$count = mysql_result($query,0);
+return $count;
 }
 
 /* Function to Order Recently Guessed */

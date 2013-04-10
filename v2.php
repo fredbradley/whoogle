@@ -36,7 +36,7 @@
 				$output = $output."<p>Keep listening to Heart for more chances to win!</p>";
 				$guessoutput[] = $output;
 			} elseif (strtolower($guess) == "fergie") {
-				$output = "<p>Both Fergie from the Black Eyed Peas and Sir Alex Ferguson have already been guessed. If you meant another \"Fergie\" please type their full name. </p>";
+				$output = "<p>Fergie from the Black Eyed Peas has already been guessed. If you meant another \"Fergie\" please type their full name. </p>";
 				$guessoutput[] = $output;
 				$return = "The Fergie Problem";
 			} else {

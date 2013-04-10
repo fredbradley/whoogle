@@ -1,8 +1,10 @@
 <?php
+require_once 'inc/config/siteconfigs.php';
+
 $name = "Jo Brand";
 
-echo getCelebPhoto(urlencode($name));
-
+//echo getCelebPhoto(urlencode($name));
+echo $db->yesterdaysSearches();
 
 
 function getCelebPhoto($celeb) {
