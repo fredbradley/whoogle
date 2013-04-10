@@ -11,22 +11,22 @@ $label = '
 /***************************************************
 	Database settings
 ****************************************************/
-	$db_server			= DB_HOST;				// Database server, usually "localhost", 
-	                                                // on (mt) servers something like internal-db.s12345.gridserver.com
- 	$db_name 			= DB_DATABASE;				// Database name, leave empty for 'all databases'
-	$db_user 		    = DB_USER;				// Database username
-	$db_pass 		    = DB_PASSWORD;				// Database password
+	$db_server		= DB_HOST;				// Database server, usually "localhost", 
+				                                        // on (mt) servers something like internal-db.s12345.gridserver.com
+ 	$db_name 		= DB_DATABASE;				// Database name, leave empty for 'all databases'
+	$db_user		= DB_USER;				// Database username
+	$db_pass 		= DB_PASSWORD;				// Database password
 
 
 
 /***************************************************
 	E-mail settings
 ****************************************************/
- 	$website            = 'whoogle.fredb.me';		    // Your site's domain (without www. part)
-	$send_to 		    = 'fredbradley@me.com';		        // backup file will be sent to?
-	$from 		        = 'fredbradley@' . $website;	// some hosting providers won’t let you send backups from invalid e-mail address
+ 	$website	= 'whoogle.fredb.me';		// Your site's domain (without www. part)
+	$send_to 	= 'fredbradley@me.com';		// backup file will be sent to?
+	$from 		= 'fredbradley@' . $website;	// some hosting providers won’t let you send backups from invalid e-mail address
 
-$tablestotake = "woh_guesses, woh_users, woh_guessattempts, woh_configs";
+	$tablestotake = "`woh_guesses`, `woh_users`, `woh_guessattempts`, `woh_configs`";
 
 /***************************************************
     Misc options
