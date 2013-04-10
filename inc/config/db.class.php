@@ -442,7 +442,7 @@ function usefulStats() {
 	$query = "SELECT sum(timesguessed) FROM ".DB_PREFIX."guesses";
 	$numguesses = mysql_result(mysql_query($query), 0);
 	$rounds = floor($numguesses / 3);
-	$output['numrounds'] = $rounds;
+	$output['numrounds'] = "> ".$rounds;
 	$query = "SELECT * FROM ".DB_PREFIX."guesses WHERE timesguessed > 0";
 	$output['numguesses'] = $this->count($query);
 	$query = "SELECT guess FROM ".DB_PREFIX."guessattempts";
