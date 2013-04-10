@@ -26,7 +26,7 @@ $label = '
 	$send_to 		    = 'fredbradley@me.com';		        // backup file will be sent to?
 	$from 		        = 'fredbradley@' . $website;	// some hosting providers won’t let you send backups from invalid e-mail address
 
-
+$tablestotake = "woh_guesses, woh_users, woh_guessattempts, woh_configs";
 
 /***************************************************
     Misc options
@@ -77,8 +77,8 @@ function backup_filename() {
 }
 
 function db_dump() {
-	global $db_server, $db_name, $db_user, $db_pass, $backup_filename, $html_output;
-	$cmd = 'mysqldump -u ' . $db_user . ' -h ' . $db_server . ' --password=' . $db_pass . ' ' . ($db_name == '' ? '--all-databases' : $db_name) . ' | gzip > ' . $backup_filename;
+	global $db_server, $db_name, $db_user, $db_pass, $backup_filename, $html_output, $tablestotake;
+	$cmd = 'mysqldump -u ' . $db_user . ' -h ' . $db_server . ' --password=' . $db_pass . ' ' . ($db_name == '' ? '--all-databases' : $db_name) . ' '.$tablestotake.' | gzip > ' . $backup_filename;
 	$dump_status = (passthru($cmd) === false) ? 'No' : 'Yes';
 	echo 'Command: ' . $cmd . '<br />';
 	echo 'Command executed? ' . $dump_status . '<br />';
