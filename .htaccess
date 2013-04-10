@@ -2,5 +2,6 @@ RewriteEngine On
 RewriteBase /
 RewriteRule ^xml/?$ v2.php [L]
 RewriteRule ^studio/?$ studio.php [L]
+Redirect 301 /admin/login /admin/index.php
 Redirect 301 /index.php /admin/index.php
 Redirect 301 /assets/images/woh_logo.png http://www.heart.co.uk/u/apps/asset_manager/uploaded/2013/00/whos-on-heart-2013-win-125000-1357315170.png

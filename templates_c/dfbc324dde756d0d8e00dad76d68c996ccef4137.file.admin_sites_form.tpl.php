@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2013-01-05 17:47:01
+<?php /* Smarty version Smarty-3.1.8, created on 2013-04-09 15:53:17
          compiled from "/kunden/homepages/3/d298570323/htdocs/_smarty_sites/whoogle/templates/admin_sites_form.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:27232565650e867156573a1-13004638%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:123199082651642b5d086ce8-58517177%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'dfbc324dde756d0d8e00dad76d68c996ccef4137' => 
     array (
       0 => '/kunden/homepages/3/d298570323/htdocs/_smarty_sites/whoogle/templates/admin_sites_form.tpl',
-      1 => 1357311137,
+      1 => 1358965181,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '27232565650e867156573a1-13004638',
+  'nocache_hash' => '123199082651642b5d086ce8-58517177',
   'function' => 
   array (
   ),
@@ -22,9 +22,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.8',
-  'unifunc' => 'content_50e867156cd687_26205873',
+  'unifunc' => 'content_51642b5d0eca19_35525721',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_50e867156cd687_26205873')) {function content_50e867156cd687_26205873($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_capitalize')) include '/homepages/3/d298570323/htdocs/_smarty_sites/libs/plugins/modifier.capitalize.php';
+<?php if ($_valid && !is_callable('content_51642b5d0eca19_35525721')) {function content_51642b5d0eca19_35525721($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_capitalize')) include '/homepages/3/d298570323/htdocs/_smarty_sites/libs/plugins/modifier.capitalize.php';
+if (!is_callable('smarty_modifier_relative_date')) include '/homepages/3/d298570323/htdocs/_smarty_sites/libs/plugins/modifier.relative_date.php';
 if (!is_callable('smarty_modifier_date_format')) include '/homepages/3/d298570323/htdocs/_smarty_sites/libs/plugins/modifier.date_format.php';
 ?>
 <div class="widget_header content-box-header">
@@ -58,8 +59,10 @@ if (!is_callable('smarty_modifier_date_format')) include '/homepages/3/d29857032
 " method="post">
     <?php ob_start();?><?php echo $_smarty_tpl->tpl_vars['action']->value;?>
 <?php $_tmp2=ob_get_clean();?><?php if ($_tmp2=='edit'){?>
-    <input type="hidden" name="returnmeto" value="<?php echo $_SERVER['HTTP_REFERER'];?>
-" />
+	<div class="line_grid">
+	<span class="label">This record was last edited on <?php echo smarty_modifier_relative_date($_smarty_tpl->tpl_vars['edit']->value['lastguessed']);?>
+</span>
+	</div>
     <?php }?>
     <input type="hidden" name="id" id="id" value="<?php echo $_smarty_tpl->tpl_vars['edit']->value['id'];?>
 " />
@@ -112,7 +115,15 @@ if (!is_callable('smarty_modifier_date_format')) include '/homepages/3/d29857032
 " />
       <!--<br /><small><?php echo smarty_modifier_date_format(time());?>
 </small></p>-->
-      
+<div class="line_grid">
+	<div class="g_3">
+		<label class="label">Is this edit a result of a <b>real guess</b> from a listener?</label>
+	</div>
+	<div class="g_9">
+		<input type="checkbox" class="simple_form" name="recordguess" checked="checked">
+		<div class="field_notice">(If you're just making an amendment - like adding or removing nickanmes) then you can uncheck this, and your edit won't count as a 'guess')</div>
+	</div>
+</div>      
       <div class="line_grid">
       	<div class="g_3"></div>
       	<div class="g_9">

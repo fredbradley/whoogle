@@ -1,22 +1,20 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2013-01-08 09:43:55
+<?php /* Smarty version Smarty-3.1.8, created on 2013-04-09 16:26:09
          compiled from "/kunden/homepages/3/d298570323/htdocs/_smarty_sites/whoogle/templates/admin_sites_list.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:62225013150e86c6e13c7c0-53076635%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:11235952745164331180e2a7-42023903%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'b571d3ffd49a98c073d03e934a6e8fc2f1623d38' => 
     array (
       0 => '/kunden/homepages/3/d298570323/htdocs/_smarty_sites/whoogle/templates/admin_sites_list.tpl',
-      1 => 1357576075,
+      1 => 1358603223,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '62225013150e86c6e13c7c0-53076635',
+  'nocache_hash' => '11235952745164331180e2a7-42023903',
   'function' => 
   array (
   ),
-  'version' => 'Smarty-3.1.8',
-  'unifunc' => 'content_50e86c6e195f54_80955331',
   'variables' => 
   array (
     'user' => 0,
@@ -25,8 +23,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'lastupdated' => 0,
   ),
   'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.8',
+  'unifunc' => 'content_51643311963223_56086985',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_50e86c6e195f54_80955331')) {function content_50e86c6e195f54_80955331($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_capitalize')) include '/homepages/3/d298570323/htdocs/_smarty_sites/libs/plugins/modifier.capitalize.php';
+<?php if ($_valid && !is_callable('content_51643311963223_56086985')) {function content_51643311963223_56086985($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_capitalize')) include '/homepages/3/d298570323/htdocs/_smarty_sites/libs/plugins/modifier.capitalize.php';
 if (!is_callable('smarty_modifier_relative_date')) include '/homepages/3/d298570323/htdocs/_smarty_sites/libs/plugins/modifier.relative_date.php';
 ?>
                                 <div class="widget_contents noPadding content-box-content">
@@ -35,16 +35,14 @@ if (!is_callable('smarty_modifier_relative_date')) include '/homepages/3/d298570
 
 
                                                         <thead>
-                                                                <tr>
-                                                                   <th>Celebrity</th>
-                                                                   <th>Times Guessed</th>
-                                                                   <th>Last Updated</th>
-                                                                   <?php ob_start();?><?php echo $_smarty_tpl->tpl_vars['user']->value['acl']=='9';?>
+								<tr>
+									<th>Celebrity</th>
+									<th>Times Guessed</th>
+									<th>Last Updated</th>
+									<?php ob_start();?><?php echo $_smarty_tpl->tpl_vars['user']->value['acl']=='9';?>
 <?php $_tmp1=ob_get_clean();?><?php if ($_tmp1){?><th>Delete</th><?php }?>
-																	<th style="display:none;">Nicknames</th>
-
-                                                                </tr>
-
+									<th style="display:none;">Nicknames</th>
+								</tr>
                                                         </thead>
 
                                                         <tfoot>

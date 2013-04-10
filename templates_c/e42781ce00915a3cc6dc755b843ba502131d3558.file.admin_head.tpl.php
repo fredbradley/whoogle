@@ -1,32 +1,35 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2013-01-07 16:35:38
+<?php /* Smarty version Smarty-3.1.8, created on 2013-04-09 16:26:19
          compiled from "/kunden/homepages/3/d298570323/htdocs/_smarty_sites/whoogle/templates/admin_head.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:28247641150e86c77d03782-56510708%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:2498332815164331b5bf5f8-31441767%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'e42781ce00915a3cc6dc755b843ba502131d3558' => 
     array (
       0 => '/kunden/homepages/3/d298570323/htdocs/_smarty_sites/whoogle/templates/admin_head.tpl',
-      1 => 1357576510,
+      1 => 1359408132,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '28247641150e86c77d03782-56510708',
+  'nocache_hash' => '2498332815164331b5bf5f8-31441767',
   'function' => 
   array (
   ),
-  'version' => 'Smarty-3.1.8',
-  'unifunc' => 'content_50e86c77dad0b5_98724897',
   'variables' => 
   array (
     'title' => 0,
+    'celebs' => 0,
+    'celeb' => 0,
+    'greeting' => 0,
     'user' => 0,
     'page' => 0,
   ),
   'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.8',
+  'unifunc' => 'content_5164331b6a8482_22321250',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_50e86c77dad0b5_98724897')) {function content_50e86c77dad0b5_98724897($_smarty_tpl) {?><!DOCTYPE HTML>
-<html lang="en-US">
+<?php if ($_valid && !is_callable('content_5164331b6a8482_22321250')) {function content_5164331b6a8482_22321250($_smarty_tpl) {?><!DOCTYPE HTML>
+<html lang="en-GB">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -84,7 +87,88 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 	<!-- Color Box -->
 	<script src="/assets/javascript/ColorBox/jquery.colorbox.js"></script>
 	<!-- Kanrisha Script -->
+
 	<script src="/assets/javascript/kanrisha.js"></script>
+<script type="text/javascript">
+//
+ // This jQuery Plugin is from: http://davidwalsh.name/demo/jquery-countdown.php
+ // ***********************************/
+	$(document).ready(function() {
+			
+			/* delay function */
+			jQuery.fn.delay = function(time,func){
+				return this.each(function(){
+					setTimeout(func,time);
+				});
+			};
+			
+			
+			jQuery.fn.countDown = function(settings,to) {
+				settings = jQuery.extend({
+					startFontSize: '12px',
+					endFontSize: '12px',
+					duration: 1000,
+					startNumber: 10,
+					endNumber: 0,
+					callBack: function() { }
+				}, settings);
+				return this.each(function() {
+					
+					if(!to && to != settings.endNumber) { to = settings.startNumber; }
+					
+					//set the countdown to the starting number
+					$(this).text(to).css('fontSize',settings.startFontSize);
+					
+					//loopage
+					$(this).animate({
+						'fontSize': settings.endFontSize
+					},settings.duration,'',function() {
+						if(to > settings.endNumber + 1) {
+							$(this).css('fontSize',settings.startFontSize).text(to - 1).countDown(settings,to - 1);
+						}
+						else
+						{
+							settings.callBack(this);
+						}
+					});
+							
+				});
+			};
+			
+			$('#countdown').countDown({
+				startNumber: 900, 
+				callBack: function(me) {
+					$('#countdownresult').html('<div class=\'error g_12\' style=\'padding-right:20px;padding-left:20px;\'>You have timed out!</div>').css('class','label');
+					$('#countdown').hide().delay(3);
+					alert('Oops! I\'m afraid you have spent too long doing nothing, and for security the system has logged you out! \r\n\nIf you are in the middle of adding or editing an entry, I suggest you copy the details down then you have them when you log back in again. \r\n\n(You will not be able to save any changes!)');
+				}
+			});
+			
+		});
+	</script>
+<?php if (!isset($_smarty_tpl->tpl_vars['autocomplete'])) $_smarty_tpl->tpl_vars['autocomplete'] = new Smarty_Variable(null);if ($_smarty_tpl->tpl_vars['autocomplete']->value = 1){?>
+<script type="text/javascript">
+/* Script to use AutoComplete */
+ $(function() {
+    var availableTags = [
+    <?php  $_smarty_tpl->tpl_vars['celeb'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['celeb']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['celebs']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['celeb']->key => $_smarty_tpl->tpl_vars['celeb']->value){
+$_smarty_tpl->tpl_vars['celeb']->_loop = true;
+?>
+    	"<?php echo ucwords($_smarty_tpl->tpl_vars['celeb']->value['cname']);?>
+",
+    <?php } ?>
+      "Celeb Not Listed"
+    ];
+    $( ".celebslist" ).autocomplete({
+      source: availableTags
+    });
+  });
+
+
+</script>
+<?php }?>
 	<script type="text/javascript">
 
   var _gaq = _gaq || [];
@@ -103,6 +187,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 	<!-- Top Panel -->
 	<div class="top_panel">
 		<div class="wrapper">
+			<div class="user" id="countdownresult">
+				<span class="label"><?php echo $_smarty_tpl->tpl_vars['greeting']->value;?>
+ <?php echo $_smarty_tpl->tpl_vars['user']->value['first_name'];?>
+! You have </span><span class="label" id="countdown">1800</span><span class="label"> seconds remaining!</span>
+			</div>
 			<div class="top_links">
 				<ul>
 
@@ -163,10 +252,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 	<header class="main_header">
 		<div class="wrapper">
 			<div class="logo">
-				
-					<h2>Welcome <?php echo $_smarty_tpl->tpl_vars['user']->value['first_name'];?>
-</h2>
-			<p id="page-intro">Welcome to the updated 'Whoogle'!</p>
+								
 			</div>
 		</div>
 	</header>
@@ -262,4 +348,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 			</form>
 				
 			</div> <!-- End #messages -->
-<div id="temp_container"><?php }} ?>
+<div id="temp_container">
+<div class="wrapper">
+<div id='countdownresult'></div>		</div><?php }} ?>

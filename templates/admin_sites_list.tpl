@@ -5,15 +5,13 @@
 
 
                                                         <thead>
-                                                                <tr>
-                                                                   <th>Celebrity</th>
-                                                                   <th>Times Guessed</th>
-                                                                   <th>Last Updated</th>
-                                                                   {if {$user.acl=='9'}}<th>Delete</th>{/if}
-																	<th style="display:none;">Nicknames</th>
-
-                                                                </tr>
-
+								<tr>
+									<th>Celebrity</th>
+									<th>Times Guessed</th>
+									<th>Last Updated</th>
+									{if {$user.acl=='9'}}<th>Delete</th>{/if}
+									<th style="display:none;">Nicknames</th>
+								</tr>
                                                         </thead>
 
                                                         <tfoot>

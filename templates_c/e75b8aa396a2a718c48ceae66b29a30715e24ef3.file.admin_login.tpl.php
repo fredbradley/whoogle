@@ -1,31 +1,32 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2013-01-11 12:42:36
+<?php /* Smarty version Smarty-3.1.8, created on 2013-04-10 09:12:38
          compiled from "/kunden/homepages/3/d298570323/htdocs/_smarty_sites/whoogle/templates/admin_login.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:44347076550e8509922e6a1-17205065%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:135606809351651ef62c0759-37584113%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'e75b8aa396a2a718c48ceae66b29a30715e24ef3' => 
     array (
       0 => '/kunden/homepages/3/d298570323/htdocs/_smarty_sites/whoogle/templates/admin_login.tpl',
-      1 => 1357901556,
+      1 => 1359408132,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '44347076550e8509922e6a1-17205065',
+  'nocache_hash' => '135606809351651ef62c0759-37584113',
   'function' => 
   array (
   ),
-  'version' => 'Smarty-3.1.8',
-  'unifunc' => 'content_50e8509929be24_91873318',
   'variables' => 
   array (
     'SITE' => 0,
     'msg' => 0,
     'error' => 0,
+    'message' => 0,
   ),
   'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.8',
+  'unifunc' => 'content_51651ef648fde1_47021114',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_50e8509929be24_91873318')) {function content_50e8509929be24_91873318($_smarty_tpl) {?><!DOCTYPE HTML>
+<?php if ($_valid && !is_callable('content_51651ef648fde1_47021114')) {function content_51651ef648fde1_47021114($_smarty_tpl) {?><!DOCTYPE HTML>
 <html lang="en-US">
 <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# profile: http://ogp.me/ns/profile#">
 	<meta charset="UTF-8">
@@ -130,6 +131,15 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 					<div style="margin-top:5px;margin-bottom:5px;" class="notification alert png_bg">
 						<div>
 							<?php echo $_smarty_tpl->tpl_vars['error']->value;?>
+
+						</div>
+					</div>
+					<?php }?>
+										<?php ob_start();?><?php echo $_smarty_tpl->tpl_vars['message']->value;?>
+<?php $_tmp3=ob_get_clean();?><?php if ($_tmp3){?>
+					<div style="margin-top:5px;margin-bottom:5px;" class="notification error png_bg">
+						<div>
+							<?php echo $_smarty_tpl->tpl_vars['message']->value;?>
 
 						</div>
 					</div>
