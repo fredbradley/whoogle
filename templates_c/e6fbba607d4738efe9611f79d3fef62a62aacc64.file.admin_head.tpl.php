@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2013-04-10 17:31:37
+<?php /* Smarty version Smarty-3.1.8, created on 2013-04-10 17:55:16
          compiled from "/Users/fredbradley/Sites/smarty_site/whoogle/templates/admin_head.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:1843383360516593e950b0b1-88393113%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:2083527432516599744ec906-05818591%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'e6fbba607d4738efe9611f79d3fef62a62aacc64' => 
     array (
       0 => '/Users/fredbradley/Sites/smarty_site/whoogle/templates/admin_head.tpl',
-      1 => 1365582835,
+      1 => 1365612909,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '1843383360516593e950b0b1-88393113',
+  'nocache_hash' => '2083527432516599744ec906-05818591',
   'function' => 
   array (
   ),
@@ -26,9 +26,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.8',
-  'unifunc' => 'content_516593e9591de0_07469865',
+  'unifunc' => 'content_5165997472d316_03767448',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_516593e9591de0_07469865')) {function content_516593e9591de0_07469865($_smarty_tpl) {?><!DOCTYPE HTML>
+<?php if ($_valid && !is_callable('content_5165997472d316_03767448')) {function content_5165997472d316_03767448($_smarty_tpl) {?><!DOCTYPE HTML>
 <html lang="en-GB">
 <head>
 	<meta charset="UTF-8">
@@ -305,7 +305,15 @@ $_smarty_tpl->tpl_vars['celeb']->_loop = true;
 					</a>
 				</li>
 				<li class="<?php ob_start();?><?php echo $_GET['page'];?>
-<?php $_tmp9=ob_get_clean();?><?php if ($_tmp9=='logout'){?>active_tab <?php }?>i_32_tables">
+<?php $_tmp9=ob_get_clean();?><?php if ($_tmp9=='guessattempts'){?>active_tab <?php }?>i_32_forms">
+					<a href="/admin/searched/list" title="Guess Attempts">
+						<span class="tab_label">Searches</span>
+						<span class="tab_info">By the punters!</span>
+					</a>
+				</li>
+				
+				<li class="<?php ob_start();?><?php echo $_GET['page'];?>
+<?php $_tmp10=ob_get_clean();?><?php if ($_tmp10=='logout'){?>active_tab <?php }?>i_32_tables">
 					<a href="/admin/index.php?logout" title="Log Out">
 						<span class="tab_label">Log Out</span>
 						<span class="tab_info">Clock Off</span>

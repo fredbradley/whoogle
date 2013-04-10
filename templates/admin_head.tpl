@@ -273,6 +273,13 @@
 						<span class="tab_info">Hooray! At last!</span>
 					</a>
 				</li>
+				<li class="{if {$smarty.get.page}=='guessattempts'}active_tab {/if}i_32_forms">
+					<a href="/admin/searched/list" title="Guess Attempts">
+						<span class="tab_label">Searches</span>
+						<span class="tab_info">By the punters!</span>
+					</a>
+				</li>
+				
 				<li class="{if {$smarty.get.page}=='logout'}active_tab {/if}i_32_tables">
 					<a href="/admin/index.php?logout" title="Log Out">
 						<span class="tab_label">Log Out</span>
