@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2013-01-29 07:45:13
+<?php /* Smarty version Smarty-3.1.8, created on 2013-04-10 09:35:27
          compiled from "/Users/fredbradley/Sites/smarty_site/whoogle/templates/admin_head.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:158197578851077e0946a4d4-94511248%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:5143003025165244fb78a00-07003442%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'e6fbba607d4738efe9611f79d3fef62a62aacc64' => 
     array (
       0 => '/Users/fredbradley/Sites/smarty_site/whoogle/templates/admin_head.tpl',
-      1 => 1359296522,
+      1 => 1365582835,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '158197578851077e0946a4d4-94511248',
+  'nocache_hash' => '5143003025165244fb78a00-07003442',
   'function' => 
   array (
   ),
@@ -26,9 +26,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.8',
-  'unifunc' => 'content_51077e09507579_46997959',
+  'unifunc' => 'content_5165244fbfeb81_54060048',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_51077e09507579_46997959')) {function content_51077e09507579_46997959($_smarty_tpl) {?><!DOCTYPE HTML>
+<?php if ($_valid && !is_callable('content_5165244fbfeb81_54060048')) {function content_5165244fbfeb81_54060048($_smarty_tpl) {?><!DOCTYPE HTML>
 <html lang="en-GB">
 <head>
 	<meta charset="UTF-8">
@@ -256,7 +256,8 @@ $_smarty_tpl->tpl_vars['celeb']->_loop = true;
 			</div>
 		</div>
 	</header>
-
+<div class="wrapper"><?php echo $_smarty_tpl->getSubTemplate ("admin_insert.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+</div>
 	<div class="wrapper small_menu">
 		<ul class="menu_small_buttons">
 			<li><a title="Home" class="i_22_dashboard <?php ob_start();?><?php echo $_GET['page'];?>
@@ -350,4 +351,5 @@ $_smarty_tpl->tpl_vars['celeb']->_loop = true;
 			</div> <!-- End #messages -->
 <div id="temp_container">
 <div class="wrapper">
-<div id='countdownresult'></div>		</div><?php }} ?>
+<div id='countdownresult'></div>		</div>
+<?php }} ?>

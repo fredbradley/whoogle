@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2013-01-29 07:45:13
+<?php /* Smarty version Smarty-3.1.8, created on 2013-04-10 09:34:57
          compiled from "/Users/fredbradley/Sites/smarty_site/whoogle/templates/admin_login.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:29429137851077e09ab7580-26718752%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:10635092851652431b516d4-81344902%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'ead060df41d4494ad5f39842fbc88730c706a0b3' => 
     array (
       0 => '/Users/fredbradley/Sites/smarty_site/whoogle/templates/admin_login.tpl',
-      1 => 1359215109,
+      1 => 1365582895,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '29429137851077e09ab7580-26718752',
+  'nocache_hash' => '10635092851652431b516d4-81344902',
   'function' => 
   array (
   ),
@@ -24,9 +24,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.8',
-  'unifunc' => 'content_51077e09d47d91_50263632',
+  'unifunc' => 'content_51652431ba40c2_62606670',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_51077e09d47d91_50263632')) {function content_51077e09d47d91_50263632($_smarty_tpl) {?><!DOCTYPE HTML>
+<?php if ($_valid && !is_callable('content_51652431ba40c2_62606670')) {function content_51652431ba40c2_62606670($_smarty_tpl) {?><!DOCTYPE HTML>
 <html lang="en-US">
 <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# profile: http://ogp.me/ns/profile#">
 	<meta charset="UTF-8">
@@ -108,6 +108,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 </head>
 	<body id="login">
 		<div id="wrapper contents_wrapper login-wrapper" class="png_bg">
+<?php echo $_smarty_tpl->getSubTemplate ("admin_insert.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+
 			<div class="login" id="login-content">
 			<div id="login-top">
 				<h1><?php echo $_smarty_tpl->tpl_vars['SITE']->value['name'];?>

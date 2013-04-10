@@ -233,7 +233,7 @@
 			</div>
 		</div>
 	</header>
-
+<div class="wrapper">{include file="admin_insert.tpl"}</div>
 	<div class="wrapper small_menu">
 		<ul class="menu_small_buttons">
 			<li><a title="Home" class="i_22_dashboard {if {$smarty.get.page}==''}smActive{/if}" href="/admin/index.php"></a></li>

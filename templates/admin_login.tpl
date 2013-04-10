@@ -80,6 +80,7 @@
 </head>
 	<body id="login">
 		<div id="wrapper contents_wrapper login-wrapper" class="png_bg">
+{include file="admin_insert.tpl"}
 			<div class="login" id="login-content">
 			<div id="login-top">
 				<h1>{$SITE.name}</h1>

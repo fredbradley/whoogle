@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2013-01-28 20:43:48
+<?php /* Smarty version Smarty-3.1.8, created on 2013-04-10 09:35:22
          compiled from "/Users/fredbradley/Sites/smarty_site/whoogle/templates/admin_sites_list.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:6036390125106e304a55c11-21088777%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:7955609755165244a5ccf32-07387180%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'b5c29835fa5e5fb126f3963d1373e9502b452c89' => 
     array (
       0 => '/Users/fredbradley/Sites/smarty_site/whoogle/templates/admin_sites_list.tpl',
-      1 => 1358351926,
+      1 => 1365582251,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '6036390125106e304a55c11-21088777',
+  'nocache_hash' => '7955609755165244a5ccf32-07387180',
   'function' => 
   array (
   ),
@@ -24,9 +24,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.8',
-  'unifunc' => 'content_5106e304a915a7_23590604',
+  'unifunc' => 'content_5165244a67fcc4_67947110',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5106e304a915a7_23590604')) {function content_5106e304a915a7_23590604($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_capitalize')) include '/Users/fredbradley/Sites/smarty_site/libs/plugins/modifier.capitalize.php';
+<?php if ($_valid && !is_callable('content_5165244a67fcc4_67947110')) {function content_5165244a67fcc4_67947110($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_capitalize')) include '/Users/fredbradley/Sites/smarty_site/libs/plugins/modifier.capitalize.php';
 if (!is_callable('smarty_modifier_relative_date')) include '/Users/fredbradley/Sites/smarty_site/libs/plugins/modifier.relative_date.php';
 ?>
                                 <div class="widget_contents noPadding content-box-content">
@@ -35,16 +35,14 @@ if (!is_callable('smarty_modifier_relative_date')) include '/Users/fredbradley/S
 
 
                                                         <thead>
-                                                                <tr>
-                                                                   <th>Celebrity</th>
-                                                                   <th>Times Guessed</th>
-                                                                   <th>Last Updated</th>
-                                                                   <?php ob_start();?><?php echo $_smarty_tpl->tpl_vars['user']->value['acl']=='9';?>
+								<tr>
+									<th>Celebrity</th>
+									<th>Times Guessed</th>
+									<th>Last Updated</th>
+									<?php ob_start();?><?php echo $_smarty_tpl->tpl_vars['user']->value['acl']=='9';?>
 <?php $_tmp1=ob_get_clean();?><?php if ($_tmp1){?><th>Delete</th><?php }?>
-																	<th style="display:none;">Nicknames</th>
-
-                                                                </tr>
-
+									<th style="display:none;">Nicknames</th>
+								</tr>
                                                         </thead>
 
                                                         <tfoot>
