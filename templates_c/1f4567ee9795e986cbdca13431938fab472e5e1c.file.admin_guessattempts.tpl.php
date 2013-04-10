@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2013-04-10 17:27:26
-         compiled from "/Users/fredbradley/Sites/smarty_site/whoogle/templates/admin_sites.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:189980544516592eee3d634-75641939%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /* Smarty version Smarty-3.1.8, created on 2013-04-10 17:31:37
+         compiled from "/Users/fredbradley/Sites/smarty_site/whoogle/templates/admin_guessattempts.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:2131204540516593e94afce7-74498729%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
-    'aaceea212fced218cb686851a2eb285b51c94698' => 
+    '1f4567ee9795e986cbdca13431938fab472e5e1c' => 
     array (
-      0 => '/Users/fredbradley/Sites/smarty_site/whoogle/templates/admin_sites.tpl',
-      1 => 1358351926,
+      0 => '/Users/fredbradley/Sites/smarty_site/whoogle/templates/admin_guessattempts.tpl',
+      1 => 1365611344,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '189980544516592eee3d634-75641939',
+  'nocache_hash' => '2131204540516593e94afce7-74498729',
   'function' => 
   array (
   ),
@@ -22,22 +22,21 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.8',
-  'unifunc' => 'content_516592eee9a0d7_73807435',
+  'unifunc' => 'content_516593e9507636_54071828',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_516592eee9a0d7_73807435')) {function content_516592eee9a0d7_73807435($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_capitalize')) include '/Users/fredbradley/Sites/smarty_site/libs/plugins/modifier.capitalize.php';
-?><?php ob_start();?><?php echo (($tmp = @smarty_modifier_capitalize($_smarty_tpl->tpl_vars['edit']->value['cname']))===null||$tmp==='' ? 'Secret Celebs' : $tmp);?>
+<?php if ($_valid && !is_callable('content_516593e9507636_54071828')) {function content_516593e9507636_54071828($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_capitalize')) include '/Users/fredbradley/Sites/smarty_site/libs/plugins/modifier.capitalize.php';
+?><?php ob_start();?><?php echo (($tmp = @smarty_modifier_capitalize($_smarty_tpl->tpl_vars['edit']->value['cname']))===null||$tmp==='' ? 'From the Punters' : $tmp);?>
 <?php $_tmp1=ob_get_clean();?><?php echo $_smarty_tpl->getSubTemplate ("admin_head.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array('title'=>$_tmp1), 0);?>
   
 
 	<body>
-	
-	
+		
 			<div class="contents">
 			<div class="grid_wrapper">
 
 				<div class="g_6 contents_header">
-					<h3 class="i_16_dashboard tab_label">Secret Celebrities</h3>
-					<div><span class="label">A list of all the secret celebrities in the database</span></div>
+					<h3 class="i_16_dashboard tab_label">Searched Guesses</h3>
+					<div><span class="label">A list of the names searched on the database by punters today!</span></div>
 				</div>
 				<div class="g_6 contents_options">
 					<div class="simple_buttons">
@@ -55,10 +54,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 			</noscript>
 <?php echo $_smarty_tpl->getSubTemplate ("admin_notification.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
+
 			
-			
-			
-			<div class="g_12 content-box"><!-- Start Content Box -->
+			<div class="content-box"><!-- Start Content Box -->
 				<?php ob_start();?><?php echo $_smarty_tpl->tpl_vars['action']->value;?>
 <?php $_tmp2=ob_get_clean();?><?php if ($_tmp2=="add"){?>
 					<?php echo $_smarty_tpl->getSubTemplate ("admin_sites_form.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
@@ -72,24 +70,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                                         <?php echo $_smarty_tpl->getSubTemplate ("admin_sites_form.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 				<?php }else{ ?>
-					<?php echo $_smarty_tpl->getSubTemplate ("admin_sites_list.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+					<?php echo $_smarty_tpl->getSubTemplate ("admin_searched_list.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 				<?php }}}?>
 				
 			</div> <!-- End .content-box -->	
-			
-			<!-- Quick Statistics -->
-				
-
-				
-
-				
-		
-			
 <?php echo $_smarty_tpl->getSubTemplate ("admin_bottom.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
-
-
-
-
 
 <?php }} ?>

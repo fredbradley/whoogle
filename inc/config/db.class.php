@@ -373,9 +373,9 @@ function getUsers($username="") {
 	return $output;
 }
 function getGuessAttempts($pagenum) {
-	$query = "SELECT `hash`, `guess`, `return`, `time` FROM ".DB_PREFIX."guessattempts ";
-	$where = "WHERE `time` > ".(time() - 86400);
-	if (!(isset($pagenum))) {
+	$query = "SELECT `id`, `hash`, `guess`, `return`, `time` FROM ".DB_PREFIX."guessattempts ";
+//	$where = "WHERE `time` > ".(time() - 86400);
+/*	if (!(isset($pagenum))) {
 		$pagenum = 1;
 	}
 
@@ -394,8 +394,8 @@ echo $this->stats['guessattempts'];
 
 	$max = "LIMIT ".($pagenum - 1) * $page_rows.", ".$page_rows;
 	$sort = " ORDER BY `time` DESC ".$max;
-//	$where = " WHERE `time` > ".(time() - 86400);
-	$this->result = mysql_query($query.$where.$sort);
+//	$where = " WHERE `time` > ".(time() - 86400); */
+	$this->result = mysql_query($query);
 	while($row=mysql_fetch_assoc($this->result)) {
 		$output[] = $row;
 	}
