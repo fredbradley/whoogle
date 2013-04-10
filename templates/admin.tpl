@@ -50,7 +50,7 @@
 					<div class="big_stats visitor_stats">
 						{$stats.numguesses}
 					</div>
-					<h5 class="stats_info">Celebrities</h5>
+					<h5 class="stats_info">Guessed Celebrities</h5>
 				</div>
 				<div class="g_3 quick_stats">
 					<div class="big_stats orders_stats">
@@ -62,7 +62,7 @@
 					<div class="big_stats tickets_stats">
 						{$stats.guessattempts}
 					</div>
-					<h5 class="stats_info">Guess Attempts</h5>
+					<h5 class="stats_info">Search Guess Attempts</h5>
 				</div>
 				<div class="g_3 quick_stats">
 					<div class="big_stats users_stats">

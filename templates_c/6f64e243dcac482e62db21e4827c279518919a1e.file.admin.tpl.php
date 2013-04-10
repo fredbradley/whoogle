@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2013-04-10 10:10:18
+<?php /* Smarty version Smarty-3.1.8, created on 2013-04-10 10:38:20
          compiled from "/Users/fredbradley/Sites/smarty_site/whoogle/templates/admin.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:51787723651652c7aa1eb43-17325528%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:17281316215165330cb347a3-08565971%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '6f64e243dcac482e62db21e4827c279518919a1e' => 
     array (
       0 => '/Users/fredbradley/Sites/smarty_site/whoogle/templates/admin.tpl',
-      1 => 1359408220,
+      1 => 1365586684,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '51787723651652c7aa1eb43-17325528',
+  'nocache_hash' => '17281316215165330cb347a3-08565971',
   'function' => 
   array (
   ),
@@ -29,9 +29,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.8',
-  'unifunc' => 'content_51652c7aae4e10_19241110',
+  'unifunc' => 'content_5165330cbfa8a9_95259812',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_51652c7aae4e10_19241110')) {function content_51652c7aae4e10_19241110($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_date_format')) include '/Users/fredbradley/Sites/smarty_site/libs/plugins/modifier.date_format.php';
+<?php if ($_valid && !is_callable('content_5165330cbfa8a9_95259812')) {function content_5165330cbfa8a9_95259812($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_date_format')) include '/Users/fredbradley/Sites/smarty_site/libs/plugins/modifier.date_format.php';
 ?><?php echo $_smarty_tpl->getSubTemplate ("admin_head.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array('title'=>"Home"), 0);?>
   
 
@@ -89,7 +89,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 						<?php echo $_smarty_tpl->tpl_vars['stats']->value['numguesses'];?>
 
 					</div>
-					<h5 class="stats_info">Celebrities</h5>
+					<h5 class="stats_info">Guessed Celebrities</h5>
 				</div>
 				<div class="g_3 quick_stats">
 					<div class="big_stats orders_stats">
@@ -103,7 +103,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 						<?php echo $_smarty_tpl->tpl_vars['stats']->value['guessattempts'];?>
 
 					</div>
-					<h5 class="stats_info">Guess Attempts</h5>
+					<h5 class="stats_info">Search Guess Attempts</h5>
 				</div>
 				<div class="g_3 quick_stats">
 					<div class="big_stats users_stats">
