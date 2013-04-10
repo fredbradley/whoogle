@@ -27,7 +27,11 @@
  			$correctguess = $db->correctGuesses($guess);
 
 			if ($correctguess != 0) {
-				$output = "<p>".ucwords($correctguess[1])." is the person saying \"".$correctguess[5]."\" and was guessed by <a href=\"".$correctguess[4]."\" target=\"_blank\">".$correctguess[2].", who won &pound;".$correctguess[6]."</a></p>";
+				if (!empty($correctguess[4])) {
+					$output = "<p>".ucwords($correctguess[1])." is the person saying \"".$correctguess[5]."\" and was guessed by <a href=\"".$correctguess[4]."\" target=\"_blank\">".$correctguess[2].", who won &pound;".$correctguess[6]."</a></p>";
+				} else {
+					$output = "<p>.ucwords($correctguess[1])." is the person saying \"".$correctguess[5]."\" and was guessed by ".$correctguess[2]." who won &pound;".$correctguess[6]."</p>";
+				}
 				$return = ucwords($correctguess[1]);
 				$output = $output."<p>Keep listening to Heart for more chances to win!</p>";
 				$guessoutput[] = $output;
