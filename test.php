@@ -2,7 +2,7 @@
 
 /* VARIABLES
 ==============*/
-$server 	= "who.fredb.me";
+$server 	= "whoogle.com";
 $thispage 	= "test.php";
 
 ?>

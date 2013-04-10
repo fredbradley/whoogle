@@ -262,11 +262,11 @@ function searchGuesses($search="", $field="cname") {
 	$search = htmlspecialchars($search, ENT_QUOTES);
 	$query = "SELECT * FROM ".DB_PREFIX."guesses";
 	if ($search)
-		$where = " WHERE cname = '".$search."'";
+		$where = " WHERE cname = '".$search."' AND timesguessed > 0";
 //."' OR surname='".$search."' OR firstname='".$search."' OR nicknames LIKE '%".$search."%'";
 	$array = $this->getGuesses($query.$where,0);
 	if ($array['error']) {
-		$where = " WHERE nicknames LIKE '%".$search."%'";
+		$where = " WHERE nicknames LIKE '%".$search."%' AND timesguessed > 0";
 		$array = $this->getGuesses($query.$where, 0);
 		if (!empty($array[0]['guess']['nicknames'])) {
 			if (in_array($search, $array[0]['guess']['nicknames'])) {
