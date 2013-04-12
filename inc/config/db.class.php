@@ -454,7 +454,7 @@ function usefulStats() {
 //	$output['guesssubmits'] = $this->count($query);
 	$list = $this->getrows("SELECT * FROM ".DB_PREFIX."guesses ORDER BY timesguessed DESC LIMIT 1");
 	$output['mostguessed'] = ucwords($list[0]['cname']);
-	$output['nextplay'] = $this->nextPlay();
+	$output['nextplay'] = $this->nextPlay(date("w"), date("Hi"));
 	$output['yesterdaysSearches'] = $this->yesterdaysSearches();
 	return $output;
 }
@@ -500,32 +500,66 @@ function mostGuessed() {
 }
 
 
-function nextPlay() {
-date_default_timezone_set('Europe/London');
-// Seems to be an error on Monday mornings before 9am?
-	if (date("w") > "0" && date("w") < "6") {
-	// If it's Mon, Tue, Wed, Thu or Fri
-		if (date("Hi") > "0900" && date("Hi") < "1550") {
-		// If it's between 0901 and 1550 (on Mon, Tue, Wed, Thu, or Fri)
-			$output = " later this hour";
-		} elseif (date("Hi") < "0900") {
-		// If it's before 0900 (on Mon, Tue, Wed, Thu or Fri)
-			$output = " at 10am";
-		} elseif (date("Hi") > "1550" && date("w") != "5") {
-		// If it's after 1550 BUT NOT Friday
-			$output = " tomorrow";
-		} elseif (date("Hi") > "1550" && date("w") == "5") {
-		// If it's after 1550 AND Friday
-			$output = " on Monday";
+
+function nextPlay($day, $hour) {
+/*  ====================================================================
+	SET A COUPLE OF DEFINED PHRASES SO YOU DON'T HAVE TO TYPE TOO MUCH!
+	==================================================================== */
+	define("PLAY_NOW", "You can play right now!");
+	define("NEXT_CHANCE", "Your next chance to play is just after");
+
+	if ($day > "0" && $day < "7") {
+	// If it's Mon, Tue, Wed, Thu, Fri or Sat
+		if ($hour < "0901") {
+			$output = NEXT_CHANCE." 9am";	        		
+		} elseif ($hour > "0901" && $hour < "0941") {
+			$output = PLAY_NOW;
+		} elseif ($hour > "0940" && $hour < "1002") {
+			$output = NEXT_CHANCE." 10am";
 		}
-	} elseif (date("w") == "6") {
-		$output = " on Monday";
-	} elseif (date("w") == "0") {
-		$output = " tomorrow";
+		for( $i=10; $i<16; $i++ ) {
+		// A cheeky for loop to save on the amount of writing IF statements you have to do!
+			if ($hour > $i."01" && $hour < $i."41") {
+				$output = PLAY_NOW;
+			} elseif ($hour > $i."40" && $hour < ($i+1)."02") {
+				$output = NEXT_CHANCE." ".$this->nextPlay_simplifytime($i+1);
+			}
+		}
+        		
+		if ($hour > "1541") {
+			$output = NEXT_CHANCE." 9am tomorrow!";
+		}
+	} 
+        
+	if ($day == "6" && $hour > "1240") {
+		// If it's Saturday and it's after 1240... (NB: This overrides the above)
+		$output = NEXT_CHANCE." 9am on Monday!";
+	} 
+        
+	if ($day == "0" || $day == "7") {
+		// If it's Sunday... (NB: This overrides the above)
+		$output = NEXT_CHANCE." 9am tomorrow!";
 	}
-$output = "";
+
 return $output;
 }
+
+function nextPlay_simplifytime($i) {
+	if ($i > 11) {
+	// If the hour is midday or after
+		$m = "pm";
+		if ($i > 12) {
+			// If it's 1pm or later then deduct 12 to get the 'PM' time. (eg. 15 minus 12 equals 3)
+			$i = $i-12;
+		}
+	} else {
+	// Otherwise it must be morning!
+		$m = "am";
+	}
+	// Return giving me the hour (in 12 hour format, with AM/PM)
+	return $i.$m;
+}
+
 
 function guessMade($input, $return, $hash) {
 	$input = mysql_real_escape_string($input);

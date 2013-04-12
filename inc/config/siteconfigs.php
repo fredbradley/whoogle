@@ -17,7 +17,8 @@
 			$SITE_PATH = $ROOT_PATH."whoogle/";
 		}
 		
-
+	/* WHAT TIME IS IT */
+		date_default_timezone_set('Europe/London');
 	/* INCLUDE SMARTY THINGS */
 		require_once($ROOT_PATH.'libs/Smarty.class.php'); // THE SCRIPT THAT RUNS SMARTY
 		//ANY OTHER SMARTY PLUGINS THAT NEED INCLUDED SHOULD BE ADDED HERE
@@ -32,8 +33,7 @@
 		$db = new Database;
 		$db->connect(DB_USER, DB_PASSWORD, DB_HOST, DB_DATABASE);
 
-	/* WHAT TIME IS IT */
-		date_default_timezone_set('Europe/London');
+
 
 	/* LOAD FUNCTIONS */
 		require_once($SITE_PATH.'inc/functions/common.php');

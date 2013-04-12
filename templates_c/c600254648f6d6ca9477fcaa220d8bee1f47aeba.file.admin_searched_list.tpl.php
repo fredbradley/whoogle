@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2013-04-10 17:55:16
+<?php /* Smarty version Smarty-3.1.8, created on 2013-04-11 05:32:02
          compiled from "/Users/fredbradley/Sites/smarty_site/whoogle/templates/admin_searched_list.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:7754827875165997477a149-73322198%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:150383920751663cc2143323-99309790%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -11,7 +11,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '7754827875165997477a149-73322198',
+  'nocache_hash' => '150383920751663cc2143323-99309790',
   'function' => 
   array (
   ),
@@ -23,9 +23,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.8',
-  'unifunc' => 'content_51659974810ab5_32946028',
+  'unifunc' => 'content_51663cc4344f55_90440922',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_51659974810ab5_32946028')) {function content_51659974810ab5_32946028($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_capitalize')) include '/Users/fredbradley/Sites/smarty_site/libs/plugins/modifier.capitalize.php';
+<?php if ($_valid && !is_callable('content_51663cc4344f55_90440922')) {function content_51663cc4344f55_90440922($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_capitalize')) include '/Users/fredbradley/Sites/smarty_site/libs/plugins/modifier.capitalize.php';
 if (!is_callable('smarty_modifier_relative_date')) include '/Users/fredbradley/Sites/smarty_site/libs/plugins/modifier.relative_date.php';
 ?><div class="widget_header">
 						<h4 class="widget_header_title wwIcon i_16_data">What the Punters Have Guessed...</h4>
