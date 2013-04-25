@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2013-04-25 13:45:39
+<?php /* Smarty version Smarty-3.1.8, created on 2013-04-25 14:11:04
          compiled from "/Users/fredbradley/Sites/smarty_site/whoogle/templates/admin_notification.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:54782774151792573e6afa0-95248116%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:41633652651792b683c0418-19691764%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -11,7 +11,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '54782774151792573e6afa0-95248116',
+  'nocache_hash' => '41633652651792b683c0418-19691764',
   'function' => 
   array (
   ),
@@ -22,9 +22,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.8',
-  'unifunc' => 'content_51792573ef8f22_08266859',
+  'unifunc' => 'content_51792b683cb778_43600145',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_51792573ef8f22_08266859')) {function content_51792573ef8f22_08266859($_smarty_tpl) {?><?php ob_start();?><?php echo $_smarty_tpl->tpl_vars['message']->value;?>
+<?php if ($_valid && !is_callable('content_51792b683cb778_43600145')) {function content_51792b683cb778_43600145($_smarty_tpl) {?><?php ob_start();?><?php echo $_smarty_tpl->tpl_vars['message']->value;?>
 <?php $_tmp1=ob_get_clean();?><?php if ($_tmp1){?>
 	<div class="notification information png_bg">
   			<img src="resources/images/icons/cross_grey_small.png" title="Close this notification" alt="close" />
