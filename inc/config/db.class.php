@@ -505,8 +505,8 @@ function nextPlay($day, $hour) {
 /*  ====================================================================
 	SET A COUPLE OF DEFINED PHRASES SO YOU DON'T HAVE TO TYPE TOO MUCH!
 	==================================================================== */
-	define("PLAY_NOW", "You can play right now!");
-	define("NEXT_CHANCE", "Your next chance to play is just after");
+	define("PLAY_NOW", "as the lines are open right now");
+	define("NEXT_CHANCE", "when we play again just after");
 
 	if ($day > "0" && $day < "7") {
 	// If it's Mon, Tue, Wed, Thu, Fri or Sat
@@ -527,18 +527,18 @@ function nextPlay($day, $hour) {
 		}
         		
 		if ($hour > "1541") {
-			$output = NEXT_CHANCE." 9am tomorrow!";
+			$output = NEXT_CHANCE." 9am tomorrow";
 		}
 	} 
         
 	if ($day == "6" && $hour > "1240") {
 		// If it's Saturday and it's after 1240... (NB: This overrides the above)
-		$output = NEXT_CHANCE." 9am on Monday!";
+		$output = NEXT_CHANCE." 9am on Monday";
 	} 
         
 	if ($day == "0" || $day == "7") {
 		// If it's Sunday... (NB: This overrides the above)
-		$output = NEXT_CHANCE." 9am tomorrow!";
+		$output = NEXT_CHANCE." 9am tomorrow";
 	}
 
 return $output;
