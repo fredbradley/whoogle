@@ -28,11 +28,11 @@
 
 			if ($correctguess != 0) {
 				if (!empty($correctguess[4])) {
-					$output = "<p>".ucwords($correctguess[1])." is the person saying \"".$correctguess[5]."\" and was guessed by <a href=\"".$correctguess[4]."\" target=\"_blank\">".$correctguess[2].", who won &pound;".$correctguess[6]."</a>!</p>";
+					$output = "<p>".$db->to_upper($correctguess[1])." is the person saying \"".$correctguess[5]."\" and was guessed by <a href=\"".$correctguess[4]."\" target=\"_blank\">".$correctguess[2].", who won &pound;".$correctguess[6]."</a>!</p>";
 				} else {
-					$output = "<p>".ucwords($correctguess[1])." is the person saying &quot;".$correctguess[5]."&quot; and was guessed by ".$correctguess[2]." who won &pound;".$correctguess[6]."!</p>";
+					$output = "<p>".$db->to_upper($correctguess[1])." is the person saying &quot;".$correctguess[5]."&quot; and was guessed by ".$correctguess[2]." who won &pound;".$correctguess[6]."!</p>";
 				}
-				$return = ucwords($correctguess[1]);
+				$return = $db->to_upper($correctguess[1]);
 				//$output = $output."<p>Keep listening to Heart for more chances to win!</p>";
 				$guessoutput[] = $output;
 			} elseif (strtolower($guess) == "fergie") {
@@ -41,12 +41,12 @@
 				$return = "The Fergie Problem";
 			} else {
 				if ($iguess['guess']['error'] OR $iguess['error']) {
-					$output = "<p>It looks like ".stripslashes(ucwords($guess))." hasn't been guessed yet, so you should call in ". $db->nextPlay(date("w"), date("Hi"))."! Make sure you've spelt it right though!</p>";
+					$output = "<p>It looks like ".stripslashes($db->to_upper($guess))." hasn't been guessed yet, so you should call in ". $db->nextPlay(date("w"), date("Hi"))."! Make sure you've spelt it right though!</p>";
 					$return = "Not Guessed Yet";
 				} else {
 					// PUT IN GOOGLE API CODE HERE
-					$output = "<p>".trim(ucwords($iguess[0]['guess']['name']['full_name']))." has been guessed ".pluralise($iguess[0]['guess']['timesguess'])." before!</p>";
-					$return = trim(ucwords($iguess[0]['guess']['name']['full_name']));
+					$output = "<p>".trim($db->to_upper($iguess[0]['guess']['name']['full_name']))." has been guessed ".pluralise($iguess[0]['guess']['timesguess'])." before!</p>";
+					$return = trim($db->to_upper($iguess[0]['guess']['name']['full_name']));
 				}
 				//$output = $output."<p>Keep listening to Heart for more chances to win!</p>";
 

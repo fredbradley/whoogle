@@ -637,6 +637,17 @@ function listFuckUps() {
 return $output;
 }
 
+function to_upper($name) {
+/* Function provided by: http://stackoverflow.com/questions/8977663/how-to-uppercase-first-letter-after-a-hyphen-ie-adam-smith-jones */
+	$name=ucwords($name);
+	$arr=explode('-', $name);
+	$name=array();
+	foreach($arr as $v) {
+		$name[]=ucfirst($v);
+	}
+	$name=implode('-', $name);
+	return $name;
+}
 
 function sendEmail($to, $subject, $message, $username) {
 	$user_details = $this->getUsers($username);
