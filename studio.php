@@ -42,7 +42,7 @@
 
 			} else {
 				if ($iguess['guess']['error'] OR $iguess['error']) {
-					$output = "<p>It doesn't look like \"".ucwords($guess)."\" has been guess yet, have you spelt the name correctly? If so you should call when we play again ". $db->nextPlay()."!</p>";
+					$output = "<p>It doesn't look like \"".ucwords($guess)."\" has been guess yet, have you spelt the name correctly? If so you should call when we play again ". $db->nextPlay(date("w"), date("Hi"))."!</p>";
 					$times = "<span class=\"new\">NEW</span>";
 				} else {
 					// PUT IN GOOGLE API CODE HERE
@@ -58,7 +58,7 @@
 	/* LOAD FUNCTIONS */
 		require_once($SITE_PATH."inc/functions/common.php");
 
-$nextplay = $db->nextPlay();
+$nextplay = $db->nextPlay(date("w"), date("Hi"));
 	/* SMARTY ASSIGNS */
 		$smarty->assign('nextplay', $nextplay);
 		$smarty->assign('guesses', $guessoutput);
