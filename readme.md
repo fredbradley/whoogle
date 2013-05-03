@@ -2,11 +2,11 @@ Whoogle
 ===========
 
 Whoogle is a system originally developed for [Heart](http://www.heart.co.uk) (the radio station) to use in conjunction with their national network competition "Who's On Heart". Primarily allowing listeners (the audience) to easily search through wrong guesses to the competition to see if a celebrity that they would like to guess has already been guess. However has since been proven to be a highly useful administrative tool for producers at the radio station to use to: 
-
-	* Track guesses given during on air executions
-	* Give stats related to the competition, including most guessed, recently guessed, ammount of total celebrities guessed, etc
-	* Track guesses made by the audience, helping to ensure the system works well, but also to give confidence that the audience are searching for sensible names.
-	
+<ol>
+	<li>Track guesses given during on air executions</li>
+	<li>Give stats related to the competition, including most guessed, recently guessed, ammount of total celebrities guessed, etc</li>
+	<li>Track guesses made by the audience, helping to ensure the system works well, but also to give confidence that the audience are searching for sensible names.</li>
+</ol>	
 
 Developer
 ---------
