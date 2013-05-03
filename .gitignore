@@ -5,4 +5,4 @@
 # http://kernel.org/pub/software/scm/git/docs/gitignore.html
  
 templates_c/*
-
+!templates_c/readme.txt
